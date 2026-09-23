@@ -57,6 +57,24 @@ Sources: [ETHGlobal](https://ethglobal.com/events/tokyo2026/info/details) · [ML
 5. Add a title card (event name) and an end card (repo and demo URL).
 6. Export at 1080p, upload, paste the link into the submission, and let it finish processing.
 
+### Bonus: a 1-command launch video with `/brag`
+
+[**latent-spaces/brag**](https://github.com/latent-spaces/brag) 🆓 (MIT, 6.9k ⭐, last push 2026-09-21) is a Claude Code skill that turns your project into a **short launch video with music, motion and share copy**. Run it inside your repo, and you get a `brag-output/` folder with the plan, a composition brief, share copy and `brag.mp4`. The rendering is done by [Hyperframes](https://hyperframes.heygen.com/).
+
+```bash
+# Claude Code
+/plugin marketplace add latent-spaces/brag
+/plugin install brag@brag
+# any other agent (Cursor, Codex, Copilot, Gemini CLI, opencode…)
+npx skills add https://github.com/latent-spaces/brag --skill brag
+```
+
+Then ask your agent `let's /brag`, or steer the tone: `/brag --tone "fake Series A launch from 2016"`.
+
+**Needs:** Node.js 22+, **FFmpeg** on your `PATH`, and the Hyperframes CLI (`npx hyperframes doctor` checks it). **Install and test it the week before**, not at 3 a.m. On Windows, clone with `git clone -c core.symlinks=true`, or copy `skills/brag/` into `~/.claude/skills/` by hand.
+
+> ⚠️ **It's a hype video, not your demo video.** Use it for the end card, a Devpost gallery clip, or your LinkedIn/X post after the event ([`after-the-event.md`](after-the-event.md)). The **judged** demo video still needs a real screen recording of your working app, in the format your event specifies (table above). Leave voiceover **off** (the default): `--voice` adds AI narration, which ETHGlobal bans. Mention it in your AI-use disclosure.
+
 ---
 
 ## Rehearsal drills

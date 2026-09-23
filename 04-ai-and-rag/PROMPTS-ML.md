@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 
-> Copy-paste prompts for picking models, costing features and building LLM calls. Reference: `docs/model-selection.md` · `docs/prompt-engineering.md`
+> Copy-paste prompts for picking models, costing features and building LLM calls. Reference: `docs/model-selection.md` · `docs/prompt-engineering.md` · `docs/agents-and-tool-use.md`
 
 ---
 
@@ -21,6 +21,9 @@
 | [ML9](#ml9--training-loop) | Training loop (classic ML) |
 | [ML10](#ml10--model-failure-analysis) | Model failure analysis |
 | [ML11](#ml11--routing--cascade) | Routing / cascade |
+| [ML12](#ml12--scaffold-a-capped-agent) | Scaffold a capped agent (AI SDK v7 / Pydantic AI) |
+| [ML13](#ml13--design-the-tools) | Design the tools |
+| [ML14](#ml14--agent-safety-and-fallback-review) | Agent safety and fallback review |
 
 > ML8–ML11 are adapted from [help-me-papi](https://github.com/maxi-cmyk/help-me-papi) `AI/PROMPTS-ML.md` and `data-analysis/prompts/scaffolds.md`. Use them for **data or ML-track hackathons** where you train a model rather than call an LLM.
 
@@ -98,6 +101,7 @@ Our demo calls <model> for <feature>. Make it demo-safe:
 2. Add a cached/recorded response fallback behind DEMO_MODE=true for when the API is slow or down.
 3. Stream the output so the judge sees progress within 1s.
 4. Show a graceful error with retry, never a raw stack trace.
+5. Do NOT set temperature/top_p/top_k (current Claude and GPT-6 models reject them). Rely on the fallback for consistency.
 ```
 
 *Why:* "Mock everything you can" ([JetBrains judges](https://blog.jetbrains.com/ai/2026/06/how-to-win-a-hackathon-notes-from-the-judging-table/)).
@@ -142,3 +146,45 @@ Output a prioritised list of next experiments (more data/augmentation, regularis
 Design a model cascade for <task> at <volume>/day: cheap model first (<Haiku 4.5 | small model>), escalate to <Sonnet 5 / Opus 5> only when confidence is low or validation fails.
 Define the confidence signal, the escalation rule, and benchmark both against our golden set (quality, p95 latency, cost/1k requests). Recommend whether the cascade beats a single model.
 ```
+
+### ML12 · Scaffold a capped agent
+
+```text
+Read docs/agents-and-tool-use.md first. Build the smallest agent for <job> in <Next.js with Vercel AI SDK v7 ToolLoopAgent | Python with Pydantic AI>.
+1. First say whether a fixed workflow (chain/router) would do instead of an agent loop; if yes, build that.
+2. Max <3–5> tools. Set the step cap explicitly (stopWhen: isStepCount(8) / equivalent) and handle hitting it with a friendly message.
+3. Stream output; show each tool call in the UI (running → done → failed).
+4. Use v7 names only (isStepCount, instructions, onEnd, toolApproval); no temperature; Node 22+, ESM.
+5. Model id and API key from env; key server-side only.
+```
+
+*Why:* start simple, cap the loop ([Anthropic](https://www.anthropic.com/engineering/building-effective-agents), [AI SDK v7](https://ai-sdk.dev/docs/migration-guides/migration-guide-7-0)).
+
+### ML13 · Design the tools
+
+```text
+Here are the actions our agent needs: <list>. Design the tool set:
+- As few tools as possible (merge thin wrappers); namespaced names (<app>_<resource>_<verb>); unambiguous parameter names; enums for modes.
+- A description per tool written for a new teammate: what it does, when to use it, what it returns.
+- strict schemas (additionalProperties: false).
+- Responses: short and human-readable (names not UUIDs), paginated, truncated.
+- Error messages that tell the model exactly how to fix the call.
+Output the schemas + one example good call and one example error per tool.
+```
+
+*Why:* [Anthropic: Writing tools for agents](https://www.anthropic.com/engineering/writing-tools-for-agents).
+
+### ML14 · Agent safety and fallback review
+
+```text
+Review our agent before the demo. Report pass/fail for each:
+1. Lethal trifecta: does any single agent have private data + untrusted input + a way to send data out? If so, how do we split it?
+2. Every write/pay/send tool requires human approval.
+3. Step cap set; MaxTurnsExceeded / step-limit handled gracefully.
+4. Function stays under the Vercel 300 s limit (or runs in Vercel Workflows).
+5. DEMO_MODE fallback returns cached answers for our 3 golden inputs.
+6. Spend cap set on the API account; MCP servers are from trusted sources only.
+7. 20+ pass/fail test cases from real failures; we've read at least 30 traces (Langfuse).
+```
+
+*Why:* [Lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) · [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) · [agent evals](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).

@@ -39,7 +39,7 @@ A dead link on your CV is worse than no link.
 ## Step 4 · Tell people about it (1 hour)
 
 - [ ] Update the **Devpost** page with anything you rushed (screenshots, a clearer description)
-- [ ] Post on **LinkedIn** or X: the problem, one GIF, what you learned, the prize if you won, and tag your teammates and the sponsors whose tech you used
+- [ ] Post on **LinkedIn** or X: the problem, one GIF, what you learned, the prize if you won, and tag your teammates and the sponsors whose tech you used. Want a slick launch clip? Run [`/brag`](https://github.com/latent-spaces/brag) in your repo ([`pitch-and-demo.md`](pitch-and-demo.md) → Bonus)
 - [ ] **Follow up with sponsors and judges** you talked to, within 48 hours: *"Thanks for judging at <event>. We built <project> with your <API>. Here's the demo: <link>."* Sponsor engineers are often recruiters
 - [ ] Add it to your CV: **one line of impact** (what it does + for whom) + the stack + the result ("Won <prize> of <N> teams")
 

@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 
-> **In plain English:** six short summaries of the most important rules. Read them like cheat sheets, or install them into Claude Code so it follows them automatically.
+> **In plain English:** seven short summaries of the most important rules. Read them like cheat sheets, or install them into Claude Code so it follows them automatically.
 
 | Cheat sheet | Summarises | Level |
 | --- | --- | --- |
@@ -12,6 +12,7 @@
 | [`hackathon-troubleshooting/`](hackathon-troubleshooting/SKILL.md) | **Something broke:** the check order and fixes by symptom | 🟢 |
 | [`hackathon-git-teamwork/`](hackathon-git-teamwork/SKILL.md) | Working as a team in one repo, fixing merge conflicts, undoing mistakes | 🟢 |
 | [`hackathon-backend/`](hackathon-backend/SKILL.md) | Backend stack, outdated patterns to avoid, security | 🟡 |
+| [`hackathon-ai/`](hackathon-ai/SKILL.md) | **AI features and agents:** pattern ladder, framework pick, tools, MCP, safety, demo-proofing | 🟡 |
 
 ## Optional: install into Claude Code
 

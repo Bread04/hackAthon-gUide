@@ -1,4 +1,4 @@
-# ⭐ Repos for this folder (15)
+# ⭐ Repos for this folder (16)
 
 <!-- markdownlint-disable MD013 -->
 
@@ -14,6 +14,7 @@
 | [slidevjs/slidev](https://github.com/slidevjs/slidev) | 48.8k | 2026-09-16 | MIT | Markdown+Vue dev slides, best DX | ✅ |
 | [charmbracelet/vhs](https://github.com/charmbracelet/vhs) | 20.9k | 2026-09-09 | MIT | Scripted terminal GIFs / terminal recording / demo video | ✅ |
 | [marp-team/marp](https://github.com/marp-team/marp) | 12.5k | 2026-07-29 | MIT | Simplest Markdown→slides, VS Code ext | ✅ |
+| [latent-spaces/brag](https://github.com/latent-spaces/brag) | 6.9k | 2026-09-21 | MIT | Claude Code skill: one command turns your project into a launch/hype video (needs FFmpeg + Hyperframes; not a substitute for the judged demo video). Added 2026-09-23 | ✅ |
 
 ## Hackathon-specific
 

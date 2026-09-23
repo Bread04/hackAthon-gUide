@@ -14,7 +14,7 @@
 | --- | --- |
 | **Node.js (LTS)** | Runs JavaScript apps like Next.js. Includes `npm` and `npx` |
 | **Git** | Saves versions of your code and uploads them to GitHub |
-| **VS Code** | The code editor (or Cursor, which is based on it) |
+| **VS Code** + extensions | The code editor (or Cursor, which is based on it), plus a few free add-ons ([below](#everyone-add-vs-code-extensions)) |
 | **GitHub CLI** (`gh`) | Logs git into GitHub without passwords. Optional but easier |
 | **Claude Code** (for BMad) | The AI coding assistant this toolkit's BMad workflow runs in. Installed in [`setup-bmad.md`](setup-bmad.md). No Claude Code? Pick a fallback from [`../../05-tools-and-mcp/docs/free-ai-dev-tools.md`](../../05-tools-and-mcp/docs/free-ai-dev-tools.md) |
 
@@ -106,6 +106,98 @@ gh auth login
 ```
 
 Choose **GitHub.com** → **HTTPS** → **Yes** (authenticate git) → **Login with a web browser**, then follow the prompts.
+
+---
+
+## Everyone: add VS Code extensions
+
+Extensions are free add-ons from the **VS Code Marketplace**. To install one, open VS Code, press `Ctrl + Shift + X` (Mac: `Cmd + Shift + X`), search for the name, and click **Install**. Or paste the install command into a terminal.
+
+> Only install extensions from **verified publishers** (blue tick) or ones listed here. Extensions can read your code and keys. All the IDs below were checked on the Marketplace on 2026-09-23, and each one had an update within the last year (dates in [`../../_research/technical-agents-and-fullstack-practices-2026-09-23/imports/vscode-extensions-2026-09-23.json`](../../_research/technical-agents-and-fullstack-practices-2026-09-23/imports/vscode-extensions-2026-09-23.json)).
+
+### 🟢 Everyone installs these (5 minutes)
+
+| Extension | What it does for you | ID |
+| --- | --- | --- |
+| **ESLint** | Underlines bugs and bad patterns in JavaScript/TypeScript as you type | `dbaeumer.vscode-eslint` |
+| **Prettier** | Tidies your code's formatting on save, so the team's code looks the same | `esbenp.prettier-vscode` |
+| **Tailwind CSS IntelliSense** | Autocompletes Tailwind classes and shows the colour | `bradlc.vscode-tailwindcss` |
+| **Error Lens** | Shows the error message right on the broken line, not just a red squiggle | `usernamehw.errorlens` |
+| **Pretty TypeScript Errors** | Turns unreadable TypeScript errors into plain, formatted ones | `yoavbls.pretty-ts-errors` |
+| **GitLens** | Shows who changed each line and when, and makes merge conflicts easier | `eamodio.gitlens` |
+| **Live Share** | A teammate joins your editor live, like Google Docs for code. Great for pairing on a bug | `ms-vsliveshare.vsliveshare` |
+
+```bash
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension esbenp.prettier-vscode
+code --install-extension bradlc.vscode-tailwindcss
+code --install-extension usernamehw.errorlens
+code --install-extension yoavbls.pretty-ts-errors
+code --install-extension eamodio.gitlens
+code --install-extension ms-vsliveshare.vsliveshare
+```
+
+> `code` not found? In VS Code press `Ctrl + Shift + P` → type **"Shell Command: Install 'code' command in PATH"** (Mac), or reopen the terminal (Windows).
+
+### 🤖 Your AI assistant (pick one)
+
+| Extension | Cost | ID |
+| --- | --- | --- |
+| **Claude Code for VS Code**: runs this toolkit's BMad workflow ([`setup-bmad.md`](setup-bmad.md)) | 💳 needs a Claude plan or API key | `anthropic.claude-code` |
+| **GitHub Copilot Chat** | 🆓* Copilot Free (2,000 completions a month); students get the Copilot Student plan ([details](../../05-tools-and-mcp/docs/free-ai-dev-tools.md)) | `github.copilot-chat` |
+| **Gemini Code Assist** | 🆓* has an individual free tier (limits not checked in this guide's research) | `google.geminicodeassist` |
+| **Cline** (open source, bring your own model key, including free ones) | 🆓 + your model's cost | `saoudrizwan.claude-dev` |
+
+Other options and the $0 route: [`../../05-tools-and-mcp/docs/free-ai-dev-tools.md`](../../05-tools-and-mcp/docs/free-ai-dev-tools.md).
+
+### 🟡 Add the ones for your project
+
+| If your project uses… | Install | ID |
+| --- | --- | --- |
+| **Python / FastAPI** | Python + Pylance (autocomplete, debugging) | `ms-python.python`, `ms-python.vscode-pylance` |
+| | Ruff (fast linting and formatting for Python) | `charliermarsh.ruff` |
+| **Data / ML notebooks** | Jupyter (run `.ipynb` notebooks inside VS Code) | `ms-toolsai.jupyter` |
+| **Testing** | Playwright Test (run and record browser tests) | `ms-playwright.playwright` |
+| | Vitest (run unit tests from the sidebar) | `vitest.explorer` |
+| **Prisma ORM** | Prisma (schema highlighting and formatting) | `prisma.prisma` |
+| **Testing your API** | Thunder Client (send requests to your API, like Postman) | `rangav.vscode-thunder-client` |
+| **Plain HTML/CSS pages** | Live Preview (a preview of your page that reloads itself) | `ms-vscode.live-server` |
+| **Docker** | Container Tools (the replacement for the old "Docker" extension) | `ms-azuretools.vscode-containers` |
+| **Accessibility** | axe Accessibility Linter (flags accessibility mistakes in your markup) | `deque-systems.vscode-axe-linter` |
+| **Writing the README / pitch** | markdownlint + Markdown Preview Mermaid Support (clean docs, diagrams in preview) | `davidanson.vscode-markdownlint`, `bierner.markdown-mermaid` |
+| | Code Spell Checker (catches typos in code and text before the judges do) | `streetsidesoftware.code-spell-checker` |
+
+### Share the list with your team
+
+Commit a `.vscode/extensions.json` file to your repo. When a teammate opens the project, VS Code offers to install everything on it:
+
+```json
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+    "usernamehw.errorlens",
+    "eamodio.gitlens",
+    "ms-vsliveshare.vsliveshare"
+  ]
+}
+```
+
+Then turn on **format on save** so Prettier runs automatically: `Ctrl + ,` → search **"format on save"** → tick it.
+
+### ❌ Skip these (popular, but not updated in years)
+
+| Instead of… | Use | Why |
+| --- | --- | --- |
+| Git Graph | **GitLens** (or VS Code's built-in Source Control graph) | Last updated 2021 |
+| REST Client | **Thunder Client** | Last updated 2022 |
+| DotENV | Nothing. VS Code highlights `.env` files well enough | Last updated 2018 |
+| Auto Rename Tag | Nothing. VS Code has this built in: `Ctrl + ,` → search **"linked editing"** → tick it | Last updated 2022 |
+| Import Cost | Check bundle size with `npx next build` output | Last updated 2022 |
+| Docker (`ms-azuretools.vscode-docker`) | **Container Tools** | Replaced by Microsoft |
+
+> Using **Cursor**? It's based on VS Code, so most of these install the same way from its own extension panel. A few Microsoft-only extensions (such as Pylance and Live Share) may be missing there. Use whatever Cursor offers instead.
 
 ---
 

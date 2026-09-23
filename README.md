@@ -30,7 +30,7 @@ The folders are numbered in the order you'll need them.
 | 📘 [`01-hackathon-playbook/`](01-hackathon-playbook/README.md) | **The game plan.** The BMad workflow hour by hour: setup, idea, plan, build, pitch, after | 🟢 Start here |
 | 🎨 [`02-frontend/`](02-frontend/README.md) | **What people see.** Making the app look good and work on phones | 🟢/🟡 |
 | ⚙️ [`03-backend/`](03-backend/README.md) | **The engine behind the scenes.** Database, logins, keeping it secure, putting it online | 🟡 |
-| 🤖 [`04-ai-and-rag/`](04-ai-and-rag/README.md) | **Adding AI to your app.** Choosing a model, writing prompts, chatbots over your own documents, voice | 🟡 |
+| 🤖 [`04-ai-and-rag/`](04-ai-and-rag/README.md) | **Adding AI to your app.** Choosing a model, writing prompts, agents and tools, chatbots over your own documents, voice | 🟡 |
 | 🔧 [`05-tools-and-mcp/`](05-tools-and-mcp/README.md) | **Supercharging your AI assistant.** Plug-ins (MCP servers), free tools, staying safe | 🟡 |
 | ⭐ [`06-repo-catalog/`](06-repo-catalog/README.md) | **The shopping list.** Recommended free libraries, and ones to avoid | 🟢 |
 | 🧠 [`07-bmad-workflow/`](07-bmad-workflow/README.md) | **The BMad engine room.** The config pack that wires this toolkit into BMad, a verdict on every BMad skill, and how the wiring works. Open it when setup asks you to, or to customise | 🟡 |
@@ -80,6 +80,7 @@ docs/         ← the detailed guides
 | Make my app look good | [`02-frontend/README.md`](02-frontend/README.md) |
 | Get my app online | [`03-backend/docs/deploy-step-by-step.md`](03-backend/docs/deploy-step-by-step.md) (first time) · [`skills/hackathon-deployment/SKILL.md`](skills/hackathon-deployment/SKILL.md) (full runbook) |
 | Add a chatbot or AI feature | [`04-ai-and-rag/README.md`](04-ai-and-rag/README.md) |
+| Build an AI agent that uses tools | [`04-ai-and-rag/docs/agents-and-tool-use.md`](04-ai-and-rag/docs/agents-and-tool-use.md) · [`skills/hackathon-ai/SKILL.md`](skills/hackathon-ai/SKILL.md) |
 | Build a mobile, voice or crypto app | [`mobile.md`](02-frontend/docs/mobile.md) · [`voice-and-realtime.md`](04-ai-and-rag/docs/voice-and-realtime.md) · [`web3.md`](03-backend/docs/web3.md) |
 | Give my AI assistant more abilities | [`05-tools-and-mcp/docs/mcp-catalog.md`](05-tools-and-mcp/docs/mcp-catalog.md) |
 | Prepare the final pitch | [`01-hackathon-playbook/docs/pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) |

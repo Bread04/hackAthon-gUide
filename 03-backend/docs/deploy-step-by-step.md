@@ -39,7 +39,7 @@ Still on the import screen, open **Environment Variables**. Copy each line from 
 | Key | Value |
 | --- | --- |
 | `NEXT_PUBLIC_SUPABASE_URL` | `https://xxxx.supabase.co` |
-| `NEXT_PUBLIC_SUPABASE_ANON_KEY` | `eyJ…` |
+| `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` | `sb_publishable_…` (older projects: the legacy `anon` key, deprecated by end of 2026) |
 | `ANTHROPIC_API_KEY` *(or your model's key)* | `sk-…` |
 
 > ⚠️ Only keys that are safe for anyone to see may start with `NEXT_PUBLIC_`. Secret keys must **not** have that prefix, or they get sent to every visitor's browser. See [`security.md`](security.md).

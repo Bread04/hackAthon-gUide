@@ -98,7 +98,9 @@
 | **Embedding / vector** | A way of turning text into numbers so similar meanings can be found. It powers RAG |
 | **Vector database** | A database built to search embeddings (for example **pgvector**, which is built into Supabase) |
 | **Local model / Ollama** | Running an AI model on your own computer, free and offline |
-| **Agent** | An AI that takes several steps on its own (for example searching, then writing code, then testing) |
+| **Agent** | An AI that takes several steps on its own (for example searching, then writing code, then testing). Building one into your app: [`04-ai-and-rag/docs/agents-and-tool-use.md`](04-ai-and-rag/docs/agents-and-tool-use.md) |
+| **Tool call** | When the AI asks your code to run a function (search, look up a user, send an email), then reads the result |
+| **Lethal trifecta** | Private data + untrusted content + a way to send data out, all in one AI. Together, one hidden instruction can leak your data, so never combine all three |
 | **Hallucination** | When an AI confidently makes something up |
 
 ## AI coding tools
