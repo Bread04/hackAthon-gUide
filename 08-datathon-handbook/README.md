@@ -40,6 +40,12 @@ Winning teams treat the datathon as a rapid **decision-support product challenge
 
 ## 🗺️ What's in This Playbook
 
+### 🤖 AI Agent Standards & Prompt Macros
+* 📜 [`SKILLS.md`](SKILLS.md) — **Datathon AI Skill Specification:** Drop this into any datathon workspace so Claude Code, Cursor, Antigravity, or Copilot strictly follow leak-free evaluation, unit economics, and Streamlit standards.
+* 🧠 [`PROMPTS.md`](PROMPTS.md) — **The Datathon Macro Catalog:** 15 copy-paste prompts (`DT01` to `DT15`) covering problem framing, 10-minute EDA, feature brainstorming, LightGBM pipelines, SHAP explainers, unit economics, pitch scripts, and judge Q&A defense.
+* 📋 [`STANDARDS.md`](STANDARDS.md) — **Standard Operating Procedures (SOP):** Repository taxonomy, data hygiene rules, cross-validation integrity, deterministic seed rules, and pre-submission audit.
+* 📦 [`PROJECT_TEMPLATE/`](PROJECT_TEMPLATE/README.md) — **Ready-to-Use Project Boilerplate:** Pre-built project folder with [`PROJECT_CONTEXT.md`](PROJECT_TEMPLATE/PROJECT_CONTEXT.md) single-source-of-truth, `requirements.txt`, `.gitignore`, and starter directories.
+
 ### 🟢 Fundamentals & Starters
 * [`first-datathon.md`](first-datathon.md) — What a datathon actually is, how it differs from a software hackathon, the 4 vital roles, and the 10 Golden Rules.
 * [`GLOSSARY.md`](GLOSSARY.md) — The plain-English cheat sheet for scary ML concepts (Overfitting, Data Leakage, Cross-Validation, SHAP, Imbalance).
@@ -68,9 +74,9 @@ Winning teams treat the datathon as a rapid **decision-support product challenge
 * [`04-solutions-and-ui/streamlit-app-template.py`](04-solutions-and-ui/streamlit-app-template.py) — Complete, runnable Streamlit app with scenario sliders, SHAP watermarks, and unit economics ticker.
 * [`04-solutions-and-ui/dashboard-design-patterns.md`](04-solutions-and-ui/dashboard-design-patterns.md) — The 5 UI patterns judges love (Counterfactual simulators, ROI tickers, glass-box explanations, cohort filters, action queues).
 
-### 📦 05. Catalog & Prompts
+### 📦 05. Catalog & References
 * [`05-repo-catalog/README.md`](05-repo-catalog/README.md) — Curated collection of top open-source tools, public data portals, and winning repositories.
-* [`06-prompts/datathon-prompts.md`](06-prompts/datathon-prompts.md) — Copy-paste LLM prompt macros (EDA assistance, feature brainstorming, business narrative).
+* [`06-prompts/datathon-prompts.md`](06-prompts/datathon-prompts.md) — Guide to prompt engineering in competitive data science.
 
 ### 🏆 07. Worked Example Case Study
 * [`07-worked-example/worked-example.md`](07-worked-example/worked-example.md) — Hour-by-hour case study of how a 4-person team took 1st place overall in a 48-hour clinical datathon.

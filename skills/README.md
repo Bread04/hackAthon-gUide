@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 
-> **In plain English:** seven short summaries of the most important rules. Read them like cheat sheets, or install them into Claude Code so it follows them automatically.
+> **In plain English:** eight short summaries of the most important rules. Read them like cheat sheets, or install them into Claude Code / Antigravity so it follows them automatically.
 
 | Cheat sheet | Summarises | Level |
 | --- | --- | --- |
@@ -13,10 +13,11 @@
 | [`hackathon-git-teamwork/`](hackathon-git-teamwork/SKILL.md) | Working as a team in one repo, fixing merge conflicts, undoing mistakes | 🟢 |
 | [`hackathon-backend/`](hackathon-backend/SKILL.md) | Backend stack, outdated patterns to avoid, security | 🟡 |
 | [`hackathon-ai/`](hackathon-ai/SKILL.md) | **AI features and agents:** pattern ladder, framework pick, tools, MCP, safety, demo-proofing | 🟡 |
+| [`hackathon-datathon/`](hackathon-datathon/SKILL.md) | **Datathons & ML challenges:** leak-free CV, LightGBM/CatBoost, unit economics, SHAP, Streamlit simulator | 🟢 |
 
-## Optional: install into Claude Code
+## Optional: install into Claude Code / Antigravity
 
-Claude Code is a paid tool 💳. If you use it, copy the folders into your skills directory so it picks them up automatically:
+Claude Code and Antigravity can pick up skills automatically. Copy the folders into your skills directory:
 
 ```bash
 cp -r skills/hackathon-* ~/.claude/skills/
