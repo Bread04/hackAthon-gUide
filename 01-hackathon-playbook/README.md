@@ -14,6 +14,7 @@
 | ⭐ [`battle-plan.md`](battle-plan.md) | **The hour-by-hour plan**: which BMad skill to run when, what you decide, and the fallback prompt |
 | [`docs/setup-your-laptop.md`](docs/setup-your-laptop.md) | Install Node, git and VS Code the week before (Windows, Mac, Linux) |
 | [`docs/free-credits.md`](docs/free-credits.md) | Free perks to claim before the event (GitHub Student Pack and more) |
+| 📊 [`Datathon-Playbook`](file:///c:/Users/braed/OneDrive/Desktop/Datathon-Playbook) | **Datathons & Data Hackathons:** Battle plan, 1-click starter, recipes, and UI templates |
 
 ## 🟡 Use during the event
 

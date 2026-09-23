@@ -103,6 +103,18 @@
 | **Lethal trifecta** | Private data + untrusted content + a way to send data out, all in one AI. Together, one hidden instruction can leak your data, so never combine all three |
 | **Hallucination** | When an AI confidently makes something up |
 
+## Datathons & Data Science
+
+| Word | What it means |
+| --- | --- |
+| **Datathon** | A data-focused hackathon where teams solve a real-world problem using datasets, machine learning and an interactive decision-support tool |
+| **Baseline** | The simplest possible model or heuristic (like guessing the average) that any clever machine learning model must beat |
+| **Cross-Validation (CV)** | Splitting data into multiple slices to train and test repeatedly, preventing lucky guesses and testing generalizability |
+| **Overfitting** | When a model memorizes the training data answers instead of learning general patterns, causing it to fail on unseen data |
+| **Target Leakage** | Accidental cheating: when information from the future or the answer key sneaks into the training features |
+| **SHAP (Explainability)** | Game-theoretic proof showing *why* a machine learning model made a specific prediction (showing the receipts) |
+| **Polars & DuckDB** | Modern, high-speed analytical engines that run in Rust/C++ across all CPU cores without memory crashes on large CSVs |
+
 ## AI coding tools
 
 | Word | What it means |

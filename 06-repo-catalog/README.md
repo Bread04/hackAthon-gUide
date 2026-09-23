@@ -40,6 +40,8 @@ These picks are a **judgement call** based on verified activity, stars and fit w
 | Local models | [ollama/ollama](https://github.com/ollama/ollama) | [ggml-org/llama.cpp](https://github.com/ggml-org/llama.cpp) | 🆓 |
 | ML demo UI | [gradio-app/gradio](https://github.com/gradio-app/gradio) | [streamlit/streamlit](https://github.com/streamlit/streamlit) | 🆓 |
 | Data wrangling | [duckdb/duckdb](https://github.com/duckdb/duckdb), [pola-rs/polars](https://github.com/pola-rs/polars) | — | 🆓 |
+| Datathon / Tabular ML | [autogluon/autogluon](https://github.com/autogluon/autogluon), [catboost/catboost](https://github.com/catboost/catboost) | [microsoft/LightGBM](https://github.com/microsoft/LightGBM), [slundberg/shap](https://github.com/slundberg/shap) | 🆓 |
+| Datathon starters & kit | [`Datathon-Playbook`](file:///c:/Users/braed/OneDrive/Desktop/Datathon-Playbook) | [Jeremy123W/Citadel-1st-Place](https://github.com/Jeremy123W/Citadel-SoCal-Datathon-2018-1st-Place-Winners), [DataSciComp](https://github.com/iphysresearch/DataSciComp) | 🆓 |
 | Vision | [ultralytics/ultralytics](https://github.com/ultralytics/ultralytics) | [google-ai-edge/mediapipe](https://github.com/google-ai-edge/mediapipe) | 🆓 (AGPL, check license) |
 | Speech-to-text | [m-bain/whisperX](https://github.com/m-bain/whisperX) | [openai/whisper](https://github.com/openai/whisper) | 🆓 |
 | LLM tracing / eval | [langfuse/langfuse](https://github.com/langfuse/langfuse), [promptfoo/promptfoo](https://github.com/promptfoo/promptfoo) | [comet-ml/opik](https://github.com/comet-ml/opik) | 🆓 OSS · 🆓* cloud |

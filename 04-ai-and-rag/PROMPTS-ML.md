@@ -24,8 +24,10 @@
 | [ML12](#ml12--scaffold-a-capped-agent) | Scaffold a capped agent (AI SDK v7 / Pydantic AI) |
 | [ML13](#ml13--design-the-tools) | Design the tools |
 | [ML14](#ml14--agent-safety-and-fallback-review) | Agent safety and fallback review |
+| [ML15](#ml15--datathon-tabular-baseline--leak-free-cv) | Datathon: tabular baseline & leak-free CV (Polars + LightGBM/CatBoost) |
+| [ML16](#ml16--datathon-what-if-simulator--shap-dashboard) | Datathon: What-If simulator & SHAP explainability dashboard |
 
-> ML8–ML11 are adapted from [help-me-papi](https://github.com/maxi-cmyk/help-me-papi) `AI/PROMPTS-ML.md` and `data-analysis/prompts/scaffolds.md`. Use them for **data or ML-track hackathons** where you train a model rather than call an LLM.
+> ML8–ML11 and ML15–ML16 are for **data or ML-track hackathons (datathons)**. For the full standalone playbook, templates and code: see [`Datathon-Playbook`](file:///c:/Users/braed/OneDrive/Desktop/Datathon-Playbook) · Evidence: [`_research/technical-datathons-and-ml-solutions-2026-09-23/`](../_research/technical-datathons-and-ml-solutions-2026-09-23/research.md).
 
 ---
 
@@ -188,3 +190,32 @@ Review our agent before the demo. Report pass/fail for each:
 ```
 
 *Why:* [Lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) · [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) · [agent evals](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
+
+### ML15 · Datathon: tabular baseline & leak-free CV
+
+```text
+[ROLE] Senior Competitive Data Scientist. [CONTEXT] Real-world datathon dataset: <paste head(5) and types>; target: <target_col>; evaluation metric: <PR-AUC / ROC-AUC / F1>.
+1. Ingest using Polars with lazy evaluation (pl.scan_csv / pl.scan_parquet).
+2. Set up a leak-free 5-fold Stratified K-Fold (or TimeSeriesSplit if temporal). Ensure all imputation, scaling, and target encoding happen strictly inside each fold.
+3. Train LightGBM (for fast iteration) and CatBoost (for native handling of categoricals/text).
+4. Evaluate out-of-fold (OOF) predictions and find the optimal decision threshold that maximizes F1/cost utility instead of default 0.5.
+5. Export best_model.pkl and precompute shap.TreeExplainer for instant frontend loading.
+Output: self-contained Python script under 80 lines.
+```
+
+*Why:* Fast iteration + leak-free validation is the #1 predictor of datathon placement. See `Datathon-Playbook/03-modeling/baseline-pipeline.py`.
+
+### ML16 · Datathon: What-If simulator & SHAP dashboard
+
+```text
+[ROLE] Fullstack Data App Engineer. Build a Streamlit decision-support dashboard for our datathon submission:
+- Model inputs: <list 6-8 key features, min/max ranges, defaults>.
+- Layout: 4 KPI scorecards at top (Predicted Risk %, Triage Tier, Expected Loss $, Potential Savings $).
+- Sidebar: Interactive "What-If" scenario sliders allowing judges to tweak inputs and see the prediction update in real time (<50ms).
+- Explainability: Horizontal bar chart showing local SHAP feature attributions (red = increases risk, green = protective factor).
+- Guidance: Clear operational recommendation box based on the risk score (Emergency / Warning / Normal).
+Make it self-contained with a fallback surrogate model so the demo NEVER crashes in front of judges.
+```
+
+*Why:* Judges reward working interactive decision-support products over static Jupyter notebooks. See `Datathon-Playbook/04-solutions-and-ui/streamlit-app-template.py`.
+
