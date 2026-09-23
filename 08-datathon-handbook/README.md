@@ -40,20 +40,40 @@ Winning teams treat the datathon as a rapid **decision-support product challenge
 
 ## 🗺️ What's in This Playbook
 
-| Folder / File | What It Covers | Level | Who Needs It |
-| --- | --- | --- | --- |
-| 🟢 [`first-datathon.md`](first-datathon.md) | **The Survival Guide:** What actually happens, team roles, and 10 golden rules | 🟢 Beginner | Everyone |
-| 🟢 [`GLOSSARY.md`](GLOSSARY.md) | **Plain English Dictionary:** Scary data science terms translated into real-world analogies | 🟢 Beginner | Everyone |
-| 🟢 [`quickstart-1-click.py`](quickstart-1-click.py) | **1-Click Starter:** Clean data, train a model, and launch a web demo in 30 seconds | 🟢 Beginner | Everyone |
-| 📘 [`01-playbook/`](01-playbook/datathon-battle-plan.md) | **The Game Plan:** Hour-by-hour 24h & 48h timeline, judging criteria rubric, and team matrix | 🟢/🟡 | Team Leads |
-| 🧹 [`02-data-wrangling/`](02-data-wrangling/recipes.md) | **Data Triage:** Polars + DuckDB high-speed recipes, automated 10-minute EDA, and dirty data cleaning | 🟡 Intermediate | Data Engineers |
-| 🤖 [`03-modeling/`](03-modeling/baseline-pipeline.py) | **Rapid ML:** LightGBM, CatBoost, AutoGluon, leak-free CV pipelines, and threshold tuning | 🟡 Intermediate | ML Engineers |
-| 🖥️ [`04-solutions-and-ui/`](04-solutions-and-ui/streamlit-app-template.py) | **The Last Mile:** Ready-to-run interactive Streamlit dashboard with "What-If" simulator & SHAP | 🟢/🟡 | UI & Demo Leads |
-| 📦 [`05-repo-catalog/`](05-repo-catalog/README.md) | **The Shopping List:** Curated high-star libraries, open data portals, and starters | 🟢 Beginner | Everyone |
-| 💬 [`06-prompts/`](06-prompts/datathon-prompts.md) | **LLM Co-Pilots:** Copy-paste prompts for fast EDA, feature brainstorming, and pitch narrative | 🟢 Beginner | Everyone |
-| 🚨 [`troubleshooting.md`](troubleshooting.md) | **The Panic Button:** 60-second solutions when code crashes or laptops freeze | 🟢 Beginner | Everyone |
+### 🟢 Fundamentals & Starters
+* [`first-datathon.md`](first-datathon.md) — What a datathon actually is, how it differs from a software hackathon, the 4 vital roles, and the 10 Golden Rules.
+* [`GLOSSARY.md`](GLOSSARY.md) — The plain-English cheat sheet for scary ML concepts (Overfitting, Data Leakage, Cross-Validation, SHAP, Imbalance).
+* [`quickstart-1-click.py`](quickstart-1-click.py) — Runnable 1-click starter script that trains a LightGBM model and launches a Streamlit UI in 30 seconds.
+* [`troubleshooting.md`](troubleshooting.md) — Fast fixes for out-of-memory errors, NaN values, merge blowups, and Streamlit crashes.
 
-**Level key:** 🟢 Beginner-friendly (Start here!) · 🟡 Read when you need it · 🔴 Advanced
+### 📘 01. Playbook & Strategy
+* [`01-playbook/datathon-battle-plan.md`](01-playbook/datathon-battle-plan.md) — Hour-by-hour 24h & 48h timelines, judging criteria breakdown, and team responsibilities.
+* [`01-playbook/hypothesis-and-problem-framing.md`](01-playbook/hypothesis-and-problem-framing.md) — The Citadel & McKinsey style hypothesis tree framework and economic bottleneck mapping.
+* [`01-playbook/pitch-and-presentation-guide.md`](01-playbook/pitch-and-presentation-guide.md) — 10-slide blueprint, word-for-word 3-minute pitch script with timestamps, and defense against the 5 hardest judge questions.
+* [`01-playbook/executive-report-template.md`](01-playbook/executive-report-template.md) — Fill-in-the-blank 2-page executive summary template for premier data competitions.
+* [`01-playbook/team-git-and-notebook-workflow.md`](01-playbook/team-git-and-notebook-workflow.md) — Anti-merge conflict Git practices, clean directory structures, and role contracts.
+
+### 🧹 02. Data Wrangling & Feature Engineering
+* [`02-data-wrangling/recipes.md`](02-data-wrangling/recipes.md) — Polars & DuckDB recipes for multi-gigabyte data ingestion and automated 10-minute EDA.
+* [`02-data-wrangling/feature-engineering-cookbook.md`](02-data-wrangling/feature-engineering-cookbook.md) — 10 high-yield feature families (ratios, rolling stats, cyclical time, frequency encoding) with copy-paste code.
+* [`02-data-wrangling/handling-dirty-data.md`](02-data-wrangling/handling-dirty-data.md) — Handling missingness, high cardinality, extreme outliers, and class imbalance (cost-sensitive learning over SMOTE).
+
+### 🤖 03. Fast Modeling & Validation
+* [`03-modeling/baseline-pipeline.py`](03-modeling/baseline-pipeline.py) — Leak-free 5-fold Stratified K-Fold LightGBM/CatBoost training pipeline with SHAP values.
+* [`03-modeling/cross-validation-guide.md`](03-modeling/cross-validation-guide.md) — Stratified vs Group vs TimeSeries CV, OOF logging, and the 5-second leakage sanity test.
+* [`03-modeling/hyperparameter-tuning-and-ensembling.md`](03-modeling/hyperparameter-tuning-and-ensembling.md) — Why to avoid GridSearchCV, Optuna 10-minute budgets, and weighted rank-averaging ensembles.
+* [`03-modeling/automl-autogluon.py`](03-modeling/automl-autogluon.py) — Multi-layer stacking script with automated fallbacks to dominate leaderboards.
+
+### 🖥️ 04. Solutions & Interactive UI
+* [`04-solutions-and-ui/streamlit-app-template.py`](04-solutions-and-ui/streamlit-app-template.py) — Complete, runnable Streamlit app with scenario sliders, SHAP watermarks, and unit economics ticker.
+* [`04-solutions-and-ui/dashboard-design-patterns.md`](04-solutions-and-ui/dashboard-design-patterns.md) — The 5 UI patterns judges love (Counterfactual simulators, ROI tickers, glass-box explanations, cohort filters, action queues).
+
+### 📦 05. Catalog & Prompts
+* [`05-repo-catalog/README.md`](05-repo-catalog/README.md) — Curated collection of top open-source tools, public data portals, and winning repositories.
+* [`06-prompts/datathon-prompts.md`](06-prompts/datathon-prompts.md) — Copy-paste LLM prompt macros (EDA assistance, feature brainstorming, business narrative).
+
+### 🏆 07. Worked Example Case Study
+* [`07-worked-example/worked-example.md`](07-worked-example/worked-example.md) — Hour-by-hour case study of how a 4-person team took 1st place overall in a 48-hour clinical datathon.
 
 ---
 
