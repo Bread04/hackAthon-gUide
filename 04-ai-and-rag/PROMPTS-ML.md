@@ -27,7 +27,7 @@
 | [ML15](#ml15--datathon-tabular-baseline--leak-free-cv) | Datathon: tabular baseline & leak-free CV (Polars + LightGBM/CatBoost) |
 | [ML16](#ml16--datathon-what-if-simulator--shap-dashboard) | Datathon: What-If simulator & SHAP explainability dashboard |
 
-> ML8–ML11 and ML15–ML16 are for **data or ML-track hackathons (datathons)**. For the full standalone playbook, templates and code: see [`Datathon-Playbook`](file:///c:/Users/braed/OneDrive/Desktop/Datathon-Playbook) · Evidence: [`_research/technical-datathons-and-ml-solutions-2026-09-23/`](../_research/technical-datathons-and-ml-solutions-2026-09-23/research.md).
+> ML8–ML11 and ML15–ML16 are for **data or ML-track hackathons (datathons)**. For the full standalone playbook, templates and code: see [`08-datathon-handbook/`](../08-datathon-handbook/README.md) · Evidence: [`_research/technical-datathons-and-ml-solutions-2026-09-23/`](../_research/technical-datathons-and-ml-solutions-2026-09-23/research.md).
 
 ---
 

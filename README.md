@@ -7,13 +7,14 @@
 
 ---
 
-## 👋 New here? Start with these 3 steps
+## 👋 New here? Start with these steps
 
 | Step | Open this | Time |
 | --- | --- | --- |
 | **1. Understand the event** | [`01-hackathon-playbook/first-hackathon.md`](01-hackathon-playbook/first-hackathon.md): your first hackathon in plain English, and how BMad guides each step | 10 min |
 | **2. Set up BMad** | [`01-hackathon-playbook/docs/setup-bmad.md`](01-hackathon-playbook/docs/setup-bmad.md): install Claude Code and practise once, the week before | 45 min |
 | **3. See it done** | [`01-hackathon-playbook/worked-example.md`](01-hackathon-playbook/worked-example.md): one team's whole hackathon, skill by skill | 10 min |
+| **📊 Entering a Datathon / ML Track?** | [`08-datathon-handbook/first-datathon.md`](08-datathon-handbook/first-datathon.md): The beginner's guide to data hackathons, 1-click starter & ML solutions | 10 min |
 
 Words you don't know? [`GLOSSARY.md`](GLOSSARY.md). On the day, follow [`battle-plan.md`](01-hackathon-playbook/battle-plan.md) hour by hour.
 
@@ -34,6 +35,7 @@ The folders are numbered in the order you'll need them.
 | 🔧 [`05-tools-and-mcp/`](05-tools-and-mcp/README.md) | **Supercharging your AI assistant.** Plug-ins (MCP servers), free tools, staying safe | 🟡 |
 | ⭐ [`06-repo-catalog/`](06-repo-catalog/README.md) | **The shopping list.** Recommended free libraries, and ones to avoid | 🟢 |
 | 🧠 [`07-bmad-workflow/`](07-bmad-workflow/README.md) | **The BMad engine room.** The config pack that wires this toolkit into BMad, a verdict on every BMad skill, and how the wiring works. Open it when setup asks you to, or to customise | 🟡 |
+| 📊 [`08-datathon-handbook/`](08-datathon-handbook/README.md) | **The Datathon Playbook.** For data science & ML competitions: dirty data wrangling (Polars/DuckDB), rapid ML baselines (LightGBM/CatBoost/AutoGluon), leak-free CV, What-If simulators, and winning pitch decks | 🟢/🟡 |
 | 📄 [`skills/`](skills/README.md) | **One-page cheat sheets** you can load into Claude Code | 🟢 |
 | 🔬 [`_research/`](_research/README.md) | **The proof.** Where every fact came from. You never need to open this | 📚 Reference |
 
@@ -42,14 +44,15 @@ The folders are numbered in the order you'll need them.
 ### How the pieces fit
 
 ```text
-01 playbook  ──  tells you WHICH BMad skill to run, and when
+01 playbook ── tells you WHICH BMad skill to run, and when (Software hackathons)
+08 datathon handbook ── guides data wrangling, ML modeling & interactive UI (Datathons)
    │
    ▼
-BMad skills in Claude Code  ──  do the work, one fresh chat per step
-   │  (the config pack in 07 makes them load…)
+BMad skills in Claude Code ── do the work, one fresh chat per step
+   │ (the config pack in 07 makes them load…)
    ▼
-02–05 knowledge + skills/ cheat sheets  ──  HOW to do each thing well
-06 repo catalog  ──  WHAT libraries to build with
+02–05 knowledge + skills/ cheat sheets ── HOW to do each thing well
+06 repo catalog ── WHAT libraries to build with
 ```
 
 ### Inside every folder
@@ -82,7 +85,7 @@ docs/         ← the detailed guides
 | Add a chatbot or AI feature | [`04-ai-and-rag/README.md`](04-ai-and-rag/README.md) |
 | Build an AI agent that uses tools | [`04-ai-and-rag/docs/agents-and-tool-use.md`](04-ai-and-rag/docs/agents-and-tool-use.md) · [`skills/hackathon-ai/SKILL.md`](skills/hackathon-ai/SKILL.md) |
 | Build a mobile, voice or crypto app | [`mobile.md`](02-frontend/docs/mobile.md) · [`voice-and-realtime.md`](04-ai-and-rag/docs/voice-and-realtime.md) · [`web3.md`](03-backend/docs/web3.md) |
-| **Win a Datathon / ML Challenge** | The dedicated [`Datathon-Playbook`](file:///c:/Users/braed/OneDrive/Desktop/Datathon-Playbook) · Evidence: [`_research/technical-datathons-and-ml-solutions-2026-09-23/`](_research/technical-datathons-and-ml-solutions-2026-09-23/research.md) |
+| **Win a Datathon / ML Challenge** | [`08-datathon-handbook/`](08-datathon-handbook/README.md): 1-click starter, battle plan, recipes, and Streamlit templates · Evidence: [`_research/technical-datathons-and-ml-solutions-2026-09-23/`](_research/technical-datathons-and-ml-solutions-2026-09-23/research.md) |
 | Give my AI assistant more abilities | [`05-tools-and-mcp/docs/mcp-catalog.md`](05-tools-and-mcp/docs/mcp-catalog.md) |
 | Prepare the final pitch | [`01-hackathon-playbook/docs/pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) |
 | Fix something that broke | [`03-backend/docs/troubleshooting.md`](03-backend/docs/troubleshooting.md) |
