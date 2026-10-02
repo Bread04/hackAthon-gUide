@@ -27,6 +27,10 @@ Situational lessons (use only when the dataset demands it): `16-anomaly-detectio
 
 ---
 
+**Hour 0 intake:** before Gate 1, run the checklist in [`01-playbook/judging-and-winning-evidence.md`](01-playbook/judging-and-winning-evidence.md) (scoring type, official criteria, AI-use and data-access rules).
+
+---
+
 ## Decision Tables (no judgment calls)
 
 ### Choosing the split

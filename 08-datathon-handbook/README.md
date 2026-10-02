@@ -58,6 +58,7 @@ Winning teams treat the datathon as a rapid **decision-support product challenge
 ### 📘 01. Playbook & Strategy
 * [`01-playbook/datathon-battle-plan.md`](01-playbook/datathon-battle-plan.md) — Hour-by-hour 24h & 48h timelines, judging criteria breakdown, and team responsibilities.
 * [`01-playbook/hypothesis-and-problem-framing.md`](01-playbook/hypothesis-and-problem-framing.md) — The Citadel & McKinsey style hypothesis tree framework and economic bottleneck mapping.
+* [`01-playbook/judging-and-winning-evidence.md`](01-playbook/judging-and-winning-evidence.md) — Sourced findings on real rubrics, winning-team patterns, failure modes and logistics, with evidence caveats and an event intake checklist.
 * [`01-playbook/pitch-and-presentation-guide.md`](01-playbook/pitch-and-presentation-guide.md) — 10-slide blueprint, word-for-word 3-minute pitch script with timestamps, and defense against the 5 hardest judge questions.
 * [`01-playbook/executive-report-template.md`](01-playbook/executive-report-template.md) — Fill-in-the-blank 2-page executive summary template for premier data competitions.
 * [`01-playbook/team-git-and-notebook-workflow.md`](01-playbook/team-git-and-notebook-workflow.md) — Anti-merge conflict Git practices, clean directory structures, and role contracts.
