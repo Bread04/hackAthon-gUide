@@ -50,7 +50,9 @@ Situational lessons (use only when the dataset demands it): `16-anomaly-detectio
 | Ranking / top-k | NDCG / precision@k | + $ captured in top-k |
 
 ### Choosing the model (first match wins)
-1. Tabular, < 1M rows → LightGBM, then CatBoost if many categoricals.
+_Full scenario matrix with confidence labels: [`03-modeling/method-selection-guide.md`](03-modeling/method-selection-guide.md)._
+
+1. Tabular → LightGBM or CatBoost baseline, then blend diverse models; consider TabPFN/TabICL only for small data with a GPU (check licence).
 2. Tabular, need a leaderboard push → AutoGluon `best_quality` on locked folds.
 3. Text/image columns → embed with a pretrained model, then feed to LightGBM.
 4. Never start with deep nets on tabular data.

@@ -12,6 +12,8 @@
 
 ## 1. Pick the Algorithm Family (first match wins)
 
+> Evidence-labelled version with upgrade paths and size bands: [`method-selection-guide.md`](method-selection-guide.md).
+
 | Your data / task | Start with | Then | Skip |
 | --- | --- | --- | --- |
 | Tabular, classification or regression | LightGBM | CatBoost, then blend | Deep nets, SVM on large data |

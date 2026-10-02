@@ -21,6 +21,8 @@
 
 > 📌 Install problems or odd errors? See [`tooling-2026-update.md`](tooling-2026-update.md) (pins, SHAP/XGBoost bug, pandas 3, hosting).
 >
+> 🎯 Which method for my problem? See [`method-selection-guide.md`](method-selection-guide.md) (scenario → first method → upgrade → avoid, with confidence labels).
+>
 > 🧰 Not sure which algorithm or tool to use? Open [`ml-toolbox.md`](ml-toolbox.md) for verdicts by task.
 
 ---
