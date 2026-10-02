@@ -1,0 +1,23 @@
+name: Outdated or wrong information
+description: A price, version, link, rule or claim in the guide is out of date or wrong
+labels: [outdated]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page
+      description: Path of the page, e.g. 04-ai-and-rag/docs/model-selection.md
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What the guide says
+    validations:
+      required: true
+  - type: textarea
+    id: right
+    attributes:
+      label: What is correct now, with a source link and date
+    validations:
+      required: true

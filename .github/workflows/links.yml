@@ -1,17 +1,26 @@
-name: Checks (links, duplicates, script smoke test)
+name: Checks (links, duplicates, lint, generated files, smoke test)
 on:
   pull_request:
   push:
     branches: [main]
 jobs:
-  links:
+  docs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
-      - run: python tools/check_links.py
+      - name: Links and duplicate files
+        run: python tools/check_links.py
+      - name: VERIFICATION.md is up to date
+        run: python tools/list_unverified.py --check
+      - name: Generated evidence/repos pages match _research
+        run: |
+          python _research/distribute.py > /dev/null
+          git diff --exit-code -- '*/docs/evidence.md' '*/docs/repos.md'
+      - name: Markdown lint
+        run: npx -y markdownlint-cli2@0.23.3 "**/*.md"
   smoke:
     runs-on: ubuntu-latest
     steps:

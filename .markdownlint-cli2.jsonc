@@ -1,0 +1,18 @@
+{
+  // Lean rule set: catches broken structure, not style preferences.
+  "config": {
+    "default": false,
+    "MD001": true,  // heading levels increase by one
+    "MD003": { "style": "atx" },
+    "MD011": true,  // reversed link syntax
+    "MD018": true,  // space after # in headings
+    "MD019": true,
+    "MD023": true,  // headings start at line beginning
+    "MD025": true,  // single top-level heading
+    "MD039": true,  // spaces inside link text
+    "MD042": true,  // empty links
+    "MD045": true,  // images need alt text
+    "MD047": true   // file ends with a newline
+  },
+  "ignores": ["_research/**", "node_modules/**", "**/node_modules/**"]
+}

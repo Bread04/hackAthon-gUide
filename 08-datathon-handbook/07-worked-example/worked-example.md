@@ -2,6 +2,8 @@
 
 > *"An unvarnished, hour-by-hour anatomy of how four university students went from an unfamiliar 4.2 GB clinical dataset to unanimous 1st place in a premier national datathon."*
 
+> ⚠️ The team, event, numbers and outcome are **fictional**. They illustrate how the handbook fits together. For a version you can actually run, use [`run_end_to_end.py`](run_end_to_end.py) on [`sample-readmissions.csv`](sample-readmissions.csv).
+
 ---
 
 ## 📋 The Datathon Brief

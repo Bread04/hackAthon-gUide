@@ -40,6 +40,8 @@ ENV/
 
 # Keep templates and sample CSVs
 !sample_features.csv
+!07-worked-example/sample-readmissions.csv
+07-worked-example/outputs/
 
 # Jupyter & Marimo
 .ipynb_checkpoints

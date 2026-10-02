@@ -50,7 +50,7 @@ def shap_on_tree_models():
 
 
 with tempfile.TemporaryDirectory() as tmp:
-    for d in ("00-start-here", "03-modeling", "04-solutions-and-ui"):
+    for d in ("00-start-here", "03-modeling", "04-solutions-and-ui", "07-worked-example"):
         shutil.copytree(os.path.join(HB, d), os.path.join(tmp, d))
     py = sys.executable
     check("SHAP TreeExplainer on LightGBM, XGBoost, CatBoost", shap_on_tree_models)
@@ -58,6 +58,9 @@ with tempfile.TemporaryDirectory() as tmp:
           lambda: run([py, "baseline-pipeline.py"], os.path.join(tmp, "03-modeling")))
     check("00-start-here/quickstart-1-click.py",
           lambda: run([py, "quickstart-1-click.py"], os.path.join(tmp, "00-start-here"), stdin="n\n"))
+
+    check("07-worked-example/run_end_to_end.py",
+          lambda: run([py, "run_end_to_end.py"], os.path.join(tmp, "07-worked-example")))
 
     def app():
         from streamlit.testing.v1 import AppTest

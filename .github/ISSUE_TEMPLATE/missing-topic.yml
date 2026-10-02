@@ -1,0 +1,15 @@
+name: Missing topic
+description: Something you needed at a hackathon or datathon that the guide does not cover
+labels: [missing-topic]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What did you need, and at which point in the event?
+      description: e.g. "Phase 3 (set up and deploy): how to deploy a Streamlit app behind a login"
+    validations:
+      required: true
+  - type: textarea
+    id: tried
+    attributes:
+      label: What did you try or find instead? (links welcome)

@@ -1,6 +1,6 @@
 # 📄 Executive Summary & Whitepaper Report Template
 
-<!-- markdownlint-disable MD013 -->
+<!-- markdownlint-disable MD013 MD025 -->
 
 > 🟢 **In plain English:** Premier corporate and academic datathons (like the Citadel Data Open, Stanford WiDS, or MIT/Harvard challenges) often grade an executive report or paper alongside your code. Winning teams submit clean, 4–8 page structured executive briefs. Use this fill-in-the-blank template for your submission.
 
