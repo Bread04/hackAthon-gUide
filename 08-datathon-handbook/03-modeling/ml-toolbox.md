@@ -4,6 +4,8 @@
 
 > A hackathon-sized map of the machine learning ecosystem. The structure is inspired by the topic-by-topic taxonomy of [`mikeroyal/Machine-Learning-Guide`](https://github.com/mikeroyal/Machine-Learning-Guide) (frameworks, algorithms, MLOps, explainability, learning resources), but cut down to **one verdict per tool for a 24-48 hour event**. That repo is a very broad awesome-list; use it to discover options, then come back here to decide.
 
+> 📌 Version pins and breaking changes: [`tooling-2026-update.md`](tooling-2026-update.md).
+
 **Verdict key:** ✅ default pick · 🟡 use when the situation matches · ⛔ skip in a datathon
 
 ---
@@ -23,6 +25,8 @@
 | Recommendation / similarity | Item-item cosine on interactions | Implicit ALS, embeddings | Neural CF as first model |
 | Uplift / "who to target" | Two-model (T-learner) with GBM | CausalML / EconML | Plain propensity as if it were causal |
 
+> **Update (Oct 2026):** LightGBM is the fastest CPU baseline, not a proven "best default". Benchmarks (vendor-reported) put tabular foundation models and AutoGluon ensembles on top. Baseline with LightGBM or CatBoost, then ensemble; see [`tooling-2026-update.md`](tooling-2026-update.md) for pins and caveats (e.g. TabPFN weights are non-commercial).
+>
 > Rule: the model that wins on your locked OOF folds wins. Never defend a model by its fame.
 
 ---

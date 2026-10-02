@@ -71,6 +71,7 @@ Winning teams treat the datathon as a rapid **decision-support product challenge
 ### 🤖 03. Fast Modeling & Validation
 * [`03-modeling/baseline-pipeline.py`](03-modeling/baseline-pipeline.py) — Leak-free 5-fold Stratified K-Fold LightGBM/CatBoost training pipeline with SHAP values.
 * [`03-modeling/ml-toolbox.md`](03-modeling/ml-toolbox.md) — Algorithm-family chooser, ✅/🟡/⛔ tool verdicts by job (data, modeling, explainability, MLOps), the beat-the-baseline ladder, and curated learning resources.
+* [`03-modeling/tooling-2026-update.md`](03-modeling/tooling-2026-update.md) — Oct 2026 version pins (Python 3.12), install smoke test, breaking changes (SHAP+XGBoost 3, pandas 3, Polars 2), free hosting terms, and rules for verifying AI-written ML code. Evidence-labelled.
 * [`03-modeling/cross-validation-guide.md`](03-modeling/cross-validation-guide.md) — Stratified vs Group vs TimeSeries CV, OOF logging, and the 5-second leakage sanity test.
 * [`03-modeling/hyperparameter-tuning-and-ensembling.md`](03-modeling/hyperparameter-tuning-and-ensembling.md) — Why to avoid GridSearchCV, Optuna 10-minute budgets, and weighted rank-averaging ensembles.
 * [`03-modeling/automl-autogluon.py`](03-modeling/automl-autogluon.py) — Multi-layer stacking script with automated fallbacks to dominate leaderboards.
