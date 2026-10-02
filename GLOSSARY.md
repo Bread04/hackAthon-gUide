@@ -102,6 +102,9 @@
 | **Tool call** | When the AI asks your code to run a function (search, look up a user, send an email), then reads the result |
 | **Lethal trifecta** | Private data + untrusted content + a way to send data out, all in one AI. Together, one hidden instruction can leak your data, so never combine all three |
 | **Hallucination** | When an AI confidently makes something up |
+| **Multi-agent system** | Several AI agents, each with its own instructions and context, coordinated by code or by a lead agent. Powerful for parallel research, but uses many more tokens: see [`multi-agent-systems.md`](04-ai-and-rag/docs/multi-agent-systems.md) |
+| **A2A** (Agent2Agent) | An open protocol for agents built by different teams or vendors to talk to each other over HTTP. MCP connects an agent to tools; A2A connects agents to agents |
+| **Context window** | How much text (in tokens) a model can read at once. Models pay most attention to the start and end of a long prompt |
 
 ## Datathons & Data Science
 

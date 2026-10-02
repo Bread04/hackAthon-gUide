@@ -118,6 +118,8 @@ docs/         ← the detailed guides
 | Make my app look good | [`02-frontend/README.md`](02-frontend/README.md) |
 | Get my app online | [`03-backend/docs/deploy-step-by-step.md`](03-backend/docs/deploy-step-by-step.md) (first time) · [`skills/hackathon-deployment/SKILL.md`](skills/hackathon-deployment/SKILL.md) (full runbook) |
 | Add a chatbot or AI feature | [`04-ai-and-rag/README.md`](04-ai-and-rag/README.md) |
+| Understand how LLMs work (tokens, context, cost) | [`04-ai-and-rag/docs/how-llms-work.md`](04-ai-and-rag/docs/how-llms-work.md) |
+| Decide if we need multiple agents or RAG | [`04-ai-and-rag/docs/multi-agent-systems.md`](04-ai-and-rag/docs/multi-agent-systems.md) |
 | Build an AI agent that uses tools | [`04-ai-and-rag/docs/agents-and-tool-use.md`](04-ai-and-rag/docs/agents-and-tool-use.md) · [`skills/hackathon-ai/SKILL.md`](skills/hackathon-ai/SKILL.md) |
 | Build a mobile, voice or crypto app | [`mobile.md`](02-frontend/docs/mobile.md) · [`voice-and-realtime.md`](04-ai-and-rag/docs/voice-and-realtime.md) · [`web3.md`](03-backend/docs/web3.md) |
 | **Win a Datathon / ML Challenge** | [`08-datathon-handbook/`](08-datathon-handbook/README.md) · [`skills/hackathon-datathon/SKILL.md`](skills/hackathon-datathon/SKILL.md) · Evidence: [`_research/`](_research/technical-datathons-and-ml-solutions-2026-09-23/research.md) |
