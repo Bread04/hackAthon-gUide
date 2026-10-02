@@ -12,11 +12,11 @@ If this is your first time competing in a data hackathon, don't feel overwhelmed
 
 | Step | Open This | Time |
 | --- | --- | --- |
-| **1. Understand the Event** | [`first-datathon.md`](first-datathon.md): What a datathon actually is, what judges care about, and how to survive your first 24 hours | 10 min |
-| **2. Learn the Lingo** | [`GLOSSARY.md`](GLOSSARY.md): Jargon-free explanations of scary words like *Overfitting*, *Data Leakage*, *SHAP*, and *Cross-Validation* | 10 min |
-| **3. Run the 1-Click Starter** | Run `python quickstart-1-click.py`: Trains a real model and launches an interactive web dashboard in 30 seconds! | 1 min |
+| **1. Understand the Event** | [`first-datathon.md`](00-start-here/first-datathon.md): What a datathon actually is, what judges care about, and how to survive your first 24 hours | 10 min |
+| **2. Learn the Lingo** | [`GLOSSARY.md`](00-start-here/GLOSSARY.md): Jargon-free explanations of scary words like *Overfitting*, *Data Leakage*, *SHAP*, and *Cross-Validation* | 10 min |
+| **3. Run the 1-Click Starter** | Run `python 00-start-here/quickstart-1-click.py`: Trains a real model and launches an interactive web dashboard in 30 seconds! | 1 min |
 
-> 🚨 **Something broke at 2 AM?** Open the [`troubleshooting.md`](troubleshooting.md) Panic Button for instant 60-second fixes!
+> 🚨 **Something broke at 2 AM?** Open the [`troubleshooting.md`](00-start-here/troubleshooting.md) Panic Button for instant 60-second fixes!
 
 ---
 
@@ -40,55 +40,63 @@ Winning teams treat the datathon as a rapid **decision-support product challenge
 
 ## 🗺️ What's in This Playbook
 
-### 🤖 AI Agent Standards & Prompt Macros
-* 📜 [`SKILLS.md`](SKILLS.md) — **Datathon AI Skill Specification:** Drop this into any datathon workspace so Claude Code, Cursor, Antigravity, or Copilot strictly follow leak-free evaluation, unit economics, and Streamlit standards.
-* 🧠 [`PROMPTS.md`](PROMPTS.md) — **The Datathon Macro Catalog:** 20 copy-paste prompts (`DT01` to `DT20`) plus a shared-context preamble (`DT00`) and review prompt (`DT-R`), covering framing, EDA, leakage audits, metrics, feature engineering, LightGBM, tuning, SHAP, unit economics, the Streamlit UI, pitch scripts, judge Q&A, and a pre-submission audit.
-* 📋 [`STANDARDS.md`](STANDARDS.md) — **Standard Operating Procedures (SOP):** Repository taxonomy, data hygiene rules, cross-validation integrity, deterministic seed rules, and pre-submission audit.
-* 📦 [`PROJECT_TEMPLATE/`](PROJECT_TEMPLATE/README.md) — **Ready-to-Use Project Boilerplate:** Pre-built project folder with [`PROJECT_CONTEXT.md`](PROJECT_TEMPLATE/PROJECT_CONTEXT.md) single-source-of-truth, `requirements.txt`, `.gitignore`, and starter directories.
+Folders are numbered in the order you will need them.
 
-### 🧭 Formulaic Runbook
-* [`00-datathon-runbook.md`](00-datathon-runbook.md) — **Start here once you know the basics:** 8 gates with exit checks, decision tables (split / metric / model / imbalance), evidence rules, and a source trust ladder mapped to [`rohitg00/ai-engineering-from-scratch`](https://github.com/rohitg00/ai-engineering-from-scratch) lessons.
+| Folder | Open it when… | Start with |
+| --- | --- | --- |
+| 🟢 [`00-start-here/`](00-start-here/README.md) | You are new, or it is Hour 0 | [`first-datathon.md`](00-start-here/first-datathon.md) → [`runbook.md`](00-start-here/runbook.md) |
+| 📘 [`01-playbook/`](01-playbook/README.md) | Planning, framing, judging, pitching | [`datathon-battle-plan.md`](01-playbook/datathon-battle-plan.md) |
+| 🧹 [`02-data-wrangling/`](02-data-wrangling/README.md) | Loading, cleaning, feature engineering | [`recipes.md`](02-data-wrangling/recipes.md) |
+| 🤖 [`03-modeling/`](03-modeling/README.md) | Choosing methods, CV, tuning, ensembling | [`method-selection-guide.md`](03-modeling/method-selection-guide.md) |
+| 🖥️ [`04-solutions-and-ui/`](04-solutions-and-ui/README.md) | Building the interactive app | [`streamlit-app-template.py`](04-solutions-and-ui/streamlit-app-template.py) |
+| 📦 [`05-repo-catalog/`](05-repo-catalog/README.md) | Looking for tools, datasets, winning repos | [`README.md`](05-repo-catalog/README.md) |
+| 🏆 [`07-worked-example/`](07-worked-example/README.md) | You want to see a full run | [`worked-example.md`](07-worked-example/worked-example.md) |
+| 🧠 [`08-ai-agent-kit/`](08-ai-agent-kit/README.md) | Using an AI assistant (prompts, skill spec, SOPs) | [`PROMPTS.md`](08-ai-agent-kit/PROMPTS.md) |
+| 📦 [`PROJECT_TEMPLATE/`](PROJECT_TEMPLATE/README.md) | Starting your team's repo | [`PROJECT_CONTEXT.md`](PROJECT_TEMPLATE/PROJECT_CONTEXT.md) |
 
-### 🟢 Fundamentals & Starters
-* [`first-datathon.md`](first-datathon.md) — What a datathon actually is, how it differs from a software hackathon, the 4 vital roles, and the 10 Golden Rules.
-* [`GLOSSARY.md`](GLOSSARY.md) — The plain-English cheat sheet for scary ML concepts (Overfitting, Data Leakage, Cross-Validation, SHAP, Imbalance).
-* [`quickstart-1-click.py`](quickstart-1-click.py) — Runnable 1-click starter script that trains a LightGBM model and launches a Streamlit UI in 30 seconds.
-* [`troubleshooting.md`](troubleshooting.md) — Fast fixes for out-of-memory errors, NaN values, merge blowups, and Streamlit crashes.
+(`06-` is intentionally unused: its quick prompts moved to [`08-ai-agent-kit/quick-prompts.md`](08-ai-agent-kit/quick-prompts.md).)
+
+### 🟢 00. Start Here
+* [`00-start-here/first-datathon.md`](00-start-here/first-datathon.md) — What a datathon is, the 4 vital roles, the 10 Golden Rules.
+* [`00-start-here/runbook.md`](00-start-here/runbook.md) — The 8 gates with exit checks, decision tables, evidence rules and source trust ladder.
+* [`00-start-here/GLOSSARY.md`](00-start-here/GLOSSARY.md) — Plain-English cheat sheet for ML jargon.
+* [`00-start-here/quickstart-1-click.py`](00-start-here/quickstart-1-click.py) — Trains a LightGBM model and launches a Streamlit UI in 30 seconds.
+* [`00-start-here/troubleshooting.md`](00-start-here/troubleshooting.md) — 60-second fixes for out-of-memory, NaN, merge blow-ups, Streamlit crashes.
 
 ### 📘 01. Playbook & Strategy
-* [`01-playbook/datathon-battle-plan.md`](01-playbook/datathon-battle-plan.md) — Hour-by-hour 24h & 48h timelines, judging criteria breakdown, and team responsibilities.
-* [`01-playbook/hypothesis-and-problem-framing.md`](01-playbook/hypothesis-and-problem-framing.md) — The Citadel & McKinsey style hypothesis tree framework and economic bottleneck mapping.
-* [`01-playbook/judging-and-winning-evidence.md`](01-playbook/judging-and-winning-evidence.md) — Sourced findings on real rubrics, winning-team patterns, failure modes and logistics, with evidence caveats and an event intake checklist.
-* [`01-playbook/pitch-and-presentation-guide.md`](01-playbook/pitch-and-presentation-guide.md) — 10-slide blueprint, word-for-word 3-minute pitch script with timestamps, and defense against the 5 hardest judge questions.
-* [`01-playbook/executive-report-template.md`](01-playbook/executive-report-template.md) — Fill-in-the-blank 2-page executive summary template for premier data competitions.
-* [`01-playbook/team-git-and-notebook-workflow.md`](01-playbook/team-git-and-notebook-workflow.md) — Anti-merge conflict Git practices, clean directory structures, and role contracts.
+* [`datathon-battle-plan.md`](01-playbook/datathon-battle-plan.md) — Hour-by-hour 24h and 48h timelines, roles.
+* [`hypothesis-and-problem-framing.md`](01-playbook/hypothesis-and-problem-framing.md) — Hypothesis tree and economic bottleneck mapping.
+* [`judging-and-winning-evidence.md`](01-playbook/judging-and-winning-evidence.md) — Sourced findings on rubrics, winners, failure modes, logistics; event intake checklist.
+* [`pitch-and-presentation-guide.md`](01-playbook/pitch-and-presentation-guide.md) — 10-slide blueprint, 3-minute script, judge Q&A.
+* [`executive-report-template.md`](01-playbook/executive-report-template.md) — Fill-in 2-page executive summary.
+* [`team-git-and-notebook-workflow.md`](01-playbook/team-git-and-notebook-workflow.md) — Anti-merge-conflict Git practice and role contracts.
 
 ### 🧹 02. Data Wrangling & Feature Engineering
-* [`02-data-wrangling/recipes.md`](02-data-wrangling/recipes.md) — Polars & DuckDB recipes for multi-gigabyte data ingestion and automated 10-minute EDA.
-* [`02-data-wrangling/feature-engineering-cookbook.md`](02-data-wrangling/feature-engineering-cookbook.md) — 10 high-yield feature families (ratios, rolling stats, cyclical time, frequency encoding) with copy-paste code.
-* [`02-data-wrangling/handling-dirty-data.md`](02-data-wrangling/handling-dirty-data.md) — Handling missingness, high cardinality, extreme outliers, and class imbalance (cost-sensitive learning over SMOTE).
+* [`recipes.md`](02-data-wrangling/recipes.md) — Polars and DuckDB ingestion, 10-minute EDA.
+* [`handling-dirty-data.md`](02-data-wrangling/handling-dirty-data.md) — Missingness, cardinality, outliers, imbalance.
+* [`feature-engineering-cookbook.md`](02-data-wrangling/feature-engineering-cookbook.md) — 10 high-yield feature families.
 
-### 🤖 03. Fast Modeling & Validation
-* [`03-modeling/baseline-pipeline.py`](03-modeling/baseline-pipeline.py) — Leak-free 5-fold Stratified K-Fold LightGBM/CatBoost training pipeline with SHAP values.
-* [`03-modeling/method-selection-guide.md`](03-modeling/method-selection-guide.md) — Scenario-to-method matrix (tabular by size/type, time series, spatial, text, image, anomaly, clustering, recsys, uplift) plus imbalance, calibration, ensembling and validation evidence, with SOURCED/INFERENCE/UNVERIFIED labels.
-* [`03-modeling/ml-toolbox.md`](03-modeling/ml-toolbox.md) — Algorithm-family chooser, ✅/🟡/⛔ tool verdicts by job (data, modeling, explainability, MLOps), the beat-the-baseline ladder, and curated learning resources.
-* [`03-modeling/tooling-2026-update.md`](03-modeling/tooling-2026-update.md) — Oct 2026 version pins (Python 3.12), install smoke test, breaking changes (SHAP+XGBoost 3, pandas 3, Polars 2), free hosting terms, and rules for verifying AI-written ML code. Evidence-labelled.
-* [`03-modeling/cross-validation-guide.md`](03-modeling/cross-validation-guide.md) — Stratified vs Group vs TimeSeries CV, OOF logging, and the 5-second leakage sanity test.
-* [`03-modeling/hyperparameter-tuning-and-ensembling.md`](03-modeling/hyperparameter-tuning-and-ensembling.md) — Why to avoid GridSearchCV, Optuna 10-minute budgets, and weighted rank-averaging ensembles.
-* [`03-modeling/automl-autogluon.py`](03-modeling/automl-autogluon.py) — Multi-layer stacking script with automated fallbacks to dominate leaderboards.
+### 🤖 03. Modeling & Validation
+* [`method-selection-guide.md`](03-modeling/method-selection-guide.md) — Scenario → method matrix with confidence labels.
+* [`ml-toolbox.md`](03-modeling/ml-toolbox.md) — Tool verdicts by job, beat-the-baseline ladder, learning resources.
+* [`tooling-2026-update.md`](03-modeling/tooling-2026-update.md) — Version pins, install smoke test, breaking changes, hosting terms.
+* [`cross-validation-guide.md`](03-modeling/cross-validation-guide.md) — Stratified vs Group vs TimeSeries CV, leakage test.
+* [`hyperparameter-tuning-and-ensembling.md`](03-modeling/hyperparameter-tuning-and-ensembling.md) — Optuna budgets, rank-average blends.
+* [`baseline-pipeline.py`](03-modeling/baseline-pipeline.py) and [`automl-autogluon.py`](03-modeling/automl-autogluon.py) — Runnable pipelines.
 
 ### 🖥️ 04. Solutions & Interactive UI
-* [`04-solutions-and-ui/streamlit-app-template.py`](04-solutions-and-ui/streamlit-app-template.py) — Complete, runnable Streamlit app with scenario sliders, SHAP watermarks, and unit economics ticker.
-* [`04-solutions-and-ui/dashboard-design-patterns.md`](04-solutions-and-ui/dashboard-design-patterns.md) — The 5 UI patterns judges love (Counterfactual simulators, ROI tickers, glass-box explanations, cohort filters, action queues).
+* [`streamlit-app-template.py`](04-solutions-and-ui/streamlit-app-template.py) — Runnable app with scenario sliders, SHAP, ROI ticker.
+* [`dashboard-design-patterns.md`](04-solutions-and-ui/dashboard-design-patterns.md) — The 5 UI patterns judges like.
 
-### 📦 05. Repo Catalog
-* [`05-repo-catalog/README.md`](05-repo-catalog/README.md) — Curated collection of top open-source tools, public data portals, and winning repositories.
+### 📦 05. Repo Catalog · 🏆 07. Worked Example
+* [`05-repo-catalog/README.md`](05-repo-catalog/README.md) — Trusted learning source, winning solutions, starter kits, data portals.
+* [`07-worked-example/worked-example.md`](07-worked-example/worked-example.md) — A 4-person team's 48-hour run.
 
-### 💬 06. Quick Prompts
-* [`06-prompts/README.md`](06-prompts/README.md) — Short copy-paste co-pilot prompts (the full macro set is [`PROMPTS.md`](PROMPTS.md)).
-
-### 🏆 07. Worked Example Case Study
-* [`07-worked-example/worked-example.md`](07-worked-example/worked-example.md) — Hour-by-hour case study of how a 4-person team took 1st place overall in a 48-hour clinical datathon.
+### 🧠 08. AI Agent Kit
+* [`PROMPTS.md`](08-ai-agent-kit/PROMPTS.md) — 20 macros (`DT01`-`DT20`) plus `DT00` context and `DT-R` review.
+* [`quick-prompts.md`](08-ai-agent-kit/quick-prompts.md) — Short co-pilot prompts.
+* [`SKILLS.md`](08-ai-agent-kit/SKILLS.md) — Agent skill spec to drop into a project.
+* [`STANDARDS.md`](08-ai-agent-kit/STANDARDS.md) — SOPs: repo taxonomy, data hygiene, CV integrity, seeds, pre-submission audit.
 
 ---
 
@@ -115,7 +123,7 @@ Winning teams treat the datathon as a rapid **decision-support product challenge
    ```
 2. **Run the 1-Click Starter:**
    ```bash
-   python quickstart-1-click.py
+   python 00-start-here/quickstart-1-click.py
    ```
 3. **Open the Battle Plan:**
    Read [`01-playbook/datathon-battle-plan.md`](01-playbook/datathon-battle-plan.md) and assign your 4 team roles before writing a single line of code!

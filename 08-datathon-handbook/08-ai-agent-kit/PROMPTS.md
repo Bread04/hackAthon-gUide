@@ -4,7 +4,7 @@
 
 > **Copy-paste prompt templates for every hour of a Datathon.**  
 > Works with any current frontier chat model or coding assistant (Claude Code, Cursor, Copilot, Antigravity, ChatGPT, Gemini).  
-> Replace every `<angle bracket>` before running. Each macro maps to a gate in [`00-datathon-runbook.md`](00-datathon-runbook.md).
+> Replace every `<angle bracket>` before running. Each macro maps to a gate in [`../00-start-here/runbook.md`](../00-start-here/runbook.md).
 
 ---
 
@@ -14,7 +14,7 @@
 
 ### Step 0: Paste the Shared Context First (`DT00`)
 
-Start every new AI chat with `DT00` so the model never forgets the leak-free rules. Fill the values from your [`PROJECT_TEMPLATE/PROJECT_CONTEXT.md`](PROJECT_TEMPLATE/PROJECT_CONTEXT.md).
+Start every new AI chat with `DT00` so the model never forgets the leak-free rules. Fill the values from your [`PROJECT_TEMPLATE/PROJECT_CONTEXT.md`](../PROJECT_TEMPLATE/PROJECT_CONTEXT.md).
 
 ```text
 You are assisting a datathon team. Treat the following as fixed project context and hard rules for this whole conversation.

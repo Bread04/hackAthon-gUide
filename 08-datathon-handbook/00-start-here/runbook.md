@@ -21,13 +21,13 @@
 | 7 | **Ship the UI** | 34-42 | Streamlit: what-if sliders, $ ticker, SHAP waterfall, cohort filter, action button | `app.py` running from a clean clone | Cold start < 10 s; slider recompute < 300 ms; runs offline | phase `00` (Setup & Tooling) | `04-solutions-and-ui/streamlit-app-template.py` |
 | 8 | **Pitch** | 42-48 | 10 slides, 3-min script, 5 judge Qs rehearsed, submission file validated | `slides`, `report.pdf`, `submission.csv` | Timed run ≤ 3:00; submission schema matches sample | n/a | `01-playbook/pitch-and-presentation-guide.md` |
 
-Tool and algorithm verdicts for gates 4-6: [`03-modeling/ml-toolbox.md`](03-modeling/ml-toolbox.md).
+Tool and algorithm verdicts for gates 4-6: [`03-modeling/ml-toolbox.md`](../03-modeling/ml-toolbox.md).
 
 Situational lessons (use only when the dataset demands it): `16-anomaly-detection` (fraud/failure with few labels), `07-unsupervised-learning` (segmentation tasks), `14-naive-bayes` (small text baselines), `06-knn-and-distances` (similarity/lookup tasks), `05-support-vector-machines` (small, high-dimensional data).
 
 ---
 
-**Hour 0 intake:** before Gate 1, run the checklist in [`01-playbook/judging-and-winning-evidence.md`](01-playbook/judging-and-winning-evidence.md) (scoring type, official criteria, AI-use and data-access rules).
+**Hour 0 intake:** before Gate 1, run the checklist in [`01-playbook/judging-and-winning-evidence.md`](../01-playbook/judging-and-winning-evidence.md) (scoring type, official criteria, AI-use and data-access rules).
 
 ---
 
@@ -50,7 +50,7 @@ Situational lessons (use only when the dataset demands it): `16-anomaly-detectio
 | Ranking / top-k | NDCG / precision@k | + $ captured in top-k |
 
 ### Choosing the model (first match wins)
-_Full scenario matrix with confidence labels: [`03-modeling/method-selection-guide.md`](03-modeling/method-selection-guide.md)._
+_Full scenario matrix with confidence labels: [`03-modeling/method-selection-guide.md`](../03-modeling/method-selection-guide.md)._
 
 1. Tabular → LightGBM or CatBoost baseline, then blend diverse models; consider TabPFN/TabICL only for small data with a GPU (check licence).
 2. Tabular, need a leaderboard push → AutoGluon `best_quality` on locked folds.

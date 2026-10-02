@@ -111,7 +111,7 @@ Use these to fill a specific gap, not to binge. Starred entries are named in [`m
 | Deep learning framework tutorials ⭐ | [PyTorch tutorials](https://pytorch.org/tutorials/) · [TensorFlow tutorials](https://www.tensorflow.org/tutorials) |
 | Wide discovery list | [`mikeroyal/Machine-Learning-Guide`](https://github.com/mikeroyal/Machine-Learning-Guide) (19 sections: frameworks, algorithms, CV, NLP, RL, per-language) |
 
-Vet any new resource with the **Source Trust Ladder** in [`../00-datathon-runbook.md`](../00-datathon-runbook.md): license, last commit, runs end-to-end.
+Vet any new resource with the **Source Trust Ladder** in [`../00-start-here/runbook.md`](../00-start-here/runbook.md): license, last commit, runs end-to-end.
 
 ---
 
