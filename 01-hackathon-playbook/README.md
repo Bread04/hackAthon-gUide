@@ -22,7 +22,7 @@
 | --- | --- |
 | ⭐ [`docs/rules-hardware-a11y-remote.md`](docs/rules-hardware-a11y-remote.md) | **Read the rules first:** AI-use disclosure, pre-existing code, IP; hardware track; accessibility & privacy; remote demos. Evidence-labelled checklists |
 | [`PROMPTS.md`](PROMPTS.md) | **Fallback prompts** for any AI tool if you don't have Claude Code: ideas (I1), plan (S1), pitch (P1)… Also useful to paste into a BMad session |
-| [`templates/`](templates/) | Fill-in-the-blank docs: [`research`](templates/research.md) · [`prd`](templates/prd.md) (the plan) · [`tech-stack`](templates/tech-stack.md) · [`design`](templates/design.md) · [`project-readme`](templates/project-readme.md) (your repo's README for judges) |
+| [`templates/`](templates/) | Fill-in-the-blank docs: [`problem-selection`](templates/problem-selection.md) · [`mvp-and-demo-checklist`](templates/mvp-and-demo-checklist.md) · [`research`](templates/research.md) · [`prd`](templates/prd.md) (the plan) · [`tech-stack`](templates/tech-stack.md) · [`design`](templates/design.md) · [`project-readme`](templates/project-readme.md) (your repo's README for judges) |
 | [`docs/git-for-teams.md`](docs/git-for-teams.md) | Working in a team without overwriting each other: branches, pulls, **fixing merge conflicts** |
 | [`docs/pitch-and-demo.md`](docs/pitch-and-demo.md) | How to structure a 3-minute pitch, slides, and the backup video |
 | [`docs/rules-and-standards.md`](docs/rules-and-standards.md) | Common event rules (AI disclosure, video length) and what judges look for |

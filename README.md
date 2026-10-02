@@ -23,6 +23,37 @@ That's enough to get started. Everything else is here for when you need it.
 
 ---
 
+## 🛤️ Pick a learning path
+
+| You are… | Read in this order | Time |
+| --- | --- | --- |
+| **A complete beginner** | [`first-hackathon.md`](01-hackathon-playbook/first-hackathon.md) → [`GLOSSARY.md`](GLOSSARY.md) → [`worked-example.md`](01-hackathon-playbook/worked-example.md) → [`setup-your-laptop.md`](01-hackathon-playbook/docs/setup-your-laptop.md) | ~1 h |
+| **Here to win a software hackathon** | [`rules-hardware-a11y-remote.md`](01-hackathon-playbook/docs/rules-hardware-a11y-remote.md) → [`problem-selection.md`](01-hackathon-playbook/templates/problem-selection.md) → [`battle-plan.md`](01-hackathon-playbook/battle-plan.md) → [`pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) → [`mvp-and-demo-checklist.md`](01-hackathon-playbook/templates/mvp-and-demo-checklist.md) | ~2 h |
+| **Entering a datathon / ML track** | [`first-datathon.md`](08-datathon-handbook/00-start-here/first-datathon.md) → [`runbook.md`](08-datathon-handbook/00-start-here/runbook.md) → [`method-selection-guide.md`](08-datathon-handbook/03-modeling/method-selection-guide.md) | ~1.5 h |
+| **Not a coder** | [`first-hackathon.md`](01-hackathon-playbook/first-hackathon.md) → [`problem-selection.md`](01-hackathon-playbook/templates/problem-selection.md) → [`pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) → [`project-readme.md`](01-hackathon-playbook/templates/project-readme.md): non-coders can own research, the idea, the README and the pitch | ~1 h |
+
+### The whole event at a glance
+
+```mermaid
+flowchart LR
+    A[Read the rules] --> B[Pick the problem]
+    B --> C[Deploy hello world]
+    C --> D[Build the core flow]
+    D --> E[Feature freeze]
+    E --> F[Record backup demo]
+    F --> G[Rehearse the pitch]
+    G --> H[Submit]
+```
+
+| Step | Open |
+| --- | --- |
+| Read the rules | [`rules-hardware-a11y-remote.md`](01-hackathon-playbook/docs/rules-hardware-a11y-remote.md) |
+| Pick the problem | [`problem-selection.md`](01-hackathon-playbook/templates/problem-selection.md) |
+| Deploy, build, freeze | [`battle-plan.md`](01-hackathon-playbook/battle-plan.md) · [`mvp-and-demo-checklist.md`](01-hackathon-playbook/templates/mvp-and-demo-checklist.md) |
+| Demo and pitch | [`pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) |
+
+---
+
 ## 🗺️ What's in each folder
 
 The folders are numbered in the order you'll need them.
@@ -89,10 +120,32 @@ docs/         ← the detailed guides
 | **Win a Datathon / ML Challenge** | [`08-datathon-handbook/`](08-datathon-handbook/README.md) · [`skills/hackathon-datathon/SKILL.md`](skills/hackathon-datathon/SKILL.md) · Evidence: [`_research/`](_research/technical-datathons-and-ml-solutions-2026-09-23/research.md) |
 | Give my AI assistant more abilities | [`05-tools-and-mcp/docs/mcp-catalog.md`](05-tools-and-mcp/docs/mcp-catalog.md) |
 | Check the rules on AI use, old code & IP (and hardware, accessibility, remote demos) | [`01-hackathon-playbook/docs/rules-hardware-a11y-remote.md`](01-hackathon-playbook/docs/rules-hardware-a11y-remote.md) |
+| Choose between project ideas | [`01-hackathon-playbook/templates/problem-selection.md`](01-hackathon-playbook/templates/problem-selection.md) |
+| Check my project is demo-ready | [`01-hackathon-playbook/templates/mvp-and-demo-checklist.md`](01-hackathon-playbook/templates/mvp-and-demo-checklist.md) |
 | Prepare the final pitch | [`01-hackathon-playbook/docs/pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) |
 | Fix something that broke | [`03-backend/docs/troubleshooting.md`](03-backend/docs/troubleshooting.md) |
 | Write the README judges will read | [`01-hackathon-playbook/templates/project-readme.md`](01-hackathon-playbook/templates/project-readme.md) |
 | Know what to do after the event | [`01-hackathon-playbook/docs/after-the-event.md`](01-hackathon-playbook/docs/after-the-event.md) |
+
+---
+
+## ❓ Quick FAQ
+
+**I have never coded. Can I take part?** Yes. Pick a role (research, idea, design, README, pitch) and use the "Not a coder" path above.
+
+**How do I find teammates?** Use the event's chat channel early, post your skills and a one-line problem statement, and aim for mixed roles. See [`git-for-teams.md`](01-hackathon-playbook/docs/git-for-teams.md) for working together.
+
+**Can I use AI coding tools?** Often yes, but rules differ by event, and undisclosed use is what typically causes trouble. Read the event rules and see [`rules-hardware-a11y-remote.md`](01-hackathon-playbook/docs/rules-hardware-a11y-remote.md).
+
+**Can I reuse code I wrote before?** Check the rules; many events limit pre-existing work. Declare libraries, templates and old code in your README.
+
+**What if the demo breaks?** Record a backup video as soon as the demo first works, seed your data, and follow the checklist in [`mvp-and-demo-checklist.md`](01-hackathon-playbook/templates/mvp-and-demo-checklist.md).
+
+**How do I choose between ideas?** Score them with [`problem-selection.md`](01-hackathon-playbook/templates/problem-selection.md), using the event's real judging criteria if published.
+
+**Is this a datathon, not a hackathon?** Go to the [`datathon handbook`](08-datathon-handbook/README.md).
+
+**Something here looks out of date.** See [`CONTRIBUTING.md`](CONTRIBUTING.md); the open items are in [`ROADMAP.md`](ROADMAP.md).
 
 ---
 
@@ -118,5 +171,7 @@ You'll see these next to tools throughout the guide:
 The full list of "things that changed recently" (tools that were renamed, retired or changed price) is in [`06-repo-catalog/`](06-repo-catalog/README.md) → "What changed in 2025–26".
 
 ---
+
+_Contributing: [`CONTRIBUTING.md`](CONTRIBUTING.md) · Plans: [`ROADMAP.md`](ROADMAP.md) · Link check: `python tools/check_links.py`._
 
 _Built from cited research (checked 2026-09-21 to 2026-09-22). Prices and tools change often; the next re-check is due **2026-10-22**. See [`_research/README.md`](_research/README.md) for how to refresh it._
