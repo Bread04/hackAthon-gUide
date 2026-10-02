@@ -7,7 +7,8 @@ Thanks for helping keep this guide accurate. Tools, prices and rules change fast
 ## Good contributions
 
 - A broken link, outdated version, or changed price (include the source URL and date)
-- A fix or addition to a checklist that you used at a real event
+- A fix or addition to a checklist that you used at a real event (or open an **Event report** issue)
+- Clearing items from [`VERIFICATION.md`](VERIFICATION.md): check a flagged claim at its primary source and replace the label with the link
 - A better prompt, template or worksheet
 - Replacing an UNVERIFIED or SNIPPET-ONLY claim with one you checked at the primary source
 
@@ -29,4 +30,13 @@ python tools/check_links.py   # must print "0 broken links, 0 duplicate groups"
 python tools/smoke_test.py
 ```
 
-Both checks run in CI. Research notes live under `_research/` (see its README); do not edit them by hand, add a new run folder instead.
+Other helpers:
+
+```bash
+python tools/list_unverified.py   # regenerate VERIFICATION.md after editing a page with flagged claims
+python tools/check_versions.py    # pinned versions vs PyPI
+python _research/distribute.py    # regenerate docs/evidence.md and docs/repos.md from _research
+npx markdownlint-cli2 "**/*.md"   # markdown lint (rules in .markdownlint-cli2.jsonc)
+```
+
+All of these run in CI. Research notes live under `_research/` (see its README); do not edit them by hand, add a new run folder instead.

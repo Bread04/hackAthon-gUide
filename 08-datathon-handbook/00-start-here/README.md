@@ -9,5 +9,6 @@
 3. [`runbook.md`](runbook.md): the 8 gates you will follow, with exit checks and decision tables
 4. `python quickstart-1-click.py`: train a model and open a dashboard in 30 seconds
 5. [`troubleshooting.md`](troubleshooting.md): when something breaks at 2 AM
+6. [`cheatsheet.md`](cheatsheet.md): the whole runbook on one printable page
 
 Back to the [handbook index](../README.md).

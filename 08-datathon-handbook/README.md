@@ -58,6 +58,7 @@ Folders are numbered in the order you will need them.
 
 ### 🟢 00. Start Here
 * [`00-start-here/first-datathon.md`](00-start-here/first-datathon.md) — What a datathon is, the 4 vital roles, the 10 Golden Rules.
+* [`00-start-here/cheatsheet.md`](00-start-here/cheatsheet.md) — The runbook on one printable page.
 * [`00-start-here/runbook.md`](00-start-here/runbook.md) — The 8 gates with exit checks, decision tables, evidence rules and source trust ladder.
 * [`00-start-here/GLOSSARY.md`](00-start-here/GLOSSARY.md) — Plain-English cheat sheet for ML jargon.
 * [`00-start-here/quickstart-1-click.py`](00-start-here/quickstart-1-click.py) — Trains a LightGBM model and launches a Streamlit UI in 30 seconds.
@@ -92,7 +93,8 @@ Folders are numbered in the order you will need them.
 
 ### 📦 05. Repo Catalog · 🏆 07. Worked Example
 * [`05-repo-catalog/README.md`](05-repo-catalog/README.md) — Trusted learning source, winning solutions, starter kits, data portals.
-* [`07-worked-example/worked-example.md`](07-worked-example/worked-example.md) — A 4-person team's 48-hour run.
+* [`07-worked-example/worked-example.md`](07-worked-example/worked-example.md) — A fictional 4-person team's 48-hour run, as a story.
+* [`07-worked-example/run_end_to_end.py`](07-worked-example/run_end_to_end.py) — The same gates as runnable code on synthetic sample data (leak detection, grouped CV, baseline ladder, $ threshold).
 
 ### 🧠 08. AI Agent Kit
 * [`PROMPTS.md`](08-ai-agent-kit/PROMPTS.md) — 20 macros (`DT01`-`DT20`) plus `DT00` context and `DT-R` review.

@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 
-> The single map of the whole event. Each phase has an **exit check**: do not move on until it passes. This page only routes you; the detail lives in the linked pages (nothing is repeated here). Hour marks are for a 24-hour event; for 48 hours, double the Build phase, not the planning.
+> The single map of the whole event. Printable one-pagers: [`CHEATSHEET.md`](CHEATSHEET.md) · [datathon cheat sheet](08-datathon-handbook/00-start-here/cheatsheet.md). Each phase has an **exit check**: do not move on until it passes. This page only routes you; the detail lives in the linked pages (nothing is repeated here). Hour marks are for a 24-hour event; for 48 hours, double the Build phase, not the planning.
 
 ```mermaid
 flowchart LR
