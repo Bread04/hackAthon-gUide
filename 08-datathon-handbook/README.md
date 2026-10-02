@@ -42,7 +42,7 @@ Winning teams treat the datathon as a rapid **decision-support product challenge
 
 ### 🤖 AI Agent Standards & Prompt Macros
 * 📜 [`SKILLS.md`](SKILLS.md) — **Datathon AI Skill Specification:** Drop this into any datathon workspace so Claude Code, Cursor, Antigravity, or Copilot strictly follow leak-free evaluation, unit economics, and Streamlit standards.
-* 🧠 [`PROMPTS.md`](PROMPTS.md) — **The Datathon Macro Catalog:** 15 copy-paste prompts (`DT01` to `DT15`) covering problem framing, 10-minute EDA, feature brainstorming, LightGBM pipelines, SHAP explainers, unit economics, pitch scripts, and judge Q&A defense.
+* 🧠 [`PROMPTS.md`](PROMPTS.md) — **The Datathon Macro Catalog:** 20 copy-paste prompts (`DT01` to `DT20`) plus a shared-context preamble (`DT00`) and review prompt (`DT-R`), covering framing, EDA, leakage audits, metrics, feature engineering, LightGBM, tuning, SHAP, unit economics, the Streamlit UI, pitch scripts, judge Q&A, and a pre-submission audit.
 * 📋 [`STANDARDS.md`](STANDARDS.md) — **Standard Operating Procedures (SOP):** Repository taxonomy, data hygiene rules, cross-validation integrity, deterministic seed rules, and pre-submission audit.
 * 📦 [`PROJECT_TEMPLATE/`](PROJECT_TEMPLATE/README.md) — **Ready-to-Use Project Boilerplate:** Pre-built project folder with [`PROJECT_CONTEXT.md`](PROJECT_TEMPLATE/PROJECT_CONTEXT.md) single-source-of-truth, `requirements.txt`, `.gitignore`, and starter directories.
 
