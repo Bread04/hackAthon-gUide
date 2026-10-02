@@ -105,6 +105,8 @@
 
 ## Datathons & Data Science
 
+> Only the essentials here. The full plain-English ML glossary (features, targets, folds, SHAP, imbalance and more) is [`08-datathon-handbook/00-start-here/GLOSSARY.md`](08-datathon-handbook/00-start-here/GLOSSARY.md).
+
 | Word | What it means |
 | --- | --- |
 | **Datathon** | A data-focused hackathon where teams solve a real-world problem using datasets, machine learning and an interactive decision-support tool |

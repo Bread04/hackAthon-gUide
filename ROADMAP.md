@@ -28,4 +28,6 @@ Prices and tools: next re-check due **2026-10-22** (see the root README).
 
 - Datathon handbook with runbook, prompts and method selection
 - Reorganized handbook (`00-start-here`, `08-ai-agent-kit`)
-- Link-check script and CI
+- Link and duplicate-file check (`tools/check_links.py`) with CI
+- `WORKFLOW.md`: one phase map for both tracks
+- De-duplication: single `SKILLS.md`, datathon prompts merged into `DT01`-`DT20`, research reports live only in the guide pages

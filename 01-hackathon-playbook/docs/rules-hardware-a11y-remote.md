@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 
-> Fills four gaps in the playbook. **Evidence is thin:** most event sites were unreachable during research, so items marked **SNIPPET-ONLY** or **UNVERIFIED** must be re-checked on the official page. Items called "our suggestion" are our own, not organizer standards. Applies to **software hackathons**; datathon-specific rules are not covered (see [`08-datathon-handbook/01-playbook/judging-and-winning-evidence.md`](../../08-datathon-handbook/01-playbook/judging-and-winning-evidence.md)). Sources and raw notes: [`_research/technical-hackathon-gap-fill-2026-10-02/`](../../_research/technical-hackathon-gap-fill-2026-10-02/research.md).
+> Fills four gaps in the playbook. **Evidence is thin:** most event sites were unreachable during research, so items marked **SNIPPET-ONLY** or **UNVERIFIED** must be re-checked on the official page. Items called "our suggestion" are our own, not organizer standards. Applies to **software hackathons**; datathon-specific rules are not covered (see [`08-datathon-handbook/01-playbook/judging-and-winning-evidence.md`](../../08-datathon-handbook/01-playbook/judging-and-winning-evidence.md)). Sources and raw notes: [`_research/technical-hackathon-gap-fill-2026-10-02/`](../../_research/technical-hackathon-gap-fill-2026-10-02/digests/).
 
 | Jump to | Use when |
 | --- | --- |

@@ -54,7 +54,7 @@ Folders are numbered in the order you will need them.
 | 🧠 [`08-ai-agent-kit/`](08-ai-agent-kit/README.md) | Using an AI assistant (prompts, skill spec, SOPs) | [`PROMPTS.md`](08-ai-agent-kit/PROMPTS.md) |
 | 📦 [`PROJECT_TEMPLATE/`](PROJECT_TEMPLATE/README.md) | Starting your team's repo | [`PROJECT_CONTEXT.md`](PROJECT_TEMPLATE/PROJECT_CONTEXT.md) |
 
-(`06-` is intentionally unused: its quick prompts moved to [`08-ai-agent-kit/quick-prompts.md`](08-ai-agent-kit/quick-prompts.md).)
+(`06-` is intentionally unused; its prompts were merged into [`PROMPTS.md`](08-ai-agent-kit/PROMPTS.md).)
 
 ### 🟢 00. Start Here
 * [`00-start-here/first-datathon.md`](00-start-here/first-datathon.md) — What a datathon is, the 4 vital roles, the 10 Golden Rules.
@@ -94,8 +94,7 @@ Folders are numbered in the order you will need them.
 
 ### 🧠 08. AI Agent Kit
 * [`PROMPTS.md`](08-ai-agent-kit/PROMPTS.md) — 20 macros (`DT01`-`DT20`) plus `DT00` context and `DT-R` review.
-* [`quick-prompts.md`](08-ai-agent-kit/quick-prompts.md) — Short co-pilot prompts.
-* [`SKILLS.md`](08-ai-agent-kit/SKILLS.md) — Agent skill spec to drop into a project.
+* [`PROJECT_TEMPLATE/SKILLS.md`](PROJECT_TEMPLATE/SKILLS.md) — The single copy of the agent skill spec; it ships inside the project template.
 * [`STANDARDS.md`](08-ai-agent-kit/STANDARDS.md) — SOPs: repo taxonomy, data hygiene, CV integrity, seeds, pre-submission audit.
 
 ---

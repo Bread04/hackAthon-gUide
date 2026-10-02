@@ -17,7 +17,7 @@
 | **📊 Entering a Datathon / ML Track?** | [`08-datathon-handbook/first-datathon.md`](08-datathon-handbook/00-start-here/first-datathon.md): The beginner's guide to data hackathons, 1-click starter & ML solutions | 10 min |
 | **📊 Datathon day-of** | [`08-datathon-handbook/00-start-here/runbook.md`](08-datathon-handbook/00-start-here/runbook.md): 8 gates with exit checks and decision tables | 10 min |
 
-Words you don't know? [`GLOSSARY.md`](GLOSSARY.md). On the day, follow [`battle-plan.md`](01-hackathon-playbook/battle-plan.md) hour by hour.
+Not sure where you are in the event? [`WORKFLOW.md`](WORKFLOW.md) maps every phase. Words you don't know? [`GLOSSARY.md`](GLOSSARY.md). On the day, follow [`battle-plan.md`](01-hackathon-playbook/battle-plan.md) hour by hour.
 
 That's enough to get started. Everything else is here for when you need it.
 
@@ -34,6 +34,8 @@ That's enough to get started. Everything else is here for when you need it.
 
 ### The whole event at a glance
 
+> Full phase-by-phase map for both tracks, with exit checks: **[`WORKFLOW.md`](WORKFLOW.md)**.
+
 ```mermaid
 flowchart LR
     A[Read the rules] --> B[Pick the problem]
@@ -47,6 +49,7 @@ flowchart LR
 
 | Step | Open |
 | --- | --- |
+| Every phase, both tracks | [`WORKFLOW.md`](WORKFLOW.md) |
 | Read the rules | [`rules-hardware-a11y-remote.md`](01-hackathon-playbook/docs/rules-hardware-a11y-remote.md) |
 | Pick the problem | [`problem-selection.md`](01-hackathon-playbook/templates/problem-selection.md) |
 | Deploy, build, freeze | [`battle-plan.md`](01-hackathon-playbook/battle-plan.md) · [`mvp-and-demo-checklist.md`](01-hackathon-playbook/templates/mvp-and-demo-checklist.md) |

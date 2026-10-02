@@ -1,4 +1,4 @@
-name: Check links
+name: Check links and duplicates
 on:
   pull_request:
   push:

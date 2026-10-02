@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 
-> Research run 7 (2026-10-02). **Version numbers come mostly from PyPI JSON; everything else is search-snippet level.** Benchmark numbers are the vendors' own claims. Hosting prices and limits must be re-checked on the day. Sources and raw notes: [`_research/technical-ml-tooling-2026-10-02/`](../../_research/technical-ml-tooling-2026-10-02/research.md). Companion to [`ml-toolbox.md`](ml-toolbox.md).
+> Research run 7 (2026-10-02). **Version numbers come mostly from PyPI JSON; everything else is search-snippet level.** Benchmark numbers are the vendors' own claims. Hosting prices and limits must be re-checked on the day. Sources and raw notes: [`_research/technical-ml-tooling-2026-10-02/`](../../_research/technical-ml-tooling-2026-10-02/digests/). Companion to [`ml-toolbox.md`](ml-toolbox.md).
 
 ## ⚡ The 60-Second Install Check (our suggestion)
 

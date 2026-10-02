@@ -22,7 +22,7 @@ Thanks for helping keep this guide accurate. Tools, prices and rules change fast
 ## Before you open a pull request
 
 ```bash
-python tools/check_links.py   # must print "0 broken links"
+python tools/check_links.py   # must print "0 broken links, 0 duplicate groups"
 ```
 
 The same check runs in CI. Research notes live under `_research/` (see its README); do not edit them by hand, add a new run folder instead.

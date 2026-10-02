@@ -17,17 +17,12 @@
 | [ML5](#ml5--streaming-chat-route) | Streaming chat route |
 | [ML6](#ml6--prompt-test-harness) | Prompt test harness |
 | [ML7](#ml7--demo-proof-the-ai-feature) | Demo-proof the AI feature |
-| [ML8](#ml8--eda--preprocessing) | EDA + preprocessing (classic ML) |
-| [ML9](#ml9--training-loop) | Training loop (classic ML) |
-| [ML10](#ml10--model-failure-analysis) | Model failure analysis |
 | [ML11](#ml11--routing--cascade) | Routing / cascade |
 | [ML12](#ml12--scaffold-a-capped-agent) | Scaffold a capped agent (AI SDK v7 / Pydantic AI) |
 | [ML13](#ml13--design-the-tools) | Design the tools |
 | [ML14](#ml14--agent-safety-and-fallback-review) | Agent safety and fallback review |
-| [ML15](#ml15--datathon-tabular-baseline--leak-free-cv) | Datathon: tabular baseline & leak-free CV (Polars + LightGBM/CatBoost) |
-| [ML16](#ml16--datathon-what-if-simulator--shap-dashboard) | Datathon: What-If simulator & SHAP explainability dashboard |
 
-> ML8–ML11 and ML15–ML16 are for **data or ML-track hackathons (datathons)**. For the full standalone playbook, templates and code: see [`08-datathon-handbook/`](../08-datathon-handbook/README.md) · Evidence: [`_research/technical-datathons-and-ml-solutions-2026-09-23/`](../_research/technical-datathons-and-ml-solutions-2026-09-23/research.md).
+> **Datathon / ML-track prompts** (EDA, training, failure analysis, baseline, simulator) live in one place: [`DT01`-`DT20`](../08-datathon-handbook/08-ai-agent-kit/PROMPTS.md). The old ML8-ML10 and ML15-ML16 macros were merged there; the numbers are not reused.
 
 ---
 
@@ -108,40 +103,6 @@ Our demo calls <model> for <feature>. Make it demo-safe:
 
 *Why:* "Mock everything you can" ([JetBrains judges](https://blog.jetbrains.com/ai/2026/06/how-to-win-a-hackathon-notes-from-the-judging-table/)).
 
-### ML8 · EDA + preprocessing
-
-```text
-[ROLE] Data scientist. [CONTEXT] Dataset description/head: <paste>; goal: <target/metric from PRD>.
-1. Missing data: impute vs drop, per column, with reasoning.
-2. Feature engineering: 3–5 derived features from domain logic.
-3. Distributions: skew → suggested transforms (log1p, Box-Cox).
-4. Correlations / multicollinearity.
-5. Data-quality summary table: raw rows vs cleaned rows (schema, duplicates, invalid values); add a source_file column for provenance.
-Output: cleaning script (Python), insights bullets, matplotlib/seaborn snippets. Fixed random_state=42.
-```
-
-### ML9 · Training loop
-
-```text
-[ROLE] ML engineer. Train a <scikit-learn | XGBoost | PyTorch> model for <target>.
-- Start with the simplest baseline (logistic regression / rules) and report it — every later model must beat it.
-- K-fold CV (stratified if classification); early stopping on validation loss where applicable.
-- Right-skewed regression target → train on log1p, back-transform MAE per-sample in original space.
-- Honest plot: out-of-fold predictions via cross_val_predict.
-- Log experiments (MLflow or a JSON file); save model as models/<name>_<timestamp>.joblib.
-Optimise the metric the problem actually cares about (e.g. recall for fraud) — say which and why.
-```
-
-### ML10 · Model failure analysis
-
-```text
-[ROLE] Model auditor. Here are the confusion matrix, loss curves, and misclassified samples: <paste>.
-1. Slice check: is it failing on specific feature slices / groups?
-2. Over/under-fitting: train vs validation gap.
-3. Regression: are residuals i.i.d.?
-Output a prioritised list of next experiments (more data/augmentation, regularisation, feature pruning) — and which ONE to try in the next hour.
-```
-
 ### ML11 · Routing / cascade
 
 ```text
@@ -190,32 +151,3 @@ Review our agent before the demo. Report pass/fail for each:
 ```
 
 *Why:* [Lethal trifecta](https://simonwillison.net/2025/Jun/16/the-lethal-trifecta/) · [OWASP Agentic Top 10](https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/) · [agent evals](https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents).
-
-### ML15 · Datathon: tabular baseline & leak-free CV
-
-```text
-[ROLE] Senior Competitive Data Scientist. [CONTEXT] Real-world datathon dataset: <paste head(5) and types>; target: <target_col>; evaluation metric: <PR-AUC / ROC-AUC / F1>.
-1. Ingest using Polars with lazy evaluation (pl.scan_csv / pl.scan_parquet).
-2. Set up a leak-free 5-fold Stratified K-Fold (or TimeSeriesSplit if temporal). Ensure all imputation, scaling, and target encoding happen strictly inside each fold.
-3. Train LightGBM (for fast iteration) and CatBoost (for native handling of categoricals/text).
-4. Evaluate out-of-fold (OOF) predictions and find the optimal decision threshold that maximizes F1/cost utility instead of default 0.5.
-5. Export best_model.pkl and precompute shap.TreeExplainer for instant frontend loading.
-Output: self-contained Python script under 80 lines.
-```
-
-*Why:* Fast iteration + leak-free validation is the #1 predictor of datathon placement. See `Datathon-Playbook/03-modeling/baseline-pipeline.py`.
-
-### ML16 · Datathon: What-If simulator & SHAP dashboard
-
-```text
-[ROLE] Fullstack Data App Engineer. Build a Streamlit decision-support dashboard for our datathon submission:
-- Model inputs: <list 6-8 key features, min/max ranges, defaults>.
-- Layout: 4 KPI scorecards at top (Predicted Risk %, Triage Tier, Expected Loss $, Potential Savings $).
-- Sidebar: Interactive "What-If" scenario sliders allowing judges to tweak inputs and see the prediction update in real time (<50ms).
-- Explainability: Horizontal bar chart showing local SHAP feature attributions (red = increases risk, green = protective factor).
-- Guidance: Clear operational recommendation box based on the risk score (Emergency / Warning / Normal).
-Make it self-contained with a fallback surrogate model so the demo NEVER crashes in front of judges.
-```
-
-*Why:* Judges reward working interactive decision-support products over static Jupyter notebooks. See `Datathon-Playbook/04-solutions-and-ui/streamlit-app-template.py`.
-

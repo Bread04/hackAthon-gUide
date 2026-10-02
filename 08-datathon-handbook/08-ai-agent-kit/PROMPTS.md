@@ -139,7 +139,7 @@ Write a concise Python script using Polars (or Pandas) that performs a 10-minute
 
 Constraints: lazy scan (`pl.scan_csv`) for files over 500 MB; set a seed; do not modify the data.
 Include clean terminal printouts with dividers. No unnecessary charts—just raw actionable health diagnostics.
-Also write the findings to `reports/data_audit.md` and finish with a "TOP 5 RISKS" list ranked by how badly each could ruin the model.
+Add a `source_file` column when combining files so every row has provenance. Also write the findings to `reports/data_audit.md` and finish with a "TOP 5 RISKS" list ranked by how badly each could ruin the model.
 ```
 
 ---
@@ -267,7 +267,8 @@ The script must:
 7. If the target rate is under 5%, set `scale_pos_weight` and report PR-AUC and the best-F1 threshold on OOF.
 8. Use the locked `folds.parquet` instead of generating new folds.
 9. Also output a `predict_test.py`-style function that averages the 5 fold models on the test set.
-10. Print a one-line sanity check: OOF score of a constant/dummy predictor, so we can see the lift.
+10. Right-skewed regression target: train on `log1p` and back-transform before scoring; log each run (config, seed, OOF score) to `feature_log.csv` or MLflow and save models as `models/<name>_<timestamp>.joblib`.
+11. Print a one-line sanity check: OOF score of a constant/dummy predictor, so we can see the lift.
 ```
 
 ---

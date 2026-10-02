@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 
-> Research run 5 (2026-10-02). **Read the caveat below before quoting anything here.** Full notes: [`_research/technical-datathon-judging-2026-10-02/`](../../_research/technical-datathon-judging-2026-10-02/research.md).
+> Research run 5 (2026-10-02). **Read the caveat below before quoting anything here.** Full notes: [`_research/technical-datathon-judging-2026-10-02/`](../../_research/technical-datathon-judging-2026-10-02/digests/).
 > The handbook's other pages give *advice*; this page separates what has a **source** from what is **common advice**.
 
 ## ✅ Event Intake Checklist (do this in the first hour)
