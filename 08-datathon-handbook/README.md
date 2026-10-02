@@ -46,6 +46,9 @@ Winning teams treat the datathon as a rapid **decision-support product challenge
 * 📋 [`STANDARDS.md`](STANDARDS.md) — **Standard Operating Procedures (SOP):** Repository taxonomy, data hygiene rules, cross-validation integrity, deterministic seed rules, and pre-submission audit.
 * 📦 [`PROJECT_TEMPLATE/`](PROJECT_TEMPLATE/README.md) — **Ready-to-Use Project Boilerplate:** Pre-built project folder with [`PROJECT_CONTEXT.md`](PROJECT_TEMPLATE/PROJECT_CONTEXT.md) single-source-of-truth, `requirements.txt`, `.gitignore`, and starter directories.
 
+### 🧭 Formulaic Runbook
+* [`00-datathon-runbook.md`](00-datathon-runbook.md) — **Start here once you know the basics:** 8 gates with exit checks, decision tables (split / metric / model / imbalance), evidence rules, and a source trust ladder mapped to [`rohitg00/ai-engineering-from-scratch`](https://github.com/rohitg00/ai-engineering-from-scratch) lessons.
+
 ### 🟢 Fundamentals & Starters
 * [`first-datathon.md`](first-datathon.md) — What a datathon actually is, how it differs from a software hackathon, the 4 vital roles, and the 10 Golden Rules.
 * [`GLOSSARY.md`](GLOSSARY.md) — The plain-English cheat sheet for scary ML concepts (Overfitting, Data Leakage, Cross-Validation, SHAP, Imbalance).

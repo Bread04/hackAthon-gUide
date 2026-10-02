@@ -95,8 +95,15 @@ Hour 46–48: Final Leaderboard Submission & Live Presentation
 
 ---
 
+## 🧭 Formulaic Gate Order
+
+Frame → Lock evaluation → Ingest & audit → Baseline → Features (one family at a time) → Improve → Ship UI → Pitch. Do not advance until the gate's exit check passes. Full table, decision tables and lesson mapping: `../../08-datathon-handbook/00-datathon-runbook.md`.
+
+**Trusted fundamentals source:** https://github.com/rohitg00/ai-engineering-from-scratch (`phases/02-ml-fundamentals/`: `08-feature-engineering`, `09-model-evaluation`, `11-ensemble-methods`, `12-hyperparameter-tuning`, `13-ml-pipelines`, `15-time-series`, `17-imbalanced-data`, `18-feature-selection`). Before using any repo: check license, last commit, and that its example runs.
+
 ## 🔗 Related Resources
 
+- Runbook: `../../08-datathon-handbook/00-datathon-runbook.md`
 - Complete Handbook: `../../08-datathon-handbook/README.md`
 - Prompt Macros: `../../08-datathon-handbook/PROMPTS.md`
 - Standard Practices: `../../08-datathon-handbook/STANDARDS.md`
