@@ -39,9 +39,15 @@ A dead link on your CV is worse than no link.
 ## Step 4 · Tell people about it (1 hour)
 
 - [ ] Update the **Devpost** page with anything you rushed (screenshots, a clearer description)
-- [ ] Post on **LinkedIn** or X: the problem, one GIF, what you learned, the prize if you won, and tag your teammates and the sponsors whose tech you used. Want a slick launch clip? Run [`/brag`](https://github.com/latent-spaces/brag) in your repo ([`pitch-and-demo.md`](pitch-and-demo.md) → Bonus)
+- [ ] Post on **LinkedIn** or X. Pick one shape: **story** (the user and the moment), **technical** (one hard problem and how you solved it), **reflection** (what you learned), or **achievement** (the result, with credit to the team). Include the problem, one GIF, what you learned, the prize if you won, and tag your teammates and the sponsors whose tech you used. Want a slick launch clip? Run [`/brag`](https://github.com/latent-spaces/brag) in your repo ([`pitch-and-demo.md`](pitch-and-demo.md) → Bonus)
 - [ ] **Follow up with sponsors and judges** you talked to, within 48 hours: *"Thanks for judging at <event>. We built <project> with your <API>. Here's the demo: <link>."* Sponsor engineers are often recruiters
-- [ ] Add it to your CV: **one line of impact** (what it does + for whom) + the stack + the result ("Won <prize> of <N> teams")
+- [ ] Add it to your CV with the formula **"Built [project] using [stack] to [solve problem for whom], resulting in [measurable result]"**, plus your own part ("I built the auth and real-time pipeline"). Examples by type:
+  - *AI feature:* "Built a lecture-notes summariser with Python and an LLM API for 3 study groups; cut review time from 2 h to 30 min in our test; won Best AI Hack (of 60 teams)."
+  - *Hardware:* "Built an ESP32 air-quality monitor with an MQTT dashboard; ran on battery for the whole 24 h demo; won the hardware prize."
+  - *Data:* "Built a churn model and what-if dashboard (LightGBM, Streamlit) with leak-free grouped CV; PR-AUC 0.48 vs 0.11 baseline."
+  Use only numbers you measured.
+
+> **Capture during the event** so you can write this later: project name, one-line problem, full stack, your specific role, live URL, 5+ screenshots or GIFs (one every few hours shows progress), teammates and their roles, any measured number, and what went wrong and how you adapted.
 
 ## Step 5 · Harvest the lessons (1 hour, within 48 hours)
 
@@ -69,3 +75,7 @@ Follow [`../battle-plan.md`](../battle-plan.md) → **"After the event: harvest 
 - [ ] README finished · repo pinned
 - [ ] Posted · sponsors thanked
 - [ ] Lessons written down
+
+---
+
+_Adapted in part from [Hackathon Starter Pack](https://github.com/udaysharmadev/Hackathon-Starter-Pack-Complete-Guide-Roadmap) by Uday Sharma (MIT licence; see [`THIRD_PARTY_NOTICES.md`](../../THIRD_PARTY_NOTICES.md)). Practitioner advice, not research._

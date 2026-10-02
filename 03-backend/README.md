@@ -10,6 +10,7 @@
 | --- | --- |
 | ⭐ [`docs/hackathon-patterns.md`](docs/hackathon-patterns.md) | Simple decision guides: which tools to use, what *not* to build, and how to fake things for the demo |
 | ⭐ [`docs/deploy-step-by-step.md`](docs/deploy-step-by-step.md) | **Your first deploy in 10 minutes**, website only, no command line |
+| [`docs/demo-day-testing.md`](docs/demo-day-testing.md) | **Before the demo:** what to test, bug triage, the 7 ways an API kills a demo |
 | ⭐ [`docs/troubleshooting.md`](docs/troubleshooting.md) | **Something broke?** The 5-minute method plus fixes by symptom |
 | [`../skills/hackathon-deployment/SKILL.md`](../skills/hackathon-deployment/SKILL.md) | The full deploy runbook: CLI, Railway, other hosts, pre-pitch checklist |
 | [`PROMPTS.md`](PROMPTS.md) | Copy-paste prompts: design the database (B10), set up the project (B2), **debug an error (B11)** |

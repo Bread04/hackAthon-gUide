@@ -17,7 +17,8 @@ Thanks for helping keep this guide accurate. Tools, prices and rules change fast
 2. **Mark volatile facts.** Prices, free-tier limits and version numbers get a date and a "re-check" note.
 3. **One page, one job.** Link new pages from the README of their folder, and from the root `README.md` if they answer an "I want to..." question.
 4. **Keep numbering.** Folders are numbered in reading order; do not renumber without updating links.
-5. **No secrets or real personal data** in examples. Use synthetic data.
+5. **Credit adapted work.** If you adapt content from another project, check its licence, credit it at the bottom of the page, and add its notice to `THIRD_PARTY_NOTICES.md`.
+6. **No secrets or real personal data** in examples. Use synthetic data.
 
 ## Before you open a pull request
 

@@ -30,7 +30,7 @@ That's enough to get started. Everything else is here for when you need it.
 | **A complete beginner** | [`first-hackathon.md`](01-hackathon-playbook/first-hackathon.md) → [`GLOSSARY.md`](GLOSSARY.md) → [`worked-example.md`](01-hackathon-playbook/worked-example.md) → [`setup-your-laptop.md`](01-hackathon-playbook/docs/setup-your-laptop.md) | ~1 h |
 | **Here to win a software hackathon** | [`rules-hardware-a11y-remote.md`](01-hackathon-playbook/docs/rules-hardware-a11y-remote.md) → [`problem-selection.md`](01-hackathon-playbook/templates/problem-selection.md) → [`battle-plan.md`](01-hackathon-playbook/battle-plan.md) → [`pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) → [`mvp-and-demo-checklist.md`](01-hackathon-playbook/templates/mvp-and-demo-checklist.md) | ~2 h |
 | **Entering a datathon / ML track** | [`first-datathon.md`](08-datathon-handbook/00-start-here/first-datathon.md) → [`runbook.md`](08-datathon-handbook/00-start-here/runbook.md) → [`method-selection-guide.md`](08-datathon-handbook/03-modeling/method-selection-guide.md) | ~1.5 h |
-| **Not a coder** | [`first-hackathon.md`](01-hackathon-playbook/first-hackathon.md) → [`problem-selection.md`](01-hackathon-playbook/templates/problem-selection.md) → [`pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) → [`project-readme.md`](01-hackathon-playbook/templates/project-readme.md): non-coders can own research, the idea, the README and the pitch | ~1 h |
+| **Not a coder** | [`first-hackathon.md`](01-hackathon-playbook/first-hackathon.md) → [`non-coder-guide.md`](01-hackathon-playbook/docs/non-coder-guide.md) → [`problem-selection.md`](01-hackathon-playbook/templates/problem-selection.md) → [`pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) → [`project-readme.md`](01-hackathon-playbook/templates/project-readme.md): non-coders can own research, the idea, the README and the pitch | ~1 h |
 
 ### The whole event at a glance
 
@@ -131,13 +131,21 @@ docs/         ← the detailed guides
 | Prepare the final pitch | [`01-hackathon-playbook/docs/pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) |
 | Fix something that broke | [`03-backend/docs/troubleshooting.md`](03-backend/docs/troubleshooting.md) |
 | Write the README judges will read | [`01-hackathon-playbook/templates/project-readme.md`](01-hackathon-playbook/templates/project-readme.md) |
+| Find a hackathon to enter | [`01-hackathon-playbook/docs/find-hackathons.md`](01-hackathon-playbook/docs/find-hackathons.md) |
+| Win a sponsor prize | [`01-hackathon-playbook/docs/sponsor-tracks.md`](01-hackathon-playbook/docs/sponsor-tracks.md) |
+| Test before the demo | [`03-backend/docs/demo-day-testing.md`](03-backend/docs/demo-day-testing.md) |
+| Stay rested / decide whether to pivot | [`01-hackathon-playbook/docs/staying-well.md`](01-hackathon-playbook/docs/staying-well.md) |
 | Know what to do after the event | [`01-hackathon-playbook/docs/after-the-event.md`](01-hackathon-playbook/docs/after-the-event.md) |
 
 ---
 
 ## ❓ Quick FAQ
 
-**I have never coded. Can I take part?** Yes. Pick a role (research, idea, design, README, pitch) and use the "Not a coder" path above.
+**I have never coded. Can I take part?** Yes. Pick a role from [`non-coder-guide.md`](01-hackathon-playbook/docs/non-coder-guide.md) (research, product, design, pitch, testing, submission) and use the "Not a coder" path above.
+
+**Where do I find hackathons?** See [`find-hackathons.md`](01-hackathon-playbook/docs/find-hackathons.md).
+
+**Should we go for a sponsor prize?** Often yes; use the sponsor-fit check in [`sponsor-tracks.md`](01-hackathon-playbook/docs/sponsor-tracks.md).
 
 **How do I find teammates?** Use the event's chat channel early, post your skills and a one-line problem statement, and aim for mixed roles. See [`git-for-teams.md`](01-hackathon-playbook/docs/git-for-teams.md) for working together.
 
@@ -180,6 +188,6 @@ The full list of "things that changed recently" (tools that were renamed, retire
 
 ---
 
-_Contributing: [`CONTRIBUTING.md`](CONTRIBUTING.md) · Plans: [`ROADMAP.md`](ROADMAP.md) · Link check: `python tools/check_links.py`._
+_Credits: parts adapted from MIT-licensed works, see [`THIRD_PARTY_NOTICES.md`](THIRD_PARTY_NOTICES.md). Contributing: [`CONTRIBUTING.md`](CONTRIBUTING.md) · Plans: [`ROADMAP.md`](ROADMAP.md) · Link check: `python tools/check_links.py`._
 
 _Built from cited research (checked 2026-09-21 to 2026-09-22). Prices and tools change often; the next re-check is due **2026-10-22**. See [`_research/README.md`](_research/README.md) for how to refresh it._

@@ -20,7 +20,7 @@
 
 - [ ] No new features; bug fixes only
 - [ ] Seed data loaded, so the demo never starts from an empty screen
-- [ ] External API keys tested within the last 24 hours; responses cached or mocked as fallback
+- [ ] External API keys tested within the last 24 hours; responses cached or mocked as fallback (see [`demo-day-testing.md`](../../03-backend/docs/demo-day-testing.md))
 - [ ] Mobile / small-screen check, keyboard navigation and contrast spot-check (see [`rules-hardware-a11y-remote.md`](../docs/rules-hardware-a11y-remote.md))
 
 ## 4. Submission package

@@ -6,7 +6,7 @@
 
 | Criterion | Weight | Idea A | Idea B | Idea C | Question to ask |
 | --- | --- | --- | --- | --- | --- |
-| Fits the theme and sponsor tracks | 3 | | | | Can a judge repeat the fit in one sentence? |
+| Fits the theme and sponsor tracks ([sponsor-fit check](../docs/sponsor-tracks.md#the-sponsor-fit-check)) | 3 | | | | Can a judge repeat the fit in one sentence? |
 | Demo-able in 3 minutes | 3 | | | | Is there one 30-second moment that works live? |
 | Buildable in the time we have | 3 | | | | Can the core be built by half-time? |
 | Real user and real pain | 2 | | | | Can we name the person and the moment? |

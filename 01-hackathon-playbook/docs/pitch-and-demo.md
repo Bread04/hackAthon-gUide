@@ -88,6 +88,53 @@ Then ask your agent `let's /brag`, or steer the tone: `/brag --tone "fake Series
 
 ---
 
+## Story templates (fill in the brackets)
+
+Use one of these for the hook and close; keep every number real.
+
+- **Struggle to solution:** "Meet [person], a [role] who [specific daily struggle]. Every [period] they spend [time] on [task], but [frustration]. So we built [project]: it [one sentence]. When we tested it with [N] people here, [specific result]. Next we [step]."
+- **Before / after:** "Until now, [user] had two options: [bad option A] or [bad option B]. With [project] they can [benefit] in [time comparison]."
+- **What if:** "[Real fact or short story]. What if [the change your project makes]? [Project] does it by [how]. The result: [specific metric]."
+- **Story spine (for the problem):** "Once upon a time [person and world]. Every day [status quo]. Until one day [trigger]. Because of that [consequence]. Until finally [your project]."
+
+Name a specific person, not "users"; one concrete detail beats a big claim.
+
+## Booth vs stage
+
+| | Booth (walk-up judging) | Stage (timed pitch) |
+| --- | --- | --- |
+| Length | 3-5 min conversation | Fixed slot, strict timer |
+| Plan | Open with the hook, then **let the judge steer**: tech judge → architecture; business judge → users and impact | Follow the skeleton above to the second |
+| Props | Demo running on loop, QR code or card with the URL, a printed diagram | Slides + live demo + backup video |
+| Main risk | Rambling or a judge walking away mid-setup | Running over time |
+
+## Judge questions: answer patterns
+
+| Question | Pattern that works |
+| --- | --- |
+| "How is this different from X?" | Acknowledge the similarity → name the specific user or case X doesn't serve → show the feature that proves it → evidence (who you tested with) |
+| "How would you scale it?" | Name the one bottleneck and the design choice that handles it; don't promise millions of users |
+| "What's the business model?" | One plausible model and who pays; "we'd validate it by…" is fine |
+| "What's the biggest risk?" | A real risk plus your mitigation; "none" is a red flag |
+| "What would you do with more time?" | Two or three priorities and why, not a feature wish-list |
+| "How did you split the work?" | Each person's part in one sentence each |
+| "What did you learn?" | One honest surprise and what you'd change |
+
+Rehearse these with [`PROMPTS.md`](../PROMPTS.md) → P2 (or `DT14` for datathons).
+
+## Behaviours judges mark down
+
+- Running over time, or skipping the demo to talk about it
+- Excuses ("with more time…") instead of owning a focused scope
+- Arguing with feedback; say "Good point — here's how we'd handle it"
+- Overpromising traction you don't have
+- Not knowing your own numbers or architecture
+- Criticising other teams
+
+If the demo breaks: stay calm, switch to the backup video within seconds ([rehearsal drills](#rehearsal-drills)), and explain what it shows.
+
+---
+
 ## What kills pitches (named judges)
 
 - **Ambiguity:** judges can't tell what the product does
@@ -107,3 +154,7 @@ Source: [Devpost: hackathon judging tips](https://info.devpost.com/blog/hackatho
 - [Devpost: Understanding submission & judging criteria](https://info.devpost.com/blog/understanding-hackathon-submission-and-judging-criteria)
 - [Devpost: 6 tips for making a hackathon demo video](https://info.devpost.com/blog/6-tips-for-making-a-hackathon-demo-video)
 - [MLH Organizer Guide: Judging plan](https://guide.mlh.com/general-information/judging-and-submissions/judging-plan)
+
+---
+
+_Adapted in part from [Hackathon Starter Pack](https://github.com/udaysharmadev/Hackathon-Starter-Pack-Complete-Guide-Roadmap) by Uday Sharma (MIT licence; see [`THIRD_PARTY_NOTICES.md`](../../THIRD_PARTY_NOTICES.md)). Practitioner advice, not research._

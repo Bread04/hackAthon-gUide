@@ -38,4 +38,5 @@ Prices, quotas and tools: next re-check due **2026-10-22** (see the root README)
 - CI: link and duplicate-file check, plus a smoke test of every handbook script on pinned Python 3.12 dependencies
 - Pinned `PROJECT_TEMPLATE/requirements.txt` (tested together)
 - Fixed: quickstart artifact path after the reorganization; AutoGluon script no longer prints a made-up leaderboard
+- From Hackathon Starter Pack (MIT, credited in `THIRD_PARTY_NOTICES.md`): finding hackathons, sponsor tracks, judge Q&A and story templates, demo-day testing, non-coder guide, staying well, CV/LinkedIn formulas
 - Datathon rules and licences, privacy/PII guide, free compute, hardware judging, solo entry and university rules
