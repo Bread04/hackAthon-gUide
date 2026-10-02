@@ -52,10 +52,16 @@ st.markdown("""
 @st.cache_resource
 def load_model_and_artifacts():
     """Loads pre-trained model and explainer, or creates robust local surrogate."""
-    model_path = os.path.join("..", "03-modeling", "artifacts", "best_model.pkl")
-    if not os.path.exists(model_path):
-        model_path = os.path.join("artifacts", "best_model.pkl")
-        
+    # Look next to this file first, then in 03-modeling, then in the current folder,
+    # so the app finds the model whichever script trained it and wherever you launch from.
+    here = os.path.dirname(os.path.abspath(__file__))
+    candidates = [
+        os.path.join(here, "artifacts", "best_model.pkl"),
+        os.path.join(here, "..", "03-modeling", "artifacts", "best_model.pkl"),
+        os.path.join("artifacts", "best_model.pkl"),
+    ]
+    model_path = next((p for p in candidates if os.path.exists(p)), candidates[0])
+
     if os.path.exists(model_path):
         import joblib
         model = joblib.load(model_path)
@@ -232,7 +238,7 @@ with tab_cohort:
     
     selected_status = st.multiselect("Filter by Status", options=cohort_data["Status"].unique(), default=["Flagged", "Pending Review"])
     filtered_df = cohort_data[cohort_data["Status"].isin(selected_status)]
-    st.dataframe(filtered_df, use_container_width=True)
+    st.dataframe(filtered_df, width="stretch")
     
     # Export CSV button
     csv_bytes = filtered_df.to_csv(index=False).encode('utf-8')

@@ -5,6 +5,7 @@
 ## Checklist
 
 - [ ] `python tools/check_links.py` passes (links and duplicate files)
+- [ ] `python tools/smoke_test.py` passes if any `.py` file or pin changed
 - [ ] New claims have a source, or are labelled "our suggestion" / SNIPPET-ONLY / UNVERIFIED
 - [ ] Prices and free-tier limits are marked "re-check"
 - [ ] New pages are linked from the folder README

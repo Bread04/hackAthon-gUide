@@ -23,6 +23,9 @@ Thanks for helping keep this guide accurate. Tools, prices and rules change fast
 
 ```bash
 python tools/check_links.py   # must print "0 broken links, 0 duplicate groups"
+# If you touched any .py file or a pin (in a Python 3.12 env built from
+# 08-datathon-handbook/PROJECT_TEMPLATE/requirements.txt):
+python tools/smoke_test.py
 ```
 
-The same check runs in CI. Research notes live under `_research/` (see its README); do not edit them by hand, add a new run folder instead.
+Both checks run in CI. Research notes live under `_research/` (see its README); do not edit them by hand, add a new run folder instead.

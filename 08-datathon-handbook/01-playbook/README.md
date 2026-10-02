@@ -9,4 +9,5 @@
 3. [`team-git-and-notebook-workflow.md`](team-git-and-notebook-workflow.md): conflict-free teamwork
 4. [`pitch-and-presentation-guide.md`](pitch-and-presentation-guide.md): 10 slides, 3-minute script, judge Q&A
 5. [`executive-report-template.md`](executive-report-template.md): 2-page fill-in report
-6. [`judging-and-winning-evidence.md`](judging-and-winning-evidence.md): what is *sourced* vs *common advice* about judging, winners and rules; event intake checklist
+6. [`datathon-rules-and-licences.md`](datathon-rules-and-licences.md): competition rules, leaderboards and dataset licences
+7. [`judging-and-winning-evidence.md`](judging-and-winning-evidence.md): what is *sourced* vs *common advice* about judging, winners and rules; event intake checklist

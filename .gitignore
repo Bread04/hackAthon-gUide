@@ -8,3 +8,5 @@ Thumbs.db
 .idea/
 .vscode/
 *.swp
+catboost_info/
+artifacts/

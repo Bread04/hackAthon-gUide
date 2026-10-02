@@ -66,6 +66,7 @@ Folders are numbered in the order you will need them.
 ### 📘 01. Playbook & Strategy
 * [`datathon-battle-plan.md`](01-playbook/datathon-battle-plan.md) — Hour-by-hour 24h and 48h timelines, roles.
 * [`hypothesis-and-problem-framing.md`](01-playbook/hypothesis-and-problem-framing.md) — Hypothesis tree and economic bottleneck mapping.
+* [`datathon-rules-and-licences.md`](01-playbook/datathon-rules-and-licences.md) — Kaggle-style rules (accounts, sharing, external data, leaderboards, winner duties), dataset licences, NDA events, disqualification precedent.
 * [`judging-and-winning-evidence.md`](01-playbook/judging-and-winning-evidence.md) — Sourced findings on rubrics, winners, failure modes, logistics; event intake checklist.
 * [`pitch-and-presentation-guide.md`](01-playbook/pitch-and-presentation-guide.md) — 10-slide blueprint, 3-minute script, judge Q&A.
 * [`executive-report-template.md`](01-playbook/executive-report-template.md) — Fill-in 2-page executive summary.
@@ -78,8 +79,9 @@ Folders are numbered in the order you will need them.
 
 ### 🤖 03. Modeling & Validation
 * [`method-selection-guide.md`](03-modeling/method-selection-guide.md) — Scenario → method matrix with confidence labels.
+* [`baseline-recipes.md`](03-modeling/baseline-recipes.md) — Tested copy-paste baselines: time series, text, anomaly, uplift, spatial CV (image and embeddings untested).
 * [`ml-toolbox.md`](03-modeling/ml-toolbox.md) — Tool verdicts by job, beat-the-baseline ladder, learning resources.
-* [`tooling-2026-update.md`](03-modeling/tooling-2026-update.md) — Version pins, install smoke test, breaking changes, hosting terms.
+* [`tooling-2026-update.md`](03-modeling/tooling-2026-update.md) — Version pins, install smoke test, breaking changes, hosting terms, free GPU/compute options.
 * [`cross-validation-guide.md`](03-modeling/cross-validation-guide.md) — Stratified vs Group vs TimeSeries CV, leakage test.
 * [`hyperparameter-tuning-and-ensembling.md`](03-modeling/hyperparameter-tuning-and-ensembling.md) — Optuna budgets, rank-average blends.
 * [`baseline-pipeline.py`](03-modeling/baseline-pipeline.py) and [`automl-autogluon.py`](03-modeling/automl-autogluon.py) — Runnable pipelines.

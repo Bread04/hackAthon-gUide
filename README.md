@@ -123,6 +123,9 @@ docs/         ← the detailed guides
 | **Win a Datathon / ML Challenge** | [`08-datathon-handbook/`](08-datathon-handbook/README.md) · [`skills/hackathon-datathon/SKILL.md`](skills/hackathon-datathon/SKILL.md) · Evidence: [`_research/`](_research/technical-datathons-and-ml-solutions-2026-09-23/research.md) |
 | Give my AI assistant more abilities | [`05-tools-and-mcp/docs/mcp-catalog.md`](05-tools-and-mcp/docs/mcp-catalog.md) |
 | Check the rules on AI use, old code & IP (and hardware, accessibility, remote demos) | [`01-hackathon-playbook/docs/rules-hardware-a11y-remote.md`](01-hackathon-playbook/docs/rules-hardware-a11y-remote.md) |
+| Use personal or health data safely | [`01-hackathon-playbook/docs/privacy-and-pii.md`](01-hackathon-playbook/docs/privacy-and-pii.md) |
+| Get a free GPU for a datathon | [`08-datathon-handbook/03-modeling/tooling-2026-update.md`](08-datathon-handbook/03-modeling/tooling-2026-update.md) → section 6 |
+| Know the competition rules (Kaggle-style) | [`08-datathon-handbook/01-playbook/datathon-rules-and-licences.md`](08-datathon-handbook/01-playbook/datathon-rules-and-licences.md) |
 | Choose between project ideas | [`01-hackathon-playbook/templates/problem-selection.md`](01-hackathon-playbook/templates/problem-selection.md) |
 | Check my project is demo-ready | [`01-hackathon-playbook/templates/mvp-and-demo-checklist.md`](01-hackathon-playbook/templates/mvp-and-demo-checklist.md) |
 | Prepare the final pitch | [`01-hackathon-playbook/docs/pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) |
@@ -139,6 +142,8 @@ docs/         ← the detailed guides
 **How do I find teammates?** Use the event's chat channel early, post your skills and a one-line problem statement, and aim for mixed roles. See [`git-for-teams.md`](01-hackathon-playbook/docs/git-for-teams.md) for working together.
 
 **Can I use AI coding tools?** Often yes, but rules differ by event, and undisclosed use is what typically causes trouble. Read the event rules and see [`rules-hardware-a11y-remote.md`](01-hackathon-playbook/docs/rules-hardware-a11y-remote.md).
+
+**Can I enter solo?** Usually yes (many university events allow teams of 1-4), but check the rules; see section 5 of [`rules-hardware-a11y-remote.md`](01-hackathon-playbook/docs/rules-hardware-a11y-remote.md).
 
 **Can I reuse code I wrote before?** Check the rules; many events limit pre-existing work. Declare libraries, templates and old code in your README.
 

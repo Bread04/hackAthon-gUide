@@ -2,7 +2,7 @@
 
 <!-- markdownlint-disable MD013 -->
 
-> Research run 8 (2026-10-02). **Read the caveat:** nearly every claim below is SNIPPET-ONLY (search-summary level; most paper sites were blocked), many benchmark numbers are the authors' own claims, sources conflict in places (uplift most of all), and **every data-size threshold is our inference, not a published rule.** Confidence labels in the matrix: SOURCED / INFERENCE / UNVERIFIED. Raw notes: [`_research/technical-ml-methods-2026-10-02/`](../../_research/technical-ml-methods-2026-10-02/digests/). Companions: [`ml-toolbox.md`](ml-toolbox.md) (tool verdicts), [`tooling-2026-update.md`](tooling-2026-update.md) (pins, breaking changes).
+> Research run 8 (2026-10-02). **Read the caveat:** nearly every claim below is SNIPPET-ONLY (search-summary level; most paper sites were blocked), many benchmark numbers are the authors' own claims, sources conflict in places (uplift most of all), and **every data-size threshold is our inference, not a published rule.** Confidence labels in the matrix: SOURCED / INFERENCE / UNVERIFIED. Raw notes: [`_research/technical-ml-methods-2026-10-02/`](../../_research/technical-ml-methods-2026-10-02/digests/). Code for each scenario: [`baseline-recipes.md`](baseline-recipes.md). Companions: [`ml-toolbox.md`](ml-toolbox.md) (tool verdicts), [`tooling-2026-update.md`](tooling-2026-update.md) (pins, breaking changes).
 
 ## 🧭 The 3-Step Rule That Holds in Every Scenario
 

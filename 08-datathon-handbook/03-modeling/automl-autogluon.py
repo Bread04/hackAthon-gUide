@@ -13,7 +13,6 @@ Run:
 
 import os
 import sys
-import time
 import numpy as np
 import pandas as pd
 from sklearn.datasets import make_classification
@@ -53,18 +52,8 @@ def run_autogluon_training(df, target_col="target", time_limit_seconds=300):
     except ImportError:
         print("\n⚠️ AutoGluon is not installed in this environment.")
         print("👉 Install it with: pip install autogluon")
-        print("\n💡 Showing simulated AutoGluon execution for demo purposes...")
-        time.sleep(1.0)
-        print("  - Stage 1: Feature Type Inference (Numeric, Categorical, Datetime)")
-        print("  - Stage 2: Training Base Models (LightGBM, CatBoost, XGBoost, ExtraTrees)")
-        print("  - Stage 3: Multi-Layer Stacking Ensemble (WeightedEnsemble_L2)")
-        print("\n🏆 Simulated Leaderboard:")
-        print("   model                  score_val   eval_metric   pred_time_val   fit_time")
-        print("1  WeightedEnsemble_L2    0.8942      roc_auc       0.042s          145.2s")
-        print("2  CatBoost_BAG_L1        0.8781      roc_auc       0.021s          42.1s")
-        print("3  LightGBM_BAG_L1        0.8654      roc_auc       0.012s          18.4s")
-        print("4  XGBoost_BAG_L1         0.8590      roc_auc       0.019s          35.8s")
-        return None
+        print("   No results are shown without AutoGluon: this script never prints made-up scores.")
+        sys.exit(2)
 
     # Split train and validation holdout
     train_data, test_data = train_test_split(df, test_size=0.2, random_state=42, stratify=df[target_col])

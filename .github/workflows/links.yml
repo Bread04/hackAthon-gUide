@@ -1,4 +1,4 @@
-name: Check links and duplicates
+name: Checks (links, duplicates, script smoke test)
 on:
   pull_request:
   push:
@@ -12,3 +12,12 @@ jobs:
         with:
           python-version: "3.12"
       - run: python tools/check_links.py
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r 08-datathon-handbook/PROJECT_TEMPLATE/requirements.txt
+      - run: python tools/smoke_test.py
