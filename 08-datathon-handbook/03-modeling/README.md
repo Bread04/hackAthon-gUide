@@ -19,6 +19,8 @@
          └─ Threshold tuning for business cost & SHAP explainability export
 ```
 
+> 🧰 Not sure which algorithm or tool to use? Open [`ml-toolbox.md`](ml-toolbox.md) for verdicts by task.
+
 ---
 
 ## 🛡️ The 3 Rules of Leak-Free Validation
