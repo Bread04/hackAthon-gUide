@@ -1,19 +1,6 @@
-# 🎯 Method Selection Guide: Which ML Method for Which Datathon
+# Matching datathon problems to the right ML method
 
-<!-- markdownlint-disable MD013 -->
-
-> Research run 8 (2026-10-02). **Read the caveat:** nearly every claim below is SNIPPET-ONLY (search-summary level; most paper sites were blocked), many benchmark numbers are the authors' own claims, sources conflict in places (uplift most of all), and **every data-size threshold is our inference, not a published rule.** Confidence labels in the matrix: SOURCED / INFERENCE / UNVERIFIED. Raw notes: [`_research/technical-ml-methods-2026-10-02/`](../../_research/technical-ml-methods-2026-10-02/research.md). Code for each scenario: [`baseline-recipes.md`](baseline-recipes.md). Companions: [`ml-toolbox.md`](ml-toolbox.md) (tool verdicts), [`tooling-2026-update.md`](tooling-2026-update.md) (pins, breaking changes).
-
-## 🧭 The 3-Step Rule That Holds in Every Scenario
-
-1. **Cheap, hard-to-fool baseline** for the scenario (below).
-2. **Validate the way the test set will be built** (group / time / spatial split, see [`cross-validation-guide.md`](cross-validation-guide.md)).
-3. **Upgrade by blending diverse model families** on out-of-fold predictions, not by hunting for one best model.
-
-Whatever the matrix says, **the method that wins on your locked OOF folds wins.** Verify with the [Beat-the-Baseline Ladder](ml-toolbox.md).
-
----
-
+The notes support one robust headline: **start with a cheap, hard-to-fool baseline for the scenario, validate the way the test set will be built, then upgrade by blending diverse model families rather than hunting for one best model.** For tabular data, tuned gradient-boosted trees (GBDTs) remain the safest single model on large or irregular data. The newest benchmarks, however, show tabular foundation models winning on small data, modern MLP ensembles matching GBDTs, and cross-model ensembles winning overall. For time series, global LightGBM wins on covariate-rich retail panels, while seasonal-naive and statistical combinations are hard to beat on short or noisy series. Text and image tasks start from frozen embeddings plus a linear head. Anomaly work starts with ECOD and Isolation Forest, and uplift work starts with a T-learner on randomised data. Imbalance is handled by thresholds, not SMOTE. **Evidence caveat: nearly every claim below is SNIPPET-ONLY** (taken from search-result summaries; arxiv.org and medium.com were blocked, so almost no paper was read in full). Many benchmark numbers are the authors' own claims, several sources conflict (uplift most of all), and every data-size threshold is an inference, not a published rule.
 
 ## Decision matrix: scenario, first method, upgrade, what to avoid
 

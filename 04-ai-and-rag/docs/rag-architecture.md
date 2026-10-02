@@ -193,6 +193,8 @@ Don't reach for a bigger model as the default fix for every failure class. Add r
 
 ## RAG variants: when each is worth it
 
+> 📚 Full research report and raw notes: [`technical-multi-agent-llm-rag-2026-10-02`](../../_research/technical-multi-agent-llm-rag-2026-10-02/research.md).
+
 > Added 2026-10-02 from a GitHub-first research run; see the label key at the top of [`multi-agent-systems.md`](multi-agent-systems.md). Headline: Most RAG variants lose to three cheap upgrades
 
 The guide's `rag-architecture.md` already prescribes contextual retrieval, hybrid search and reranking in Supabase. What it lacks is a view of the alternatives, with honest evidence grades. The rough order of value per hour of hackathon work is: **long context (if the corpus is small) > naive RAG > hybrid + rerank > contextual retrieval > agentic loop > parent-child > query rewriting > CRAG-style grading > LightRAG > ColPali > GraphRAG > Self-RAG training**. That ranking is an inference from the evidence below, not a measured result. One discrepancy needs flagging. The guide's default chunk size is about 800 tokens, following Anthropic. Chroma's chunking report found RecursiveCharacterTextSplitter at **200 tokens with no overlap** "performed consistently well across all metrics", with 85.4-89.5% recall, while LLMSemanticChunker reached 91.9% recall (SNIPPET-ONLY, [Chroma research](https://www.trychroma.com/research/evaluating-chunking); code at [chunking_evaluation](https://github.com/brandonstarxel/chunking_evaluation)). The two sources measured different things, so treat chunk size as a parameter to test on your golden set rather than a settled default.

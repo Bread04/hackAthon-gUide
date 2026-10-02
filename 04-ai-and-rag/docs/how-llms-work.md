@@ -2,6 +2,8 @@
 
 <!-- markdownlint-disable MD013 -->
 
+> 📚 Full research report and raw notes: [`technical-multi-agent-llm-rag-2026-10-02`](../../_research/technical-multi-agent-llm-rag-2026-10-02/research.md).
+
 > The mechanics that decide how you design an LLM feature: tokens, context, caching, tool loops, structured output, cost. For choosing a model and prices see [`model-selection.md`](model-selection.md); for prompts see [`prompt-engineering.md`](prompt-engineering.md). Research run 2026-10-02 (GitHub-first sources; many vendor/paper pages were blocked, so read the labels).
 >
 > **Labels used throughout:** **SNIPPET-ONLY** means the finding comes from search-result summaries because the primary page (usually arXiv, ACL Anthology or a vendor blog) was blocked in the research sandbox. **UNVERIFIED** means general background or memory that no fetched source confirmed. **Vendor-reported** means a number published by the company or authors that sell or built the thing being measured. **(re-check)** marks a price.

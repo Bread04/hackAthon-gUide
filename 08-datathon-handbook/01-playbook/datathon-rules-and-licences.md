@@ -2,6 +2,8 @@
 
 <!-- markdownlint-disable MD013 -->
 
+> 📚 Full research report and raw notes: [`technical-datathon-gap-fill-round-two-2026-10-02`](../../_research/technical-datathon-gap-fill-round-two-2026-10-02/research.md).
+
 > What competition rules usually say about accounts, sharing, external data, leaderboards, winner obligations and dataset licences. Research round two, 2026-10-02. The sandbox blocked many primary sites, so read the labels: **FULL-TEXT** means the page or file was read in full, usually a GitHub copy or source file. **SNIPPET-ONLY** means the claim comes from a search-engine summary, not the page itself, so do not quote it as verbatim. **UNVERIFIED** means it could not be checked at all, or rests on background knowledge. **RE-CHECK** marks a limit, quota or price the vendor can change at any time. **CONFLICT** marks sources that disagree. "Inference (ours)" is the researchers' own synthesis, not a rule or standard.
 
 ## Datathon rules: Kaggle's template allows external data by default but bans private sharing outright

@@ -1,33 +1,10 @@
-# 🧑‍⚖️ Judging, Winning & Logistics: What the Evidence Says
-
-<!-- markdownlint-disable MD013 -->
-
-> Research run 5 (2026-10-02). **Read the caveat below before quoting anything here.** Full notes: [`_research/technical-datathon-judging-2026-10-02/`](../../_research/technical-datathon-judging-2026-10-02/research.md).
-> The handbook's other pages give *advice*; this page separates what has a **source** from what is **common advice**.
-
-## ✅ Event Intake Checklist (do this in the first hour)
-
-Derived from the findings below; this is our recommendation, not an organizer rule.
-
-| # | Ask / check | Why (finding) |
-| - | --- | --- |
-| 1 | Is the event **leaderboard-scored** (e.g. WiDS: one metric) or **judge-scored** (e.g. DataFest, TAMU, Data Open finals)? | Leaderboard → trust CV, avoid public-board overfit. Judged → map work to the published criteria. |
-| 2 | Find the **official criteria** and copy them into `PROJECT_CONTEXT.md` | Most real rubrics are unweighted; the criteria themselves are the only guide |
-| 3 | What is the **submission format**? (predictions file, 2-3 slides, report + live talk, notebooks + code) | Formats differ sharply by event |
-| 4 | **Written** answer from organizers on: AI/LLM assistants, external data, pretrained models, IP | No datathon-specific AI policy text was found for any named event |
-| 5 | Is the data **restricted** (DUA, credentialed access)? Start access days early | Credentialed clinical data requires training + a signed agreement and can forbid sending rows to third-party AI services |
-| 6 | Keep an **AI-use log** (tool, purpose, what was pasted) | Hackathon rules commonly require disclosure; disclose by default |
-| 7 | Plan a **smaller scope** than you think you can finish | Scope outrunning delivery is one of the few sourced failure modes |
-
-For general rules on AI disclosure, pre-existing code and IP, also read [`rules-hardware-a11y-remote.md`](../../01-hackathon-playbook/docs/rules-hardware-a11y-remote.md) (software hackathons; datathon-specific rules still unsourced).
-
-## The Research Report: Datathon judges reward framing, validation and story
+# Datathon judges reward framing, validation and story
 
 **Evidence caveat first.** The researchers could mostly read only search-engine snippets of official pages, because the sandbox proxy blocked most event sites (WiDS, Citadel, Devpost, Kaggle, Medium, and others). Only a few GitHub repos were read in full: Rice 2024, IndoML 2024, UIUC 2024 and one WiDS 2025 repo. Throughout this report, "snippet-only" means the claim rests on a search extract, and "UNVERIFIED" means it could not be confirmed. Items tagged "common advice" come from opinion pieces or general knowledge, not from a located primary source. Do not present those as fact in the guide.
 
 Datathons are judged in one of two ways. Leaderboard events such as WiDS are decided by a single metric, and narrative events such as DataFest, TAMU and the Citadel Data Open finals are decided by judges applying qualitative criteria. Across the narrative events, the published criteria converge on four themes: problem understanding, method and validation rigor, insight or impact, and communication. Explicit percentage weights were found for almost no real event. Recent winners we could check favored domain-informed features, metric awareness and simple, explainable methods over exotic models. The failure modes with sourced support are public-leaderboard overfitting, scope outrunning delivery, and complexity or submission volume beating insight. Leakage, broken demos and weak Q&A are widely asserted in advice pieces, but no sourced 2023-26 case was found. For logistics, the best-sourced item is data-access rules: credentialed clinical data can take days to unlock and forbids sending rows to third-party AI services. No datathon-specific AI-assistant policy text was found for any named event.
 
-### What is evidenced about how datathons are judged
+## What is evidenced about how datathons are judged
 
 **Leaderboard events.** The WiDS Datathon 2025 Kaggle track used **F1 score** (ADHD diagnosis from fMRI). Prizes went to the top 5 on the global leaderboard and to top undergraduate teams, all by rank. Teams were up to 4 people, at least half women-identifying ([WiDS](https://www.widsworldwide.org/learn/datathon/); snippet-only, and the year mapping in the extract is UNVERIFIED). The WiDS Excellence in Research Award is judged on real-world impact potential, scientific rigor and clarity of communication, with no weights found ([WiDS archive](https://www.widsworldwide.org/topics/datathon/); snippet-only).
 
@@ -50,7 +27,7 @@ Generic weighted rubrics circulate online, for example Technical 25 / Innovation
 
 **What judges say they reward.** The direct judge-voice evidence is thin. One secondary report on the Ross Business+Tech datathon quotes a takeaway that teams should truly understand the business problem and tell the story along with good techniques, because many students jump to a solution first ([Michigan Daily](https://www.michigandaily.com/news/campus-life/ross-businesstech-hosts-annual-datathon/); snippet-only). Rubrics back this up indirectly: TAMU scores Validation and Framework, and RIT scores Data-Driven Rigor and Actionability. No interviews with explicit judge penalty lists were found. An "interactivity" requirement or penalty appears in **no** located rubric, so do not assert one. Interactive demos fit general hackathons (iNTUition scores Polish and Technical Difficulty) better than datathons ([iNTUition](https://intuitionv5.devpost.com/); snippet-only, inference).
 
-### What winning teams actually did
+## What winning teams actually did
 
 The best-evidenced winners are the ones whose repos were read in full. At **Rice Datathon 2024 (Chevron track, 1st)**, the team encoded a domain hypothesis, that neighboring wells drive a well's outcome, as an engineered spatial feature using KNN. Feature importance showed it "by far the most important." They also reported test RMSE averaged over five train/test splits (78.698 against a train RMSE of 21.264), which discloses the generalization gap instead of hiding it ([repo](https://github.com/ajholzbach/Datathon_2024); fetched). At **IndoML 2024 (NielsenIQ), Team PRMAS** combined ByT5-small, Llama-flanT5 and MultiModal-ByT5 by hard voting with hierarchy-compliance post-processing and label correction ([repo](https://github.com/iamansinha/Datathon-IndoML-2024); fetched). A **UIUC 2024 4th-place** team (4th of 345, F1 0.90) paired EDA and feature importance for interpretability with a BERT-versus-GPT-3.5 comparison before choosing a sentiment model ([repo](https://github.com/shengzhuyin/uiuc-datathon-24); fetched). Its placement as 4th rather than 1st is a reminder that a wide tool stack alone did not win.
 
@@ -66,13 +43,13 @@ Several other examples rest on snippets and need re-verification. The **Illinois
 
 No verified hour-by-hour time split or role assignment from any 2023-26 winner was found.
 
-### Failure modes: three sourced, three only asserted
+## Failure modes: three sourced, three only asserted
 
 **Sourced or partly sourced.** First, **public-leaderboard overfitting**. "Shake-up" metrics exist because tuning to the public split hurts the private result, and the community mantra is "trust your CV" ([shakeup repo](https://github.com/davidthaler/shakeup), [Kaggle Handbook](https://medium.com/global-maksimum-data-information-technologies/kaggle-handbook-fundamentals-to-survive-a-kaggle-shake-up-3dec0c085bc8)). The AES 2.0 jump above is one example, and a Kaggle CMI first-place write-up is titled "...Or How I Won the Lottery," which suggests a large shake-up component, though its contents were not read ([Kaggle](https://www.kaggle.com/competitions/child-mind-institute-problematic-internet-use/writeups/lennart-haupts-first-place-write-up-or-how-i-won-t); title only, UNVERIFIED). Both are Kaggle competitions, so they apply most to leaderboard-scored datathons like WiDS. Second, **volume and complexity over insight**. The Illinois 2026 result, where roughly 10x more submissions lost to a metric-aware simple model, is the only dated datathon case and is snippet-only. Third, **scope outrunning delivery**. A WiDS 2025 repo (not a winner, no score disclosed) has notebooks marked "(in progress)" and "(planned)" with deep-learning extensions pending. That is the researchers' reading, not the author's statement ([repo](https://github.com/ghazalehran/WiDS-Datathon-2025)). Retrospective opinion pieces add that ideation ate the schedule, leaving little time for insights and documentation, and that teams skip stating the problem ([LinkedIn](https://www.linkedin.com/pulse/meta-lessons-from-failed-data-science-hackathon-abdulmajedraja-rs), [Eugene Yan](https://eugeneyan.com/writing/evaluating-ideas-at-a-hackathon/)). These are opinion, not measured.
 
 **Asserted but with no sourced 2023-26 confirmed example.** The researchers found **no named, sourced 2023-26 case** of data leakage costing a team, of a broken live demo, or of weak Q&A. These are standard advice and should be labeled "common advice" in the guide. The closest leakage evidence is a WiDS participant spotlight in which distance-based features acted as proxies for future information, with advice to update the message if the data contradicts the idea. That is a participant's voice, not a judge's, and it is not a documented loss ([WiDS spotlight](https://www.widsworldwide.org/get-inspired/blog/datathon-spotlight-applying-judicial-scrutiny-to-code-with-valentina-torres-da-silva/)). Leakage is penalized only implicitly, through validation and rigor criteria, and is rarely named in a rubric. The practical stance for a team is that the cost of checking is low, so check anyway, but do not tell readers that judges have been documented penalizing these.
 
-### Logistics and rules to prepare for
+## Logistics and rules to prepare for
 
 **Datasets.** Recent sponsor-donated datasets are mostly domain-specific tabular data, often health. WiDS 2025 had 3 datasets (categorical, quantitative, connectome) on **1,213 participants**, with 200x200 connectome matrices, hosted on Kaggle ([ADHD paper](https://doi.org/10.3390/cmsf2025012006), [WiDS blog](https://www.widsworldwide.org/get-inspired/blog/8th-annual-wids-datathon-challenges-unraveling-the-mysteries-of-the-female-brain/)). WiDS 2024 (Gilead-sponsored) had about **39,000 records** on timely metastatic breast cancer diagnosis and ran Jan 9 to Mar 1 ([Lafayette](https://dss.lafayette.edu/wids-datathon-2024/), [GitHub](https://github.com/rebrinehart/WiDS-2024-Datathon)). The Women in Data 2025 "Space Aware" challenge used open space situational awareness data with US Space Force ([Women in Data](https://www.womenindata.org/blog/datathon-2025)). The Carolina Data Challenge 2025 offered five tracks (Business, Health Sciences, Social Sciences, Natural Sciences, Pop Culture) with hand-picked datasets ([CDC](https://cdc.cs.unc.edu/)). A reasonable expectation, flagged as inference, is laptop-scale CSV or Parquet data. No sourced 2024-26 finance, logistics or sports datathon example was found, and the Citadel datathon page surfaced in search but was not read.
 
@@ -86,7 +63,7 @@ No verified hour-by-hour time split or role assignment from any 2023-26 winner w
 
 **Preparation checklist from advice sources.** Research the topic and the data providers' GitHub pages in advance, prepare wrangling and pipeline code, set up a shared repo with templates, and confirm laptops and software ([Sogeti Labs](https://labs.sogeti.com/5-tips-to-participate-and-succeed-in-your-datathons/), [Hex](https://hex.tech/blog/the-modern-datathon/)). Define the problem before modeling, review all cases when released, and do not fit the data to your preferred solution ([Data Science Society](https://www.datasciencesociety.net/datathon-participants-guidelines/); search summary only). Item-level attribution across these sources is imprecise, and one cited source dates from 2016. A one-week plan (data access and credentialing first, environment and baseline next, then rules and past winners, then roles and a presentation dry run) is the researchers' own inference, not a sourced schedule.
 
-### Conclusion
+## Conclusion
 
 The evidence base is thinner than the advice ecosystem implies. Only a few winners could be read in full, most rubrics are unweighted, and the loudest folk wisdom (leakage, broken demos, weak Q&A, interactive dashboards) has no sourced 2023-26 confirmation. What survives scrutiny is a short list: know whether your event is leaderboard- or judge-scored, map your work to the published criteria, show validation rather than claim it, root features and framing in the domain, and finish a smaller scope than you planned.
 

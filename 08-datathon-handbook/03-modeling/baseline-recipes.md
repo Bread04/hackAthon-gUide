@@ -2,6 +2,8 @@
 
 <!-- markdownlint-disable MD013 -->
 
+> 📚 Full research report and raw notes: [`technical-datathon-gap-fill-round-two-2026-10-02`](../../_research/technical-datathon-gap-fill-round-two-2026-10-02/research.md).
+
 > Copy-paste baselines for time series, text, image, anomaly, uplift and spatial CV, plus the 2026 API pitfalls. Pick the method first with [`method-selection-guide.md`](method-selection-guide.md). Research round two, 2026-10-02. The sandbox blocked many primary sites, so read the labels: **FULL-TEXT** means the page or file was read in full, usually a GitHub copy or source file. **SNIPPET-ONLY** means the claim comes from a search-engine summary, not the page itself, so do not quote it as verbatim. **UNVERIFIED** means it could not be checked at all, or rests on background knowledge. **RE-CHECK** marks a limit, quota or price the vendor can change at any time. **CONFLICT** marks sources that disagree. "Inference (ours)" is the researchers' own synthesis, not a rule or standard.
 
 ## Baseline recipes: six task types, current APIs, and the breaking changes to watch
