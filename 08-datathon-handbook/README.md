@@ -77,9 +77,11 @@ Winning teams treat the datathon as a rapid **decision-support product challenge
 * [`04-solutions-and-ui/streamlit-app-template.py`](04-solutions-and-ui/streamlit-app-template.py) — Complete, runnable Streamlit app with scenario sliders, SHAP watermarks, and unit economics ticker.
 * [`04-solutions-and-ui/dashboard-design-patterns.md`](04-solutions-and-ui/dashboard-design-patterns.md) — The 5 UI patterns judges love (Counterfactual simulators, ROI tickers, glass-box explanations, cohort filters, action queues).
 
-### 📦 05. Catalog & References
+### 📦 05. Repo Catalog
 * [`05-repo-catalog/README.md`](05-repo-catalog/README.md) — Curated collection of top open-source tools, public data portals, and winning repositories.
-* [`06-prompts/datathon-prompts.md`](06-prompts/datathon-prompts.md) — Guide to prompt engineering in competitive data science.
+
+### 💬 06. Quick Prompts
+* [`06-prompts/README.md`](06-prompts/README.md) — Short copy-paste co-pilot prompts (the full macro set is [`PROMPTS.md`](PROMPTS.md)).
 
 ### 🏆 07. Worked Example Case Study
 * [`07-worked-example/worked-example.md`](07-worked-example/worked-example.md) — Hour-by-hour case study of how a 4-person team took 1st place overall in a 48-hour clinical datathon.

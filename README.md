@@ -15,6 +15,7 @@
 | **2. Set up BMad** | [`01-hackathon-playbook/docs/setup-bmad.md`](01-hackathon-playbook/docs/setup-bmad.md): install Claude Code and practise once, the week before | 45 min |
 | **3. See it done** | [`01-hackathon-playbook/worked-example.md`](01-hackathon-playbook/worked-example.md): one team's whole hackathon, skill by skill | 10 min |
 | **📊 Entering a Datathon / ML Track?** | [`08-datathon-handbook/first-datathon.md`](08-datathon-handbook/first-datathon.md): The beginner's guide to data hackathons, 1-click starter & ML solutions | 10 min |
+| **📊 Datathon day-of** | [`08-datathon-handbook/00-datathon-runbook.md`](08-datathon-handbook/00-datathon-runbook.md): 8 gates with exit checks and decision tables | 10 min |
 
 Words you don't know? [`GLOSSARY.md`](GLOSSARY.md). On the day, follow [`battle-plan.md`](01-hackathon-playbook/battle-plan.md) hour by hour.
 
