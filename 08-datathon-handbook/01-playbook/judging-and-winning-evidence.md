@@ -19,6 +19,8 @@ Derived from the findings below; this is our recommendation, not an organizer ru
 | 6 | Keep an **AI-use log** (tool, purpose, what was pasted) | Hackathon rules commonly require disclosure; disclose by default |
 | 7 | Plan a **smaller scope** than you think you can finish | Scope outrunning delivery is one of the few sourced failure modes |
 
+For general rules on AI disclosure, pre-existing code and IP, also read [`rules-hardware-a11y-remote.md`](../../01-hackathon-playbook/docs/rules-hardware-a11y-remote.md) (software hackathons; datathon-specific rules still unsourced).
+
 ## The Research Report: Datathon judges reward framing, validation and story
 
 **Evidence caveat first.** The researchers could mostly read only search-engine snippets of official pages, because the sandbox proxy blocked most event sites (WiDS, Citadel, Devpost, Kaggle, Medium, and others). Only a few GitHub repos were read in full: Rice 2024, IndoML 2024, UIUC 2024 and one WiDS 2025 repo. Throughout this report, "snippet-only" means the claim rests on a search extract, and "UNVERIFIED" means it could not be confirmed. Items tagged "common advice" come from opinion pieces or general knowledge, not from a located primary source. Do not present those as fact in the guide.

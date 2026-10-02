@@ -88,6 +88,7 @@ docs/         ← the detailed guides
 | Build a mobile, voice or crypto app | [`mobile.md`](02-frontend/docs/mobile.md) · [`voice-and-realtime.md`](04-ai-and-rag/docs/voice-and-realtime.md) · [`web3.md`](03-backend/docs/web3.md) |
 | **Win a Datathon / ML Challenge** | [`08-datathon-handbook/`](08-datathon-handbook/README.md) · [`skills/hackathon-datathon/SKILL.md`](skills/hackathon-datathon/SKILL.md) · Evidence: [`_research/`](_research/technical-datathons-and-ml-solutions-2026-09-23/research.md) |
 | Give my AI assistant more abilities | [`05-tools-and-mcp/docs/mcp-catalog.md`](05-tools-and-mcp/docs/mcp-catalog.md) |
+| Check the rules on AI use, old code & IP (and hardware, accessibility, remote demos) | [`01-hackathon-playbook/docs/rules-hardware-a11y-remote.md`](01-hackathon-playbook/docs/rules-hardware-a11y-remote.md) |
 | Prepare the final pitch | [`01-hackathon-playbook/docs/pitch-and-demo.md`](01-hackathon-playbook/docs/pitch-and-demo.md) |
 | Fix something that broke | [`03-backend/docs/troubleshooting.md`](03-backend/docs/troubleshooting.md) |
 | Write the README judges will read | [`01-hackathon-playbook/templates/project-readme.md`](01-hackathon-playbook/templates/project-readme.md) |
