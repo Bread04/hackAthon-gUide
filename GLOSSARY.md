@@ -118,6 +118,9 @@
 | **Overfitting** | When a model memorizes the training data answers instead of learning general patterns, causing it to fail on unseen data |
 | **Target Leakage** | Accidental cheating: when information from the future or the answer key sneaks into the training features |
 | **SHAP (Explainability)** | Game-theoretic proof showing *why* a machine learning model made a specific prediction (showing the receipts) |
+| **Linear / logistic regression** | The simplest models: a weighted sum of features. Linear predicts a number; logistic turns the sum into a probability for yes/no questions. Always try them first. See [`ml-models-explained.md`](08-datathon-handbook/03-modeling/ml-models-explained.md) |
+| **Regularisation (Ridge, Lasso)** | A penalty that keeps a model's weights small so it doesn't memorise noise. Lasso can switch useless features off completely |
+| **Random forest / gradient boosting** | Ensembles of many decision trees. A forest averages independent trees; boosting adds trees one by one, each fixing the last one's mistakes |
 | **Confusion matrix** | A 2×2 table of right and wrong predictions: true/false positives and negatives. Rows are the truth, columns the prediction |
 | **Precision / Recall** | Precision: of the cases you flagged, how many were real. Recall: of the real cases, how many you caught. Raising one usually lowers the other |
 | **PR-AUC / ROC-AUC** | Scores for how well a model ranks positives above negatives across all thresholds. Always compare with the "no skill" value: the positive rate for PR-AUC, 0.5 for ROC-AUC. See [`ml-fundamentals-and-metrics.md`](08-datathon-handbook/03-modeling/ml-fundamentals-and-metrics.md) |

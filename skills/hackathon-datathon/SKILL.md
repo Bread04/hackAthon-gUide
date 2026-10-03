@@ -104,7 +104,7 @@ Frame → Lock evaluation → Ingest & audit → Baseline → Features (one fami
 ## 🔗 Related Resources
 
 - Runbook: `../../08-datathon-handbook/00-start-here/runbook.md`
-- ML basics and metrics: `../../08-datathon-handbook/03-modeling/ml-fundamentals-and-metrics.md` · error analysis: `error-analysis-and-tracking.md` · deep learning: `deep-learning-quickstart.md` · no data: `../02-data-wrangling/getting-data.md`
+- ML basics and metrics: `../../08-datathon-handbook/03-modeling/ml-fundamentals-and-metrics.md` · every model explained: `ml-models-explained.md` · error analysis: `error-analysis-and-tracking.md` · deep learning: `deep-learning-quickstart.md` · no data: `../02-data-wrangling/getting-data.md`
 - Complete Handbook: `../../08-datathon-handbook/README.md`
 - Prompt Macros: `../../08-datathon-handbook/08-ai-agent-kit/PROMPTS.md`
 - Standard Practices: `../../08-datathon-handbook/08-ai-agent-kit/STANDARDS.md`

@@ -47,7 +47,7 @@ Folders are numbered in the order you will need them.
 | 🟢 [`00-start-here/`](00-start-here/README.md) | You are new, or it is Hour 0 | [`first-datathon.md`](00-start-here/first-datathon.md) → [`runbook.md`](00-start-here/runbook.md) |
 | 📘 [`01-playbook/`](01-playbook/README.md) | Planning, framing, judging, pitching | [`datathon-battle-plan.md`](01-playbook/datathon-battle-plan.md) |
 | 🧹 [`02-data-wrangling/`](02-data-wrangling/README.md) | Loading, cleaning, feature engineering | [`recipes.md`](02-data-wrangling/recipes.md) |
-| 🤖 [`03-modeling/`](03-modeling/README.md) | ML basics and metrics, choosing methods, CV, tuning, error analysis, deep learning | [`ml-fundamentals-and-metrics.md`](03-modeling/ml-fundamentals-and-metrics.md) → [`method-selection-guide.md`](03-modeling/method-selection-guide.md) |
+| 🤖 [`03-modeling/`](03-modeling/README.md) | ML basics, every model explained, metrics, choosing methods, CV, tuning, error analysis, deep learning | [`ml-fundamentals-and-metrics.md`](03-modeling/ml-fundamentals-and-metrics.md) → [`ml-models-explained.md`](03-modeling/ml-models-explained.md) → [`method-selection-guide.md`](03-modeling/method-selection-guide.md) |
 | 🖥️ [`04-solutions-and-ui/`](04-solutions-and-ui/README.md) | Building the interactive app | [`streamlit-app-template.py`](04-solutions-and-ui/streamlit-app-template.py) |
 | 📦 [`05-repo-catalog/`](05-repo-catalog/README.md) | Looking for tools, datasets, winning repos | [`README.md`](05-repo-catalog/README.md) |
 | 🏆 [`07-worked-example/`](07-worked-example/README.md) | You want to see a full run | [`worked-example.md`](07-worked-example/worked-example.md) |
@@ -81,6 +81,7 @@ Folders are numbered in the order you will need them.
 
 ### 🤖 03. Modeling & Validation
 * [`ml-fundamentals-and-metrics.md`](03-modeling/ml-fundamentals-and-metrics.md) — How a model learns, train/validation/test, overfitting, and which metric answers which question (formulas, scikit-learn functions, pitfalls).
+* [`ml-models-explained.md`](03-modeling/ml-models-explained.md) — Every classic model explained (linear and logistic regression, regularisation, GLMs, Naive Bayes, kNN, SVM, trees, forests, boosting, neural nets, clustering, PCA, anomaly detection), all trained side by side on the sample data.
 * [`error-analysis-and-tracking.md`](03-modeling/error-analysis-and-tracking.md) — Find where the model fails (slices, worst errors, label issues, drift) and log every run.
 * [`deep-learning-quickstart.md`](03-modeling/deep-learning-quickstart.md) — Transfer learning for images, text and audio on free GPUs; backbones and licences (code untested here).
 * [`method-selection-guide.md`](03-modeling/method-selection-guide.md) — Scenario → method matrix with confidence labels.

@@ -46,6 +46,8 @@ Balanced classes → ROC-AUC · Positives < 5% → **PR-AUC** · Regression → 
 
 ## Model defaults
 
+_How each model works, with all of them trained side by side: [`../03-modeling/ml-models-explained.md`](../03-modeling/ml-models-explained.md)._
+
 Tabular → LightGBM or CatBoost baseline, then blend · Small data + GPU → try TabPFN/TabICL (check licence) · Text → TF-IDF + logistic regression first · Time series → seasonal naive, then LightGBM with lags · Anomaly → ECOD + Isolation Forest. Details: [`../03-modeling/method-selection-guide.md`](../03-modeling/method-selection-guide.md).
 
 ## Rules (Kaggle-style)
