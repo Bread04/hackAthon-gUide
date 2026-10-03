@@ -21,6 +21,8 @@
 
 > 📌 Install problems or odd errors? See [`tooling-2026-update.md`](tooling-2026-update.md) (pins, SHAP/XGBoost bug, pandas 3, hosting).
 >
+> 📏 New to ML? Start with [`ml-fundamentals-and-metrics.md`](ml-fundamentals-and-metrics.md) (splits, overfitting, which metric answers which question), then [`error-analysis-and-tracking.md`](error-analysis-and-tracking.md). Images, text or audio: [`deep-learning-quickstart.md`](deep-learning-quickstart.md).
+>
 > 🧪 Need code for time series, text, anomaly, uplift or spatial CV? See [`baseline-recipes.md`](baseline-recipes.md).
 >
 > 🎯 Which method for my problem? See [`method-selection-guide.md`](method-selection-guide.md) (scenario → first method → upgrade → avoid, with confidence labels).

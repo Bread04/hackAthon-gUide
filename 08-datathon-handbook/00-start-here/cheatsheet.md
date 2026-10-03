@@ -28,6 +28,8 @@
 
 ## Pick the metric
 
+_Explained with formulas and pitfalls: [`../03-modeling/ml-fundamentals-and-metrics.md`](../03-modeling/ml-fundamentals-and-metrics.md)._
+
 Balanced classes → ROC-AUC · Positives < 5% → **PR-AUC** · Regression → RMSE (MAE if outliers are real) · Always also report **$ value at your chosen threshold**.
 
 ## Leakage alarms (stop and check)

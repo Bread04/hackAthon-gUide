@@ -23,6 +23,7 @@ Research runs 5-8 and round two were limited by a blocked sandbox, so many claim
 
 ## Planned content
 
+- [ ] Run the deep-learning code in [`deep-learning-quickstart.md`](08-datathon-handbook/03-modeling/deep-learning-quickstart.md) and the untested snippets in [`ml-in-your-app.md`](04-ai-and-rag/docs/ml-in-your-app.md) (PyTorch, transformers, transformers.js) on a normal machine
 - [ ] Run the image and sentence-embedding recipes and mark them tested in [`baseline-recipes.md`](08-datathon-handbook/03-modeling/baseline-recipes.md). Blocked in our sandbox: Hugging Face and the PyTorch wheel index were unreachable on 2026-10-02, so this needs a normal machine
 
 ## Re-check cadence
@@ -45,3 +46,4 @@ Prices, quotas and tools: next re-check due **2026-10-22** (see the root README)
 - `VERIFICATION.md` generated checklist, `tools/check_versions.py`, markdown lint and generated-page checks in CI, monthly re-check issue
 - Shorter README; reference material moved to `FAQ.md`; printable cheat sheets for both tracks
 - Issue templates: outdated info, missing topic, event report
+- ML gap fill (run 11): fundamentals and metrics, error analysis and tracking, deep-learning quickstart, ML in apps, getting data; tabular, ONNX/FastAPI, fairlearn, cleanlab, sliceline and Evidently code tested on the sample data

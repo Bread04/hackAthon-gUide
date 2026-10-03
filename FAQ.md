@@ -21,6 +21,10 @@
 | Get my app online | [`03-backend/docs/deploy-step-by-step.md`](03-backend/docs/deploy-step-by-step.md) (first time) · [`skills/hackathon-deployment/SKILL.md`](skills/hackathon-deployment/SKILL.md) (full runbook) |
 | Add a chatbot or AI feature | [`04-ai-and-rag/README.md`](04-ai-and-rag/README.md) |
 | Understand how LLMs work (tokens, context, cost) | [`04-ai-and-rag/docs/how-llms-work.md`](04-ai-and-rag/docs/how-llms-work.md) |
+| Add an ML model to our app (API, pretrained, ONNX, in-browser) | [`04-ai-and-rag/docs/ml-in-your-app.md`](04-ai-and-rag/docs/ml-in-your-app.md) |
+| Understand ML metrics (precision, recall, PR-AUC, RMSE…) | [`08-datathon-handbook/03-modeling/ml-fundamentals-and-metrics.md`](08-datathon-handbook/03-modeling/ml-fundamentals-and-metrics.md) |
+| Get or label data when none is provided | [`08-datathon-handbook/02-data-wrangling/getting-data.md`](08-datathon-handbook/02-data-wrangling/getting-data.md) |
+| Use images, text or audio with a pretrained model | [`08-datathon-handbook/03-modeling/deep-learning-quickstart.md`](08-datathon-handbook/03-modeling/deep-learning-quickstart.md) |
 | Decide if we need multiple agents or RAG | [`04-ai-and-rag/docs/multi-agent-systems.md`](04-ai-and-rag/docs/multi-agent-systems.md) |
 | Build an AI agent that uses tools | [`04-ai-and-rag/docs/agents-and-tool-use.md`](04-ai-and-rag/docs/agents-and-tool-use.md) · [`skills/hackathon-ai/SKILL.md`](skills/hackathon-ai/SKILL.md) |
 | Build a mobile, voice or crypto app | [`mobile.md`](02-frontend/docs/mobile.md) · [`voice-and-realtime.md`](04-ai-and-rag/docs/voice-and-realtime.md) · [`web3.md`](03-backend/docs/web3.md) |

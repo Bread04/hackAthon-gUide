@@ -16,6 +16,7 @@
 | [`technical-ml-methods-2026-10-02/`](technical-ml-methods-2026-10-02/research.md) | Research run 8: which ML method per datathon scenario, plus imbalance/calibration/ensembling/validation. Almost entirely snippet-only | `research.md` (full report) + `digests/`; condensed into `08-datathon-handbook/03-modeling/method-selection-guide.md` |
 | [`technical-datathon-gap-fill-round-two-2026-10-02/`](technical-datathon-gap-fill-round-two-2026-10-02/research.md) | Research run 9: datathon rules and licences, baseline recipes, free compute, PII, hardware/solo/university rules. Mixed evidence (Kaggle rules via GitHub copies; much snippet-only) | `research.md` + `digests/` + `imports/recipe-tests/` (the scripts we ran); feeds `datathon-rules-and-licences.md`, `baseline-recipes.md`, `tooling-2026-update.md` §6, `privacy-and-pii.md`, `rules-hardware-a11y-remote.md` §5 |
 | [`technical-multi-agent-llm-rag-2026-10-02/`](technical-multi-agent-llm-rag-2026-10-02/research.md) | Research run 10: LLM mechanics, multi-agent systems, RAG variants, agents/RAG at hackathons (GitHub-first) | `research.md` + `digests/`; feeds `04-ai-and-rag/docs/how-llms-work.md`, `multi-agent-systems.md`, `rag-architecture.md` (RAG variants) |
+| [`technical-ml-gaps-2026-10-03/`](technical-ml-gaps-2026-10-03/research.md) | Research run 11: ML fundamentals and metrics, error analysis, deep/transfer learning, ML inside apps (serving, ONNX, in-browser, fine-tune vs prompt vs RAG), getting data, experiment tracking (GitHub-first) | `research.md` + `digests/` + `imports/code-tests/` (what we ran); feeds `ml-fundamentals-and-metrics.md`, `error-analysis-and-tracking.md`, `deep-learning-quickstart.md`, `getting-data.md`, `04-ai-and-rag/docs/ml-in-your-app.md` |
 | [`distribute.py`](distribute.py) | Splits both reports and `repo-tables.md` into each folder's `docs/evidence.md` and `docs/repos.md`. Run it from the toolkit root after a Refresh | Regenerated files |
 | [`help-me-papi-import.md`](help-me-papi-import.md) | What was adapted from maxi-cmyk/help-me-papi, what was corrected, and what was left out | Import log |
 
@@ -26,6 +27,6 @@ Inside each run folder:
 - `imports/`: verified data, such as `github-metrics.json`
 - `repo-tables.md` (run 2 only): the category tables, the source for every `docs/repos.md`
 - `.memlog.md`: the append-only decision and claims log (runs 1-4)
-- `imports/recipe-tests/` (run 9 only): the scripts used to test code in the guide
+- `imports/recipe-tests/` (run 9) and `imports/code-tests/` (run 11): the scripts used to test code in the guide
 
 Every Claude research run is kept here in full (report + raw researcher notes), even when a guide page carries a condensed copy.
