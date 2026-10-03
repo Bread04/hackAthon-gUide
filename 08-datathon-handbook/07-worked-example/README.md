@@ -9,6 +9,7 @@
 | [`worked-example.md`](worked-example.md) | A **fictional** hour-by-hour 48-hour clinical datathon, told as a story |
 | [`run_end_to_end.py`](run_end_to_end.py) | **Runnable** gates 2-6 on the sample data: grouped folds, data audit, leak detection, baseline ladder, feature families with a log, $-based threshold, evidence table. ~20 s on a laptop |
 | [`model_zoo.py`](model_zoo.py) | Trains **every classic model** (dummy, linear/logistic, Ridge/Lasso, Poisson, Naive Bayes, kNN, SVM, trees, forests, boosting, MLP, clustering, PCA, Isolation forest) on the same folds and prints a fair comparison. ~25 s |
+| [`lightgbm_imbalance_lab.py`](lightgbm_imbalance_lab.py) | LightGBM and class imbalance: what `scale_pos_weight`, `is_unbalance`, `class_weight` and undersampling do to ranking vs probabilities; fixing probabilities (cross-fitted Platt, isotonic, odds correction); choosing the threshold from false-positive/false-negative costs; fixed-budget top-k. ~7 s (`--rare` for ~3% positives) |
 | [`evaluate_and_explain.py`](evaluate_and_explain.py) | Confusion matrix, PR/ROC with baselines, calibration, learning curve, error slices, experiment log |
 | [`sample-readmissions.csv`](sample-readmissions.csv) | 2,622 synthetic admissions for 900 synthetic patients (11% readmitted), with a planted post-outcome leak. No real people |
 | [`make_sample_data.py`](make_sample_data.py) | Regenerates the CSV deterministically |

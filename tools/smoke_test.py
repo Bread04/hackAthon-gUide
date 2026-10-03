@@ -62,6 +62,8 @@ with tempfile.TemporaryDirectory() as tmp:
     check("07-worked-example/run_end_to_end.py",
           lambda: run([py, "run_end_to_end.py"], os.path.join(tmp, "07-worked-example")))
 
+    check("07-worked-example/lightgbm_imbalance_lab.py",
+          lambda: run([py, "lightgbm_imbalance_lab.py"], os.path.join(tmp, "07-worked-example")))
     check("07-worked-example/model_zoo.py",
           lambda: run([py, "model_zoo.py"], os.path.join(tmp, "07-worked-example")))
     check("07-worked-example/evaluate_and_explain.py",
