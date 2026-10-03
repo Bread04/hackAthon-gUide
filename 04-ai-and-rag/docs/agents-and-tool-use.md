@@ -17,6 +17,8 @@
 
 ---
 
+> 🤝 Considering several agents? Read [`multi-agent-systems.md`](multi-agent-systems.md) first: decision tree, framework versions, failure modes and per-SDK step caps (LangGraph's default recursion limit is now 10,007, so set your own).
+
 ## 🪜 Pick a pattern (go down the ladder only when you need to)
 
 | Step | Pattern | Use it when | Hackathon example |

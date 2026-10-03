@@ -118,7 +118,7 @@
 | --- | --- | --- | --- | --- | --- |
 | [infiniflow/ragflow](https://github.com/infiniflow/ragflow) | 91.1k | 2026-09-21 | Apache-2.0 | Turnkey RAG with deep document understanding and a UI | ✅ |
 | [HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) | 39.8k | 2026-09-21 | MIT | Graph-based RAG from HKU research | ✅ |
-| [microsoft/graphrag](https://github.com/microsoft/graphrag) | 36.1k | 2026-09-21 | MIT | Knowledge-graph RAG pipeline | ✅ |
+| [microsoft/graphrag](https://github.com/microsoft/graphrag) | 36.1k | 2026-09-21 | MIT | Knowledge-graph RAG pipeline. **Maintenance mode** (no new features, 2026-10); prefer LightRAG for new builds | ⚠️ |
 | [deepset-ai/haystack](https://github.com/deepset-ai/haystack) | 26.6k | 2026-09-21 | Apache-2.0 | Mature production RAG pipelines | ✅ |
 
 ## Speech, vision & generative media
@@ -163,3 +163,5 @@
 | [microsoft/playwright-mcp](https://github.com/microsoft/playwright-mcp) | 37.4k | 2026-09-18 | Apache-2.0 | Give agents a browser via MCP | ✅ |
 | [apify/crawlee](https://github.com/apify/crawlee) | 25.9k | 2026-09-21 | Apache-2.0 | JS/Python crawling library | ✅ |
 | [browserbase/stagehand](https://github.com/browserbase/stagehand) | 24.7k | 2026-09-21 | MIT | act/extract/observe AI primitives over Playwright | ✅ |
+
+> **Status updates (2026-10-02):** for archived, dormant or changed repos found since this table was generated (Verba archived, Self-RAG/CRAG/ARES dormant, RAG_Techniques non-commercial, AG2 dropped the `autogen` import, MetaGPT idle, nanoGPT deprecated), see [`rag-architecture.md` → Repo status changes](rag-architecture.md#repo-status-changes-checked-2026-10-02).

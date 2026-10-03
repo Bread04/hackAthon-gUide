@@ -1,0 +1,154 @@
+# 🔧 ML Tooling Update (Oct 2026): Pins, Breaking Changes, Hosting
+
+<!-- markdownlint-disable MD013 -->
+
+> Research run 7 (2026-10-02). **Version numbers come mostly from PyPI JSON; everything else is search-snippet level.** Benchmark numbers are the vendors' own claims. Hosting prices and limits must be re-checked on the day. Sources and raw notes: [`_research/technical-ml-tooling-2026-10-02/`](../../_research/technical-ml-tooling-2026-10-02/research.md). Companion to [`ml-toolbox.md`](ml-toolbox.md).
+
+## ⚡ The 60-Second Install Check (our suggestion)
+
+> The full, tested pin set is [`PROJECT_TEMPLATE/requirements.txt`](../PROJECT_TEMPLATE/requirements.txt); the repo's `tools/smoke_test.py` runs every handbook script against it.
+
+Run after `pip install`, before writing any model code. It catches the best-evidenced breakage (SHAP `TreeExplainer` vs XGBoost 3.x).
+
+```python
+import sys, numpy as np, lightgbm as lgb, shap
+print(sys.version.split()[0], lgb.__version__, shap.__version__)
+X = np.random.rand(200, 5); y = (X[:, 0] > 0.5).astype(int)
+m = lgb.LGBMClassifier(n_estimators=20, verbose=-1).fit(X, y)
+shap.TreeExplainer(m).shap_values(X[:5])      # must not raise
+print("OK")
+# If you use XGBoost, repeat with xgboost.XGBClassifier. On ValueError (base_score), pin xgboost<3.
+```
+
+---
+
+**Python 3.12 is the one baseline that satisfies every library the guide's ml-toolbox touches in October 2026, and the stack's defaults need three edits: stop calling LightGBM a clear "best default", pin SHAP and XGBoost together (or avoid the pair), and rewrite 2024-era pandas, Gradio and Streamlit snippets.** Version data below come from PyPI JSON fetched 2026-10-02 where noted; GitHub release-page summaries repeatedly printed wrong years (for example "2024" for 2026 releases), so PyPI dates override them and conflicts are flagged inline. Tabular foundation models (TabPFN, TabICLv2) and AutoGluon ensembles now top the TabArena benchmark, but those ranks are mostly the model authors' own claims and TabPFN weights carry non-commercial terms. Free hosting tightened: Hugging Face restricts new free Gradio/Docker Spaces, and every price or limit here is search-snippet level and must be re-checked. AI coding agents remain useful but show documented validation overfitting and silent failures, so section 5 lists verification rules; those rules are **our own suggestions**, not published standards. Most items outside PyPI version numbers are SNIPPET-ONLY or UNVERIFIED, and labels are kept on each claim.
+
+Reading guide: SNIPPET-ONLY means seen only in a search-result snippet or a lossy fetch summary; UNVERIFIED means no source in the notes confirms it; "vendor claim" means the number comes from the model or tool authors.
+
+## 1. Version and compatibility table with a "pin this" column
+
+Python 3.12 works for all rows. The binding floors are XGBoost 3.4.1 and SHAP 0.52.0 (both >=3.12 on PyPI); the binding ceiling is AutoGluon (<3.14). Older Colab or Kaggle images on 3.10/3.11 may get stuck on older xgboost or shap ([PyPI xgboost](https://pypi.org/pypi/xgboost/json), [PyPI shap](https://pypi.org/pypi/shap/json), [PyPI autogluon.tabular](https://pypi.org/pypi/autogluon.tabular/json)).
+
+| Package | Latest stable seen (date) | Python | Pin-this recommendation | Caveat / flag |
+|---|---|---|---|---|
+| LightGBM | 4.7.0 (2026-07-18) | >=3.10 | `lightgbm==4.7.0` | Polars input via narwhals; project moved to lightgbm-org; 17-month gap since 4.6.0 (2025-02-15) ([PyPI](https://pypi.org/pypi/lightgbm/json), [GitHub v4.7.0](https://github.com/microsoft/LightGBM/releases/tag/v4.7.0), summary-level) |
+| XGBoost | 3.4.1 on PyPI (2026-08-15) | >=3.12 | `xgboost==3.4.1` (tested with `shap==0.52.0` by us) | CONFLICT: GitHub lists v3.4.2 "identical to 3.4.1 plus Python 3.11 support", absent from PyPI at fetch time (SNIPPET-ONLY). Run `pip index versions xgboost` before pinning ([GitHub](https://github.com/dmlc/xgboost/releases)) |
+| CatBoost | 1.2.10 (2026-02-18) | cp310-cp312+ wheels | `catboost==1.2.10` | Slow cadence (1.2.8 Apr 2025, 1.2.9 Feb 2026); 1.2.9 added Python 3.14 and Polars input ([GitHub](https://github.com/catboost/catboost/releases)) |
+| scikit-learn | 1.9.1 (2026-09-10) | >=3.11 | `scikit-learn==1.9.1` | 1.9.0 made narwhals a new required dependency; 1.9 deprecation list not retrieved ([PyPI](https://pypi.org/pypi/scikit-learn/json)) |
+| Optuna | 5.0.0 (2026-09-07) | >=3.9 | `optuna==5.0.0` | Default TPE now multivariate; `trial.set_constraint()` replaces `constraints_func`; LightGBM pruning callback moving to `optuna-integration` is UNVERIFIED ([GitHub](https://github.com/optuna/optuna/releases)) |
+| AutoGluon | 1.6.3 (2026-09-18) | >=3.10,<3.14 | `autogluon.tabular==1.6.3` | Models from older versions must be retrained; FastText and "lite" mode removed; torch >=2.10,<2.14 ([GitHub v1.6.0](https://github.com/autogluon/autogluon/releases/tag/v1.6.0)) |
+| FLAML | 2.7.0 (2026-09-18) | >=3.10 | optional | Only the 2.7.0 date is PyPI-confirmed; 2.6.0 and 2.5.0 dates UNVERIFIED ([PyPI](https://pypi.org/pypi/flaml/json)) |
+| SHAP | 0.52.0 (2026-05-28); 0.53.0rc0 is a pre-release | >=3.12 per PyPI | `shap==0.52.0` | CONFLICT: GitHub summary says floor is 3.11 (0.50.0 last to support 3.9/3.10); verify the exact floor. Do not pin the rc |
+| pandas | 3.0.6 (3.0.0 shipped 2026-01-21) | >=3.11 | `pandas==3.0.6` for new code; `<3` only for old snippets | Release date from secondary press (SNIPPET-ONLY) ([GitHub](https://github.com/pandas-dev/pandas/releases), [InfoQ](https://www.infoq.com/news/2026/02/pandas-library)) |
+| Polars | 1.44.2 stable; 2.0.0-rc.2 pre-release | >=3.10 | `polars<2` | Release dates garbled in sources; whether 2.0 stable has shipped is unknown ([PyPI](https://pypi.org/pypi/polars/json)) |
+| DuckDB | 1.5.6 (GitHub page dated 2026-09-28) | n/a | `duckdb==1.5.6` | PyPI dates for DuckDB were inconsistent; ignore ([GitHub](https://github.com/duckdb/duckdb/releases)) |
+| Streamlit | 1.64.0 | 3.10-3.14 | `streamlit==1.64.0` | Old `st.cache` removed in 1.62.0 ([PyPI](https://pypi.org/pypi/streamlit/json)) |
+| Gradio | 6.29.0 | 3.10-3.13 | `gradio==6.29.0` | v6 breaking changes (below) ([PyPI](https://pypi.org/pypi/gradio/json)) |
+| marimo | 0.25.1 (2026-10-01) | 3.10-3.14 | optional | Reactive notebooks, WASM/HTML export ([GitHub](https://github.com/marimo-team/marimo/releases)) |
+| pandera | 0.33.1 | n/a | optional | Use `import pandera.pandas as pa`; top-level-import deprecation inferred, verify ([PyPI](https://pypi.org/pypi/pandera/json)) |
+| ydata-profiling | CONFLICT: PyPI 4.18.4 (2026-04-22) vs GitHub 4.20.0 | n/a | verify first | GitHub says 4.19.1 renamed the package to `data-profiling`; the old PyPI name appears stale. Check `pip index versions data-profiling` ([GitHub](https://github.com/ydataai/ydata-profiling/releases)) |
+
+TabPFN is deliberately not pinned in the table: its repo lists a 3.5 default (Sept 2026) but the technical report could not be opened, so exact package version and release date are UNVERIFIED ([PriorLabs/TabPFN](https://github.com/PriorLabs/TabPFN), fetch summary).
+
+## 2. Verdict changes to the default stack
+
+**LightGBM is no longer defensible as the "clear best default"; call it the fastest CPU baseline.** On TabArena (51 curated datasets, NeurIPS 2025 D&B) the top single models are pretrained tabular foundation models and AutoGluon ensembles ([TabArena paper](https://papers.neurips.cc/paper_files/paper/2025/file/1697e3fb412da11dc9488249f9e7bbc9-Paper-Datasets_and_Benchmarks_Track.pdf), [repo](https://github.com/autogluon/tabarena)). An aggregator snippet puts tuned+ensembled LightGBM 9th (Elo 1433) and CatBoost 10th (Elo 1417) while also saying CatBoost is the best GBDT; those rankings contradict each other inside one snippet, so treat them as SNIPPET-ONLY and do not quote the ranks ([codesota](https://www.codesota.com/tasks/tabular-ml)). The sturdier statement is that CatBoost tends to lead in untuned regimes, especially with categoricals, and LightGBM wins on speed. Suggested wording for the guide: "baseline with CatBoost or LightGBM, then ensemble diverse GBDTs plus feature engineering." Kaggle evidence supports this: a Playground S6E9 solution rank-blended 8 GBDTs (4 CatBoost, 4 LightGBM/XGBoost) to OOF AUC 0.94561 ([repo](https://github.com/CATastr0phe/kaggle-s6e9-ev-purchase)); a March 2026 churn winner reportedly stacked 150 of 850 models, SNIPPET-ONLY.
+
+**Add AutoGluon as the recommended "upgrade" step, with a licence caveat.** AutoGluon 1.6.0 bundles TabPFN-2.6, TabPFN-3, TabICLv2, TabDPT-Turbo and Nori, plus an `extreme` preset and a `noncommercial` preset ([v1.6.0](https://github.com/autogluon/autogluon/releases/tag/v1.6.0)). Its "67% win-rate vs 1.5 extreme with 27x faster training" is the vendor's own figure. It also adds `validation_structure` for grouped or temporal data, useful against leakage. Routing foundation models through AutoGluon inherits its stacking and validation, which is safer for beginners than hand-rolled TabPFN code (our inference). Exact preset flags and whether foundation models are on in `best_quality` were not confirmed (docs blocked).
+
+**Treat tabular foundation models as an optional ensemble member, not a GBDT replacement.** TabPFN's repo lists limits of up to 1,000,000 rows and 20,000 features for 3.5, a default CPU cap of 5,000 samples, and a GPU recommendation; weights are non-commercial with a browser-login terms acceptance at first use, while code is Apache-2.0 ([PriorLabs/TabPFN](https://github.com/PriorLabs/TabPFN), fetch summary, UNVERIFIED against the report). The login needs internet and an account, so complete it before the event. TabICLv2 is designed for 2-100 columns and degrades beyond 100 features; its licence is listed only as "permissive" (exact licence unconfirmed) ([soda-inria/tabicl](https://github.com/soda-inria/tabicl)). All headline numbers are vendor or author claims: TabPFN-3 default Elo ~1673 near 4-hour AutoGluon 1.5 extreme (~1695) ([arXiv 2605.13986](https://arxiv.org/pdf/2605.13986)); TabPFN-3-Plus beating non-TabPFN models by >200 Elo ([arXiv 2609.17895](https://arxiv.org/pdf/2609.17895)); TabICLv2 average rank 4.66 versus 5.11 for RealTabPFN-2.5 ([arXiv 2602.11139](https://arxiv.org/html/2602.11139v1)); TabICL's claim of beating heavily tuned GBDTs on ~80% of TabArena datasets. These are SNIPPET-ONLY or fetch-summary level and not independently confirmed. Prize events with a commercial sponsor may conflict with non-commercial weights (unconfirmed; check the rules). TabDPT and CARTE specifics were not researched; "TabFM" (arXiv 2609.37959) appeared in search and is UNVERIFIED and unassessed. The TabArena paper also reports that 36 of 51 datasets are small and that deep methods caught up with GBDTs after post-hoc ensembling (SNIPPET-ONLY, [arXiv 2506.16791](https://arxiv.org/pdf/2506.16791)).
+
+**Other tools.** Optuna 5.0 changes sampler defaults, so tuning code that relied on old defaults will behave differently. For apps, keep Streamlit or Gradio as demo picks and marimo as an optional notebook; Dash, Panel, Vizro, Taipy and Hex were not evidenced as needed for 24-48 hours (our judgement; secondary blogs only, [Fastero](https://fastero.com/blog/best-data-visualization-tools-2026)). Evidently is useful only if drift or data-quality reports matter ([GitHub](https://github.com/evidentlyai/evidently)).
+
+## 3. Breaking changes and pitfalls that break copy-paste code
+
+> ✅ **Our test (2026-10-02):** on Python 3.12.3 with the pinned `shap==0.52.0` + `xgboost==3.4.1` (and on Python 3.11 with `shap==0.51.0` + `xgboost==3.2.0`), `TreeExplainer` worked for binary, multiclass and regression XGBoost models. The bug below may be fixed or limited to other configurations; keep the smoke test anyway.
+
+**SHAP plus XGBoost 3.x was the best-evidenced breaker in the research.** `TreeExplainer` raises `ValueError: could not convert string to float: '[...]'` because XGBoost >=3.0 stores `base_score` as a JSON list. It was reported with SHAP 0.49.x and XGBoost 3.1.0 (Nov 2025) and with XGBoost 3.2.0 (issue opened 2026-03-03); issues #4202 and #4288 were OPEN when fetched ([shap#4202](https://github.com/shap/shap/issues/4202), [shap#4288](https://github.com/shap/shap/issues/4288)). **No source confirms SHAP 0.52.0 fixes it.** Workaround used elsewhere: `xgboost<3`, for example 2.1.4 ([sapientml PR 125](https://github.com/sapientml/core/pull/125), SNIPPET-ONLY). Rule for the guide: run a three-line `TreeExplainer` smoke test right after install, and prefer LightGBM or CatBoost for SHAP-heavy work (our inference). An older issue on XGBoost pandas-categorical features with TreeExplainer also exists, status unknown ([shap#2662](https://github.com/shap/shap/issues/2662)).
+
+**pandas 3.0 (Jan 2026) breaks 2024 snippets.** Per release notes and migration guides (details SNIPPET-ONLY): strings default to a `str` dtype rather than `object`, so `dtype == "object"` checks fail (use `pd.api.types.is_string_dtype`); Copy-on-Write is the only mode, so chained assignment like `df[df.A>0]["B"]=1` no longer works and `SettingWithCopyWarning` is gone; datetime default resolution changed; everything deprecated in 2.x was removed (upgrade to 2.3 first) ([GitHub releases](https://github.com/pandas-dev/pandas/releases), [migration guide](https://medium.com/@yogeshkrishnanseeniraj/pandas-3-0-migration-guide-what-actually-breaks-why-and-how-to-fix-it-bebe95fbd053)). Teach `.loc` assignment.
+
+**Polars 2.0 changes row order.** In the 2.0 pre-release (rc.2 seen; stable status unknown), `LazyFrame.collect(engine="auto")` resolves to the streaming engine, which does not guarantee row order for `join`, `group_by` and `unpivot`; fix with an explicit sort or `maintain_order=True`. Other rc changes: Parquet ENUM read as `pl.String`, new Map dtype, `cut()`/`qcut()` deprecated. SNIPPET-ONLY from [Polars announcement](https://pola.rs/posts/announcing-polars-2/) and [upgrade guide](https://docs.pola.rs/releases/upgrade/2/); the "~5x faster" figure is the vendor's. Pin `polars<2` or add sorts. Polars GPU status is UNVERIFIED.
+
+**Gradio 6 (around Nov 2025).** `theme`, `css`, `js` and `head` moved from `gr.Blocks` to `launch()`; `show_api` replaced by `footer_links`; event-listener `show_api` removed and `api_name=False` replaced by `api_visibility`; Chatbot tuple format removed; Sketch deprecated; upgrade to 5.50 first to see warnings (SNIPPET-ONLY, [migration guide](https://gradio.app/main/guides/gradio-6-migration-guide), [AlternativeTo](https://alternativeto.net/news/2025/11/gradio-6-released-with-faster-performance-for-creating-machine-learning-apps-in-python)). **Streamlit 1.62.0** removed the old `st.cache` and global-figure `st.pyplot`; use `st.cache_data` / `st.cache_resource` ([GitHub releases](https://github.com/streamlit/streamlit/releases)).
+
+**Early stopping and training pitfalls.** In LightGBM 4.x use `callbacks=[lgb.early_stopping(stopping_rounds=...)]`, not `train(early_stopping_rounds=...)` ([issue #5196](https://github.com/microsoft/LightGBM/issues/5196)); a snippet claiming the argument is `stopping_round` conflicts with it and is likely wrong. The sklearn API only early-stops when `eval_set` is passed and otherwise silently does nothing (SNIPPET-ONLY, low-quality source, [theneuralbase](https://theneuralbase.com/lightgbm/learn/beginner/early-stopping-not-working/)). XGBoost >=2.0 takes `early_stopping_rounds` in the constructor (background knowledge, UNVERIFIED in 2026 sources). Early stopping on the fold you report is optimistic. The following are background knowledge with no 2026 primary source (UNVERIFIED): `scale_pos_weight` ~ n_neg/n_pos distorts probabilities (fine for AUC, bad for log-loss); LightGBM categoricals need pandas `category` dtype; XGBoost needs `enable_categorical=True` with `tree_method="hist"`; CatBoost accepts raw strings via `cat_features`. Target encoding must be out-of-fold, as the S6E9 solution did.
+
+## 4. Free hosting terms (RE-CHECK every row before the event)
+
+All figures are SNIPPET-ONLY from search results or third-party blogs; official pricing pages were blocked. Re-check on the day.
+
+| Host | Terms seen | Datathon note |
+|---|---|---|
+| Streamlit Community Cloud | Sleeps after 12 h without traffic; click to wake; roughly 0.078-2 CPU cores, 690 MB-2.7 GB memory ([docs](https://docs.streamlit.io/deploy/streamlit-community-cloud/manage-your-app), [Fastero](https://fastero.com/blog/why-your-streamlit-app-keeps-sleeping)); commits may no longer reliably prevent sleep ([forum](https://discuss.streamlit.io/t/how-to-prevent-the-app-enter-the-sleep-mode/87959)) | Simplest free demo; wake it before judging |
+| Hugging Face Spaces | CPU Basic free: 2 vCPU, 16 GB, sleeps after 48 h; static Spaces free; Gradio and Docker Spaces require paid plan (PRO $9/month) to create (Docker restriction from about July 2026); free accounts may host up to 2 ZeroGPU Gradio Spaces, ~5 min/day ([HF docs](https://huggingface.co/docs/hub/en/spaces-overview), [GPU docs](https://huggingface.co/docs/hub/en/spaces-gpus), [forum](https://discuss.huggingface.co/t/new-free-accounts-cannot-create-cpu-basic-gradio-spaces-only-zerogpu-available/177629), [forum](https://discuss.huggingface.co/t/docker-sdk-now-marked-as-paid-when-creating-a-new-space/177580)) | Do not assume a free Gradio Space; whether Streamlit SDK Spaces remain free was not checked |
+| Render | Free web services spin down after 15 min idle, ~1 min cold start; 750 instance hours per workspace per month ([Render](https://render.com/articles/platforms-with-a-real-free-tier-for-developers-in-2026), [DEV](https://dev.to/sanjaysah/750-free-hours-a-month-but-a-month-is-730-3-free-tier-mistakes-that-took-down-my-app-17g8)) | Fallback; warm it up |
+| Fly.io | No free tier for new accounts; trial of 2 h compute or 7 days; legacy plans keep 3 small VMs ([Costbench](https://costbench.com/software/developer-tools/flyio/free-plan/), [agentdeals](https://agentdeals.dev/vendor/fly-io)) | Not free |
+| Railway | Trial with $5 credit; sources conflict on credit-card requirement and post-trial free plan (~$1/month usage); Hobby $5, Pro $20 ([bex.co](https://bex.co/blog/2026/07/29/railway-free-tier-trial-credit), [saaspricepulse](https://www.saaspricepulse.com/tools/railway)) | Not reliably free |
+
+## 5. Rules for verifying AI-agent-written ML code (our own suggestions)
+
+The evidence base is that agents help but fail quietly. The MLE-bench leaderboard tops out near 64% medal rate (Famou-Agent 2.0 at 64.44%, AIBuildAI at 63.11%), under large compute budgets rather than datathon conditions, and its maintainers document label leakage, validation-script failures and a paused submission process ([openai/mle-bench](https://github.com/openai/mle-bench)). A study of research agents found that picking the final solution by test instead of validation score would add 9-13 points, implying systematic validation overfitting, along with invalid submissions and pass@6 about double pass@1 ([arXiv 2507.02554](https://arxiv.org/html/2507.02554), SNIPPET-ONLY). Other figures are weaker: 27% of failures as silent state violations attributed to DSEval and ELT-Bench's 57% loading versus 3.9% transformation success both come from a search summary of a survey, with source attribution unverified ([survey](https://arxiv.org/pdf/2510.04023)). No published agent-specific checklist was found, and no source quantifies hallucinated columns or wrong CV rates. The `leakcheck` linter exists but its quality is unknown ([repo](https://github.com/Sofienguy1/leakcheck)); vet it before use.
+
+The rules below are therefore our own suggestions, built on general leakage checklists ([Kaggle guide](https://www.kaggle.com/general/423738), SNIPPET-ONLY):
+
+1. Read every line of data loading, splitting and feature code yourself; agents fail most silently there.
+2. Split first, then fit: no `.fit()` on unsplit data, imputers and encoders inside a `sklearn.pipeline.Pipeline` within CV, oversampling only after the split, target encoding out-of-fold.
+3. Match the split to the test set: time-based for temporal data, group-based when entities repeat (AutoGluon 1.6 `validation_structure` helps).
+4. Assert in code: no row or ID overlap between train and validation; target not in the feature list; submission row count, columns and ID order match the sample file; predictions are not constant; the CV metric equals the competition metric.
+5. Compare against a dummy model and a default LightGBM/CatBoost run; a large jump on the first try suggests leakage.
+6. Do not pick the final model by repeatedly peeking at one validation score; keep a untouched holdout until the end and use the provided submission checker.
+7. Pin seeds and library versions from section 1; run the SHAP smoke test; reject agent code using removed APIs (`fit(early_stopping_rounds=...)`, `st.cache`, `gr.Blocks(theme=...)`, chained pandas assignment).
+8. Ask the agent to print shapes, dtypes and head after each transform, and treat claimed filters ("excluded X") as unproven until a row count confirms them.
+
+---
+
+## 6. Free compute: Kaggle is the dependable free GPU, and two well-known options have closed
+
+> 📚 Full research report and raw notes: [`technical-datathon-gap-fill-round-two-2026-10-02`](../../_research/technical-datathon-gap-fill-round-two-2026-10-02/research.md).
+
+### What is sourced
+
+Every vendor page was blocked, so this section is **SNIPPET-ONLY and every figure is RE-CHECK** unless marked otherwise.
+
+**Kaggle Notebooks.** About **30 GPU-hours a week** (a "floating" quota that can go higher depending on demand) and 20 TPU-hours, with sessions of up to 12 h (9 h for TPU). The GPU is either 1× P100 (16 GB) or 2× T4. Machines have 4 CPU cores and 29–30 GB RAM. Up to **20 GB** of output persists in `/kaggle/working` ([Kaggle Notebooks docs](https://www.kaggle.com/docs/notebooks); [floating quota thread](https://www.kaggle.com/product-feedback/173129)). New notebooks default to Private, and **making a notebook Public is permanent** ([Kaggle privacy launch](https://www.kaggle.com/product-feedback/34719)). A Secrets add-on holds API keys, and forks of a public notebook do not inherit them ([Kaggle secrets thread](https://www.kaggle.com/general/414523)). Competition scoring kernels often run without internet; the usual workaround is to chain an internet-on training notebook into an offline inference notebook ([Kaggle competitions setup](https://www.kaggle.com/docs/competitions-setup); [TDS chaining kernels](https://towardsdatascience.com/easy-kaggle-offline-submission-with-chaining-kernels-30bba5ea5c4d/)). The private dataset quota is UNVERIFIED.
+
+**Google Colab (free).** Google's own FAQ says limits are "dynamic", with no guaranteed resources. VMs are private to your account and are deleted after idling or at a maximum lifetime, and files are lost when the session ends. Mounting Drive gives **any code in the notebook access to your whole Drive** ([Colab FAQ](https://research.google.com/colaboratory/faq.html)). Third-party reports describe a T4, sessions of about 12 h, an idle disconnect of about 90 minutes, and roughly 15–30 GPU-hours a week (not official) ([Thunder Compute, Sept 2026](https://www.thundercompute.com/blog/colab-alternatives-for-cheap-deep-learning-in-2025)).
+
+**CONFLICT: Colab Pro for Education.** Free Pro for students at US institutions: one snippet says new signups are closed, while Swarthmore IT advertised it as available in January 2026 ([Google blog](https://blog.google/outreach-initiatives/education/colab-higher-education/); [Swarthmore ITS](https://blogs.swarthmore.edu/its/2026/01/13/google-colab-free-for-students-and-faculty/)).
+
+**Hugging Face ZeroGPU.** **CONFLICT:** sources disagree on the free quota, giving 3.5 minutes a day in one and 5 minutes in another. PRO costs about $9 a month for about 40 minutes a day ([HF ZeroGPU docs](https://huggingface.co/docs/hub/en/spaces-zerogpu); [HF forum](https://discuss.huggingface.co/t/zero-gpu-daily-quota/168376)). It is for hosting demos, not training.
+
+**Lightning AI.** The free tier gives 15 credits a month and one Studio that restarts every 4 h. **CONFLICT:** one source says 80 interruptible GPU-hours a month, another about 22 T4-hours ([aicreditmart](https://aicreditmart.com/ai-credits-providers/lightning-ai-free-plan-22-gpu-hours-month-guide-2026/); [Lightning](https://lightning.ai/on-demand-gpus)).
+
+**GitHub Codespaces.** The free plan gives **120 core-hours and 15 GB a month**, CPU only ([GitHub community FAQ](https://github.com/orgs/community/discussions/38697)).
+
+**Closed or uncertain options.**
+
+- **Paperspace:** being absorbed into DigitalOcean (the Gradient API was deprecated in July 2024), and its free tier is UNVERIFIED ([DO docs](https://docs.digitalocean.com/products/paperspace/notebooks/)).
+- **SageMaker Studio Lab:** reportedly closed on 30 July 2026. This rests on a **single snippet**, so it is UNVERIFIED ([Thunder Compute](https://www.thundercompute.com/blog/colab-alternatives-for-cheap-deep-learning-in-2025)).
+- **DigitalOcean Student Pack credit (FULL-TEXT, confirmed):** the $200 offer closed for redemption on **31 July 2026**, and all credits expired on **1 August 2026** ([GitHub community discussion #201240](https://github.com/orgs/community/discussions/201240)).
+
+### Inference (ours)
+
+Kaggle's documented 12-hour sessions and weekly quota make it the safest default for GPU work over a weekend. A team of 3–4 has 90–120 GPU-hours if each member runs on their own account, but check that the event rules allow it. Colab suits fast prototyping, not critical overnight runs. Codespaces or a Lightning CPU Studio is a reproducible shared dev box, and most tabular datathons need no GPU. ZeroGPU fits a final Gradio demo. Guides that still point students to DigitalOcean credits or Studio Lab are out of date. If the data is under an NDA or DUA, or contains PII or health data, treat every one of these platforms as a third-party processor and use only what the organisers approve. The vendors' terms of service on training and data residency were not retrieved.
+
+### Ready-to-use checklist
+
+- [ ] Before the event, re-check each platform's current quota page; every number here is RE-CHECK.
+- [ ] Check whether the data's licence or DUA allows uploads to Kaggle, Colab, HF or Lightning at all.
+- [ ] Code lives in a shared Git repo from minute one. Data and checkpoints live in persistent storage (`/kaggle/working`, Drive, HF Hub). Nothing important lives only in a runtime.
+- [ ] Pin `requirements.txt` with `==` versions. Record the Python, CUDA and key library versions in the README.
+- [ ] Checkpoint every N minutes or epochs, and make training resumable.
+- [ ] Run long Kaggle jobs as "Save & Run All" versions, not interactive sessions.
+- [ ] For offline competitions: download wheels and weights in an internet-on notebook, save them as a dataset, and attach that dataset to the offline inference notebook.
+- [ ] Keep API keys in Kaggle Secrets or environment variables, never in cells. Keep notebooks Private, since publishing is irreversible.
+- [ ] Do not mount Drive in notebooks you did not write.
+- [ ] Add raw-data paths to `.gitignore`. Never push data to a public repo.
+
+## Conclusion
+
+The shift since 2024 is less about a new winner than about eroded defaults: the "LightGBM first" line, the unpinned `pip install`, and copy-pasted pandas, Gradio, Streamlit and SHAP snippets each now fail or mislead in specific, checkable ways. The most actionable guide change is a pinned requirements block on Python 3.12 plus a smoke-test cell, which neutralises the SHAP/XGBoost bug whether or not 0.52.0 fixes it.
+
+Open items to resolve before publishing: whether XGBoost 3.4.2 and Polars 2.0 stable are out, SHAP's true Python floor, the ydata-profiling versus `data-profiling` name, TabPFN and TabICL licence text, the live TabArena leaderboard, and every hosting price. Foundation-model and agent benchmark numbers should appear in the guide only with "vendor claim" labels, and independent verification on a team's own CV remains the deciding test.

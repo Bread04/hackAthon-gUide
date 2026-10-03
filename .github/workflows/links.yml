@@ -1,0 +1,32 @@
+name: Checks (links, duplicates, lint, generated files, smoke test)
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Links and duplicate files
+        run: python tools/check_links.py
+      - name: VERIFICATION.md is up to date
+        run: python tools/list_unverified.py --check
+      - name: Generated evidence/repos pages match _research
+        run: |
+          python _research/distribute.py > /dev/null
+          git diff --exit-code -- '*/docs/evidence.md' '*/docs/repos.md'
+      - name: Markdown lint
+        run: npx -y markdownlint-cli2@0.23.3 "**/*.md"
+  smoke:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r 08-datathon-handbook/PROJECT_TEMPLATE/requirements.txt
+      - run: python tools/smoke_test.py

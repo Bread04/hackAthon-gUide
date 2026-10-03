@@ -1,0 +1,41 @@
+name: Monthly re-check
+on:
+  schedule:
+    - cron: "17 6 1 * *"   # 06:17 UTC on the 1st of each month
+  workflow_dispatch:
+permissions:
+  contents: read
+  issues: write
+jobs:
+  recheck:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Build the re-check issue
+        run: |
+          {
+            echo "Monthly re-check for $(date -u +%Y-%m)."
+            echo
+            echo "## Pinned versions vs PyPI"
+            echo
+            python tools/check_versions.py --markdown
+            echo
+            echo "## Claims still flagged"
+            echo
+            python tools/list_unverified.py >/dev/null
+            grep -m1 "flagged lines" VERIFICATION.md
+            echo
+            echo "## To do"
+            echo
+            echo "- [ ] Bump any pins that are behind, then run \`python tools/smoke_test.py\` (Python 3.12)"
+            echo "- [ ] Re-check prices, free tiers and quotas marked RE-CHECK"
+            echo "- [ ] Work through a few pages of VERIFICATION.md"
+            echo "- [ ] Update the re-check date in README.md and ROADMAP.md"
+          } > body.md
+      - name: Open the issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh issue create --title "Monthly re-check $(date -u +%Y-%m)" --body-file body.md

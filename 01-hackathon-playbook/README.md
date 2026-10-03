@@ -13,19 +13,25 @@
 | ⭐ [`worked-example.md`](worked-example.md) | **One fictional team from idea to prize**, showing which BMad skill they ran at each step |
 | ⭐ [`battle-plan.md`](battle-plan.md) | **The hour-by-hour plan**: which BMad skill to run when, what you decide, and the fallback prompt |
 | [`docs/setup-your-laptop.md`](docs/setup-your-laptop.md) | Install Node, git and VS Code the week before (Windows, Mac, Linux) |
+| [`docs/find-hackathons.md`](docs/find-hackathons.md) | Where hackathons are listed, how to pick one and get accepted |
 | [`docs/free-credits.md`](docs/free-credits.md) | Free perks to claim before the event (GitHub Student Pack and more) |
+| [`docs/non-coder-guide.md`](docs/non-coder-guide.md) | Roles and deliverables for teammates who don't code |
 | 📊 [`08-datathon-handbook/`](../08-datathon-handbook/README.md) | **Datathons & Data Hackathons:** Battle plan, 1-click starter, recipes, and UI templates |
 
 ## 🟡 Use during the event
 
 | File | What it's for |
 | --- | --- |
+| [`docs/privacy-and-pii.md`](docs/privacy-and-pii.md) | **Personal data:** what counts as PII, de-identification, Presidio/Faker, when you may not send data to an LLM (not legal advice) |
+| ⭐ [`docs/rules-hardware-a11y-remote.md`](docs/rules-hardware-a11y-remote.md) | **Read the rules first:** AI-use disclosure, pre-existing code, IP; hardware track and judging; solo entry; university rules; accessibility & privacy; remote demos. Evidence-labelled checklists |
 | [`PROMPTS.md`](PROMPTS.md) | **Fallback prompts** for any AI tool if you don't have Claude Code: ideas (I1), plan (S1), pitch (P1)… Also useful to paste into a BMad session |
-| [`templates/`](templates/) | Fill-in-the-blank docs: [`research`](templates/research.md) · [`prd`](templates/prd.md) (the plan) · [`tech-stack`](templates/tech-stack.md) · [`design`](templates/design.md) · [`project-readme`](templates/project-readme.md) (your repo's README for judges) |
+| [`templates/`](templates/) | Fill-in-the-blank docs: [`problem-selection`](templates/problem-selection.md) · [`mvp-and-demo-checklist`](templates/mvp-and-demo-checklist.md) · [`research`](templates/research.md) · [`prd`](templates/prd.md) (the plan) · [`tech-stack`](templates/tech-stack.md) · [`design`](templates/design.md) · [`project-readme`](templates/project-readme.md) (your repo's README for judges) |
 | [`docs/git-for-teams.md`](docs/git-for-teams.md) | Working in a team without overwriting each other: branches, pulls, **fixing merge conflicts** |
-| [`docs/pitch-and-demo.md`](docs/pitch-and-demo.md) | How to structure a 3-minute pitch, slides, and the backup video |
+| [`docs/sponsor-tracks.md`](docs/sponsor-tracks.md) | Win sponsor prizes: decode the brief, sponsor-fit check, integration depth, follow-up |
+| [`docs/staying-well.md`](docs/staying-well.md) | Sleep, energy, and when to shrink, pivot or stop |
+| [`docs/pitch-and-demo.md`](docs/pitch-and-demo.md) | How to structure a 3-minute pitch, story templates, booth vs stage, judge Q&A patterns, the backup video |
 | [`docs/rules-and-standards.md`](docs/rules-and-standards.md) | Common event rules (AI disclosure, video length) and what judges look for |
-| [`docs/after-the-event.md`](docs/after-the-event.md) | After judging: rotate keys, keep the demo alive, share it, follow up with sponsors |
+| [`docs/after-the-event.md`](docs/after-the-event.md) | After judging: rotate keys, keep the demo alive, share it, CV bullets and posts, follow up with sponsors |
 
 ## 📚 Reference
 

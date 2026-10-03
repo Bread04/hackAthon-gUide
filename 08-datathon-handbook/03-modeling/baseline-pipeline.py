@@ -72,7 +72,7 @@ def train_eval_lightgbm_cv(X, y, cat_cols=None, n_splits=5, random_state=42):
         )
         model.fit(
             X_train, y_train,
-            eval_set=[(X_val, y_val)],
+            eval_X=(X_val,), eval_y=(y_val,),  # LightGBM 4.7+: eval_set is deprecated
             callbacks=[lgb.early_stopping(stopping_rounds=30, verbose=False)]
         )
         val_preds = model.predict_proba(X_val)[:, 1]

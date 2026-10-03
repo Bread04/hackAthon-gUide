@@ -1,0 +1,23 @@
+name: Event report (my hackathon or datathon)
+description: Share your event's rules or what worked and what didn't, so the guide can learn from real events
+labels: [event-report]
+body:
+  - type: input
+    id: event
+    attributes:
+      label: Event name, date and link to its rules
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: Type
+      options: [Software hackathon, Datathon / ML, Hardware, Other]
+  - type: textarea
+    id: rules
+    attributes:
+      label: Rules worth knowing (AI use, pre-existing code, team size, judging criteria)
+  - type: textarea
+    id: lessons
+    attributes:
+      label: What in the guide helped, and what was missing or wrong?

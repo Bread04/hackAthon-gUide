@@ -7,7 +7,7 @@ description: Complete datathon and machine learning hackathon skill. Covers hypo
 
 <!-- markdownlint-disable MD013 -->
 
-> Condensed rules for winning data science competitions, Kaggle days, and corporate datathons. Full detail: `../../08-datathon-handbook/` · macros in `../../08-datathon-handbook/PROMPTS.md`. Verified 2026-09-23.
+> Condensed rules for winning data science competitions, Kaggle days, and corporate datathons. Full detail: `../../08-datathon-handbook/` · macros in `../../08-datathon-handbook/08-ai-agent-kit/PROMPTS.md`. Verified 2026-09-23.
 
 ---
 
@@ -95,10 +95,18 @@ Hour 46–48: Final Leaderboard Submission & Live Presentation
 
 ---
 
+## 🧭 Formulaic Gate Order
+
+Frame → Lock evaluation → Ingest & audit → Baseline → Features (one family at a time) → Improve → Ship UI → Pitch. Do not advance until the gate's exit check passes. Full table, decision tables and lesson mapping: `../../08-datathon-handbook/00-start-here/runbook.md`.
+
+**Trusted fundamentals source:** https://github.com/rohitg00/ai-engineering-from-scratch (`phases/02-ml-fundamentals/`: `08-feature-engineering`, `09-model-evaluation`, `11-ensemble-methods`, `12-hyperparameter-tuning`, `13-ml-pipelines`, `15-time-series`, `17-imbalanced-data`, `18-feature-selection`). Before using any repo: check license, last commit, and that its example runs.
+
 ## 🔗 Related Resources
 
+- Runbook: `../../08-datathon-handbook/00-start-here/runbook.md`
+- ML basics and metrics: `../../08-datathon-handbook/03-modeling/ml-fundamentals-and-metrics.md` · every model explained: `ml-models-explained.md` · error analysis: `error-analysis-and-tracking.md` · deep learning: `deep-learning-quickstart.md` · no data: `../02-data-wrangling/getting-data.md`
 - Complete Handbook: `../../08-datathon-handbook/README.md`
-- Prompt Macros: `../../08-datathon-handbook/PROMPTS.md`
-- Standard Practices: `../../08-datathon-handbook/STANDARDS.md`
+- Prompt Macros: `../../08-datathon-handbook/08-ai-agent-kit/PROMPTS.md`
+- Standard Practices: `../../08-datathon-handbook/08-ai-agent-kit/STANDARDS.md`
 - Codebase Recipes: `../../08-datathon-handbook/02-data-wrangling/recipes.md`
 - Worked 48h Example: `../../08-datathon-handbook/07-worked-example/worked-example.md`

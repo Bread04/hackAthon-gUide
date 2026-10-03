@@ -115,14 +115,14 @@ def step_4_evaluate(model, X_test, y_test):
 
 def step_5_export_and_launch(model, X_test):
     print("\n💾 [Step 5 of 5] Saving Artifacts for the Interactive Web Demo...")
-    artifacts_dir = os.path.join(os.path.dirname(__file__), "04-solutions-and-ui", "artifacts")
+    artifacts_dir = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "04-solutions-and-ui", "artifacts"))
     os.makedirs(artifacts_dir, exist_ok=True)
     
     model_file = os.path.join(artifacts_dir, "best_model.pkl")
     joblib.dump(model, model_file)
     print(f"  ✓ Saved trained model to '{model_file}'.")
     
-    app_file = os.path.join(os.path.dirname(__file__), "04-solutions-and-ui", "streamlit-app-template.py")
+    app_file = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "04-solutions-and-ui", "streamlit-app-template.py"))
     
     print("\n" + "=" * 65)
     print("🎉 SUCCESS! You have a working, production-grade machine learning model.")

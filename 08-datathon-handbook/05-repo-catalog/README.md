@@ -6,6 +6,14 @@
 
 ---
 
+## 🎓 0. Trusted Learning Source
+
+| Repository | License | Why trust it | Use it for |
+| --- | --- | --- | --- |
+| [rohitg00/ai-engineering-from-scratch](https://github.com/rohitg00/ai-engineering-from-scratch) | MIT | 523 lessons / 20 phases, every lesson has `docs/en.md` + runnable `code/` + reusable `outputs/` | `phases/02-ml-fundamentals/` (feature engineering, evaluation, ensembles, tuning, imbalance, time series, anomaly detection). Mapped gate-by-gate in [`../00-start-here/runbook.md`](../00-start-here/runbook.md). |
+
+---
+
 ## 🏆 1. Winning Datathon Solutions on GitHub
 
 Studying real winning code is the fastest way to understand what judges reward. Notice how winning teams structure their repositories: hypothesis definition, clean feature engineering, out-of-fold cross-validation, and an interactive tool or executive report.

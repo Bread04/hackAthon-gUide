@@ -19,6 +19,16 @@
          └─ Threshold tuning for business cost & SHAP explainability export
 ```
 
+> 📌 Install problems or odd errors? See [`tooling-2026-update.md`](tooling-2026-update.md) (pins, SHAP/XGBoost bug, pandas 3, hosting).
+>
+> 📏 New to ML? Start with [`ml-fundamentals-and-metrics.md`](ml-fundamentals-and-metrics.md) (splits, overfitting, which metric answers which question), then [`ml-models-explained.md`](ml-models-explained.md) (every classic model from linear regression to gradient boosting, trained side by side), then [`error-analysis-and-tracking.md`](error-analysis-and-tracking.md). Images, text or audio: [`deep-learning-quickstart.md`](deep-learning-quickstart.md).
+>
+> 🧪 Need code for time series, text, anomaly, uplift or spatial CV? See [`baseline-recipes.md`](baseline-recipes.md).
+>
+> 🎯 Which method for my problem? See [`method-selection-guide.md`](method-selection-guide.md) (scenario → first method → upgrade → avoid, with confidence labels).
+>
+> 🧰 Not sure which algorithm or tool to use? Open [`ml-toolbox.md`](ml-toolbox.md) for verdicts by task.
+
 ---
 
 ## 🛡️ The 3 Rules of Leak-Free Validation

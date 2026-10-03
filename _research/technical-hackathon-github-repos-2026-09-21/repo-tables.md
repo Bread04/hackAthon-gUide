@@ -387,7 +387,7 @@ Generated from `imports/github-metrics.json` (GitHub API, 2026-09-22). `_researc
 | --- | --- | --- | --- | --- | --- |
 | [infiniflow/ragflow](https://github.com/infiniflow/ragflow) | 91.1k | 2026-09-21 | Apache-2.0 | Turnkey RAG with deep document understanding and a UI | ✅ |
 | [HKUDS/LightRAG](https://github.com/HKUDS/LightRAG) | 39.8k | 2026-09-21 | MIT | Graph-based RAG from HKU research | ✅ |
-| [microsoft/graphrag](https://github.com/microsoft/graphrag) | 36.1k | 2026-09-21 | MIT | Knowledge-graph RAG pipeline | ✅ |
+| [microsoft/graphrag](https://github.com/microsoft/graphrag) | 36.1k | 2026-09-21 | MIT | Knowledge-graph RAG pipeline. **Maintenance mode** (no new features, 2026-10); prefer LightRAG for new builds | ⚠️ |
 | [deepset-ai/haystack](https://github.com/deepset-ai/haystack) | 26.6k | 2026-09-21 | Apache-2.0 | Mature production RAG pipelines | ✅ |
 
 ### Speech, vision & generative media

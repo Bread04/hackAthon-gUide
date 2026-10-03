@@ -102,8 +102,13 @@
 | **Tool call** | When the AI asks your code to run a function (search, look up a user, send an email), then reads the result |
 | **Lethal trifecta** | Private data + untrusted content + a way to send data out, all in one AI. Together, one hidden instruction can leak your data, so never combine all three |
 | **Hallucination** | When an AI confidently makes something up |
+| **Multi-agent system** | Several AI agents, each with its own instructions and context, coordinated by code or by a lead agent. Powerful for parallel research, but uses many more tokens: see [`multi-agent-systems.md`](04-ai-and-rag/docs/multi-agent-systems.md) |
+| **A2A** (Agent2Agent) | An open protocol for agents built by different teams or vendors to talk to each other over HTTP. MCP connects an agent to tools; A2A connects agents to agents |
+| **Context window** | How much text (in tokens) a model can read at once. Models pay most attention to the start and end of a long prompt |
 
 ## Datathons & Data Science
+
+> Only the essentials here. The full plain-English ML glossary (features, targets, folds, SHAP, imbalance and more) is [`08-datathon-handbook/00-start-here/GLOSSARY.md`](08-datathon-handbook/00-start-here/GLOSSARY.md).
 
 | Word | What it means |
 | --- | --- |
@@ -113,6 +118,15 @@
 | **Overfitting** | When a model memorizes the training data answers instead of learning general patterns, causing it to fail on unseen data |
 | **Target Leakage** | Accidental cheating: when information from the future or the answer key sneaks into the training features |
 | **SHAP (Explainability)** | Game-theoretic proof showing *why* a machine learning model made a specific prediction (showing the receipts) |
+| **Linear / logistic regression** | The simplest models: a weighted sum of features. Linear predicts a number; logistic turns the sum into a probability for yes/no questions. Always try them first. See [`ml-models-explained.md`](08-datathon-handbook/03-modeling/ml-models-explained.md) |
+| **Regularisation (Ridge, Lasso)** | A penalty that keeps a model's weights small so it doesn't memorise noise. Lasso can switch useless features off completely |
+| **Random forest / gradient boosting** | Ensembles of many decision trees. A forest averages independent trees; boosting adds trees one by one, each fixing the last one's mistakes |
+| **Confusion matrix** | A 2×2 table of right and wrong predictions: true/false positives and negatives. Rows are the truth, columns the prediction |
+| **Precision / Recall** | Precision: of the cases you flagged, how many were real. Recall: of the real cases, how many you caught. Raising one usually lowers the other |
+| **PR-AUC / ROC-AUC** | Scores for how well a model ranks positives above negatives across all thresholds. Always compare with the "no skill" value: the positive rate for PR-AUC, 0.5 for ROC-AUC. See [`ml-fundamentals-and-metrics.md`](08-datathon-handbook/03-modeling/ml-fundamentals-and-metrics.md) |
+| **Calibration** | Whether a predicted "30% risk" really happens about 30% of the time |
+| **Transfer learning** | Starting from a model pretrained on lots of data (images, text, audio) and adapting it to your small dataset, instead of training from scratch |
+| **ONNX** | A standard file format for trained models, so a model trained in Python can run fast elsewhere (a server, a phone, a browser) |
 | **Polars & DuckDB** | Modern, high-speed analytical engines that run in Rust/C++ across all CPU cores without memory crashes on large CSVs |
 
 ## AI coding tools

@@ -7,7 +7,7 @@ description: AI feature and agent toolkit for hackathons covering the workflow-b
 
 <!-- markdownlint-disable MD013 -->
 
-> Condensed rules. Full detail: `../../04-ai-and-rag/docs/agents-and-tool-use.md`, `model-selection.md`, `rag-architecture.md` · macros in `../../04-ai-and-rag/PROMPTS-ML.md`. Verified 2026-09-23.
+> Condensed rules. Full detail: `../../04-ai-and-rag/docs/agents-and-tool-use.md`, `multi-agent-systems.md` (when to go multi-agent, step caps, failure modes), `how-llms-work.md`, `ml-in-your-app.md` (API vs pretrained vs train, ONNX/FastAPI, in-browser, fine-tune vs prompt vs RAG), `model-selection.md`, `rag-architecture.md` (incl. RAG variants) · macros in `../../04-ai-and-rag/PROMPTS-ML.md`. Verified 2026-09-23.
 
 ## Pattern ladder (stop at the first step that works)
 
