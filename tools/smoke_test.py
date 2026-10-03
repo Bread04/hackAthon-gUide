@@ -62,6 +62,9 @@ with tempfile.TemporaryDirectory() as tmp:
     check("07-worked-example/run_end_to_end.py",
           lambda: run([py, "run_end_to_end.py"], os.path.join(tmp, "07-worked-example")))
 
+    check("07-worked-example/evaluate_and_explain.py",
+          lambda: run([py, "evaluate_and_explain.py"], os.path.join(tmp, "07-worked-example")))
+
     def tuning_recipe():
         doc = open(os.path.join(HB, "03-modeling", "hyperparameter-tuning-and-ensembling.md"), encoding="utf-8").read()
         start = doc.index("```python", doc.index("Rapid Tuning Recipe")) + len("```python")
