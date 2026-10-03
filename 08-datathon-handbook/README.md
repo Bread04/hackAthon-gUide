@@ -82,6 +82,7 @@ Folders are numbered in the order you will need them.
 ### 🤖 03. Modeling & Validation
 * [`ml-fundamentals-and-metrics.md`](03-modeling/ml-fundamentals-and-metrics.md) — How a model learns, train/validation/test, overfitting, and which metric answers which question (formulas, scikit-learn functions, pitfalls).
 * [`ml-models-explained.md`](03-modeling/ml-models-explained.md) — Every classic model explained (linear and logistic regression, regularisation, GLMs, Naive Bayes, kNN, SVM, trees, forests, boosting, neural nets, clustering, PCA, anomaly detection), all trained side by side on the sample data.
+* [`lightgbm-imbalance-and-tuning.md`](03-modeling/lightgbm-imbalance-and-tuning.md) — LightGBM on rare classes: what `scale_pos_weight` / `is_unbalance` / undersampling really do, calibrating probabilities, precision vs recall, choosing a threshold from false-positive and false-negative costs, imbalance-specific tuning. Tested numbers.
 * [`error-analysis-and-tracking.md`](03-modeling/error-analysis-and-tracking.md) — Find where the model fails (slices, worst errors, label issues, drift) and log every run.
 * [`deep-learning-quickstart.md`](03-modeling/deep-learning-quickstart.md) — Transfer learning for images, text and audio on free GPUs; backbones and licences (code untested here).
 * [`method-selection-guide.md`](03-modeling/method-selection-guide.md) — Scenario → method matrix with confidence labels.

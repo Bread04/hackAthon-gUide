@@ -58,6 +58,7 @@ _Full scenario matrix with confidence labels: [`03-modeling/method-selection-gui
 4. Never start with deep nets on tabular data.
 
 ### Handling imbalance
+_Tested walkthrough with LightGBM: [`03-modeling/lightgbm-imbalance-and-tuning.md`](../03-modeling/lightgbm-imbalance-and-tuning.md)._
 `scale_pos_weight` → threshold tuning on OOF → class-weighted loss. SMOTE only if the first three failed **and** you can justify synthetic rows to judges.
 
 ---

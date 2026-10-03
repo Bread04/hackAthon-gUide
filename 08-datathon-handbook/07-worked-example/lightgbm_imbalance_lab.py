@@ -4,7 +4,7 @@ how to fix probabilities, and how to pick a threshold from false-positive / fals
     python lightgbm_imbalance_lab.py              # sample data as-is (~11% positive)
     python lightgbm_imbalance_lab.py --rare       # keep ~3% positives to make imbalance harsher
 
-Companion to ../03-modeling/hyperparameter-tuning-and-ensembling.md and ml-fundamentals-and-metrics.md. All numbers are out-of-fold on grouped
+Companion to ../03-modeling/lightgbm-imbalance-and-tuning.md. All numbers are out-of-fold on grouped
 folds (no patient in two folds). The data is synthetic: the point is the *pattern*, not the scores.
 """
 import argparse

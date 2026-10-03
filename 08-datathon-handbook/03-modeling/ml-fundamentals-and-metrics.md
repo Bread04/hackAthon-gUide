@@ -164,3 +164,5 @@ Version from [PyPI scikit-learn](https://pypi.org/pypi/scikit-learn/json).
 ### See it on real numbers
 
 [`07-worked-example/evaluate_and_explain.py`](../07-worked-example/evaluate_and_explain.py) runs all of this on the sample data with out-of-fold predictions: a labelled confusion matrix with precision and recall worked out, PR-AUC and ROC-AUC next to their no-skill baselines, calibration before and after removing `class_weight="balanced"` (mean predicted risk 0.443 vs 0.112 against an actual rate of 0.112), and a learning curve with an automatic verdict. Plain accuracy there is 0.673 while predicting "nobody" scores 0.888, which is the accuracy trap in one line.
+
+**Next:** for a rare positive class, see how imbalance settings, calibration and false-positive/false-negative costs interact in LightGBM: [`lightgbm-imbalance-and-tuning.md`](lightgbm-imbalance-and-tuning.md).

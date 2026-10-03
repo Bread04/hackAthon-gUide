@@ -23,6 +23,7 @@
 | Understand how LLMs work (tokens, context, cost) | [`04-ai-and-rag/docs/how-llms-work.md`](04-ai-and-rag/docs/how-llms-work.md) |
 | Add an ML model to our app (API, pretrained, ONNX, in-browser) | [`04-ai-and-rag/docs/ml-in-your-app.md`](04-ai-and-rag/docs/ml-in-your-app.md) |
 | Understand how ML models work (linear/logistic regression, trees, forests, boosting, kNN, SVM, clustering…) | [`08-datathon-handbook/03-modeling/ml-models-explained.md`](08-datathon-handbook/03-modeling/ml-models-explained.md) |
+| Handle a rare positive class in LightGBM (imbalance, calibration, thresholds, FP/FN costs) | [`08-datathon-handbook/03-modeling/lightgbm-imbalance-and-tuning.md`](08-datathon-handbook/03-modeling/lightgbm-imbalance-and-tuning.md) |
 | Understand ML metrics (precision, recall, PR-AUC, RMSE…) | [`08-datathon-handbook/03-modeling/ml-fundamentals-and-metrics.md`](08-datathon-handbook/03-modeling/ml-fundamentals-and-metrics.md) |
 | Get or label data when none is provided | [`08-datathon-handbook/02-data-wrangling/getting-data.md`](08-datathon-handbook/02-data-wrangling/getting-data.md) |
 | Use images, text or audio with a pretrained model | [`08-datathon-handbook/03-modeling/deep-learning-quickstart.md`](08-datathon-handbook/03-modeling/deep-learning-quickstart.md) |

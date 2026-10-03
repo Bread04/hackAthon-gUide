@@ -48,3 +48,4 @@ Prices, quotas and tools: next re-check due **2026-10-22** (see the root README)
 - Issue templates: outdated info, missing topic, event report
 - ML gap fill (run 11): fundamentals and metrics, error analysis and tracking, deep-learning quickstart, ML in apps, getting data; tabular, ONNX/FastAPI, fairlearn, cleanlab, sliceline and Evidently code tested on the sample data
 - Every classic ML model explained (`ml-models-explained.md`) and trained side by side on the sample data (`model_zoo.py`, in the smoke test)
+- LightGBM imbalance, calibration, FP/FN-cost thresholds and tuning (`lightgbm-imbalance-and-tuning.md`, research run 12) backed by a tested lab

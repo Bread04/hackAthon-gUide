@@ -42,6 +42,8 @@ Balanced classes → ROC-AUC · Positives < 5% → **PR-AUC** · Regression → 
 
 ## Imbalance and threshold
 
+_Why, with numbers: [`../03-modeling/lightgbm-imbalance-and-tuning.md`](../03-modeling/lightgbm-imbalance-and-tuning.md)._
+
 `scale_pos_weight` or class weights → tune the threshold on OOF by dollars → calibrate before quoting probabilities. SMOTE only if those fail and you can defend synthetic rows.
 
 ## Model defaults

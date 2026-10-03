@@ -120,6 +120,8 @@ print("best params:", study.best_params)
 
 **Try it on the sample data:** with the runnable example's data ([`07-worked-example/`](../07-worked-example/README.md)) and a 60-second cap, our run (2026-10-03, Python 3.12, pinned requirements) completed 212 trials and lifted LightGBM's grouped OOF PR-AUC from **0.200 to 0.238**. Logistic regression still scores **0.254** on that data, so the baseline ladder keeps the simpler model: tuning cannot rescue the wrong model family. This code block is executed by `tools/smoke_test.py` so it stays runnable.
 
+**Rare positive class?** Imbalance-specific additions (minimum hessian in leaf, `first_metric_only`, class-balanced bagging, whether to search `scale_pos_weight`) are in [`lightgbm-imbalance-and-tuning.md`](lightgbm-imbalance-and-tuning.md).
+
 **Prompt shortcut:** [`DT18`](../08-ai-agent-kit/PROMPTS.md) asks an AI assistant to generate this with your folds, metric and time budget.
 
 ---

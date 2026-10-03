@@ -23,6 +23,8 @@
 >
 > 📏 New to ML? Start with [`ml-fundamentals-and-metrics.md`](ml-fundamentals-and-metrics.md) (splits, overfitting, which metric answers which question), then [`ml-models-explained.md`](ml-models-explained.md) (every classic model from linear regression to gradient boosting, trained side by side), then [`error-analysis-and-tracking.md`](error-analysis-and-tracking.md). Images, text or audio: [`deep-learning-quickstart.md`](deep-learning-quickstart.md).
 >
+> ⚖️ Rare positive class (fraud, readmission, churn)? [`lightgbm-imbalance-and-tuning.md`](lightgbm-imbalance-and-tuning.md): train plain, calibrate honestly, threshold on money.
+>
 > 🧪 Need code for time series, text, anomaly, uplift or spatial CV? See [`baseline-recipes.md`](baseline-recipes.md).
 >
 > 🎯 Which method for my problem? See [`method-selection-guide.md`](method-selection-guide.md) (scenario → first method → upgrade → avoid, with confidence labels).
