@@ -50,7 +50,8 @@ def load(rare):
 
 
 def model(**kw):
-    base = dict(n_jobs=min(4, os.cpu_count() or 1), n_estimators=400, learning_rate=0.03, num_leaves=15, min_child_samples=40,
+    # n_jobs=1: on small data, LightGBM threads mostly fight each other (and stall badly if the CPU is busy)
+    base = dict(n_jobs=1, n_estimators=400, learning_rate=0.03, num_leaves=15, min_child_samples=40,
                 subsample=0.8, subsample_freq=1, colsample_bytree=0.8, reg_lambda=1.0,
                 random_state=SEED, verbose=-1)
     base.update(kw)
