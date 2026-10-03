@@ -62,6 +62,27 @@ with tempfile.TemporaryDirectory() as tmp:
     check("07-worked-example/run_end_to_end.py",
           lambda: run([py, "run_end_to_end.py"], os.path.join(tmp, "07-worked-example")))
 
+    def tuning_recipe():
+        doc = open(os.path.join(HB, "03-modeling", "hyperparameter-tuning-and-ensembling.md"), encoding="utf-8").read()
+        start = doc.index("```python", doc.index("Rapid Tuning Recipe")) + len("```python")
+        code = doc[start:doc.index("```", start)].replace("timeout=600", "timeout=15")
+        setup = (
+            "import pandas as pd\n"
+            "from sklearn.model_selection import StratifiedGroupKFold\n"
+            f"df = pd.read_csv({os.path.join(tmp, '07-worked-example', 'sample-readmissions.csv')!r})\n"
+            "y = df['readmitted_30d']\n"
+            "X = df[['age', 'length_of_stay', 'n_medications', 'discharge_to', 'creatinine']]\n"
+            "folds = pd.Series(-1, index=df.index)\n"
+            "for k, (_, va) in enumerate(StratifiedGroupKFold(5, shuffle=True, random_state=42)"
+            ".split(df, y, groups=df['patient_id'])):\n"
+            "    folds.iloc[va] = k\n")
+        path = os.path.join(tmp, "tuning_recipe.py")
+        open(path, "w", encoding="utf-8").write(setup + code)
+        out = run([py, path], tmp)
+        if "tuned OOF" not in out:
+            raise RuntimeError("recipe did not print its result")
+    check("03-modeling/hyperparameter-tuning-and-ensembling.md (Optuna recipe)", tuning_recipe)
+
     def app():
         from streamlit.testing.v1 import AppTest
         at = AppTest.from_file(os.path.join(tmp, "04-solutions-and-ui", "streamlit-app-template.py"),
