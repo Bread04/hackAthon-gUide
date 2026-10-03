@@ -50,7 +50,7 @@ def load(rare):
 
 
 def model(**kw):
-    base = dict(n_estimators=400, learning_rate=0.03, num_leaves=15, min_child_samples=40,
+    base = dict(n_jobs=min(4, os.cpu_count() or 1), n_estimators=400, learning_rate=0.03, num_leaves=15, min_child_samples=40,
                 subsample=0.8, subsample_freq=1, colsample_bytree=0.8, reg_lambda=1.0,
                 random_state=SEED, verbose=-1)
     base.update(kw)
@@ -81,6 +81,18 @@ def oof(df, y, folds, make, undersample=None, calibrate=None):
             m = CalibratedClassifierCV(FrozenEstimator(m), method=calibrate).fit(X.iloc[cal_idx], y[cal_idx])
         p[va] = m.predict_proba(X.iloc[va])[:, 1]
     return p
+
+
+def crossfit_platt(p_oof, y, folds):
+    """Calibrate out-of-fold scores without leakage: for each fold, fit Platt scaling (logistic regression
+    on the log-odds) using the OTHER folds' out-of-fold scores, then apply it to this fold. Keeps the full
+    training data for the model and keeps the ranking (the map is monotone)."""
+    from sklearn.linear_model import LogisticRegression
+    z = np.log(np.clip(p_oof, 1e-6, 1 - 1e-6) / (1 - np.clip(p_oof, 1e-6, 1 - 1e-6))).reshape(-1, 1)
+    out = np.zeros(len(y))
+    for tr, va in folds:
+        out[va] = LogisticRegression(C=1e6).fit(z[tr], y[tr]).predict_proba(z[va])[:, 1]
+    return out
 
 
 def quality(y, p):
@@ -120,20 +132,28 @@ def main():
     fixes = {
         "weighted, uncorrected": p_w,
         "weighted + odds correction (divide odds by w)": p_corr,
+        "weighted + cross-fitted Platt on OOF scores": crossfit_platt(p_w, y, folds),
+        "unweighted + cross-fitted Platt on OOF scores": crossfit_platt(runs["no weighting (default)"], y, folds),
         "unweighted + sigmoid (Platt) calibration": oof(df, y, folds, lambda: model(), calibrate="sigmoid"),
         "unweighted + isotonic calibration": oof(df, y, folds, lambda: model(), calibrate="isotonic"),
         "unweighted, no calibration": runs["no weighting (default)"],
     }
     rows = [{"probabilities": k, **quality(y, v)} for k, v in fixes.items()]
     print(pd.DataFrame(rows).to_string(index=False, float_format=lambda v: f"{v:.3f}"))
-    for name in ("weighted, uncorrected", "weighted + odds correction (divide odds by w)"):
+    for name in ("weighted, uncorrected", "weighted + odds correction (divide odds by w)",
+                 "weighted + cross-fitted Platt on OOF scores"):
         frac, mean_pred = calibration_curve(y, fixes[name], n_bins=5, strategy="quantile")
         print(f"{name}: predicted -> observed  " + ", ".join(f"{a:.2f}->{b:.2f}" for a, b in zip(mean_pred, frac)))
-    print("Lower Brier / log loss = more honest probabilities. Calibration methods hold out part of each "
-          "training fold, so they train on less data; on small data that can cost a little ranking skill.")
+    over = p_corr.mean() < 0.8 * pos_rate
+    print("Lower Brier / log loss = more honest probabilities.")
+    if over:
+        print(f"The textbook odds correction OVER-corrected here (mean p {p_corr.mean():.3f} vs actual {pos_rate:.3f}): "
+              "it is exact only for an ideal model. Fit a calibrator on held-out predictions instead.")
+    print("Holding out a calibration slice inside each training fold costs training data (watch PR-AUC drop); "
+          "cross-fitting Platt on out-of-fold scores keeps all the data and the ranking.")
 
     banner("3 · False positives vs false negatives: choosing the threshold from costs")
-    p = fixes["weighted + odds correction (divide odds by w)"]
+    p = fixes["weighted + cross-fitted Platt on OOF scores"]
     p_star = COST_FP / (COST_FP + BENEFIT_TP + 0)  # flag when p*BENEFIT_TP > (1-p)*COST_FP
     print(f"Assumed: a flag costs ${COST_FP:.0f}; a correct flag nets ${BENEFIT_TP:.0f}; a miss forgoes ${COST_FN:.0f}.")
     print(f"Decision rule for CALIBRATED probabilities: flag if p > COST_FP / (COST_FP + BENEFIT_TP) = {p_star:.3f}")
