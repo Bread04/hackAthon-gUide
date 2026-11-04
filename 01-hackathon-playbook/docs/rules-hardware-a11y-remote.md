@@ -111,6 +111,8 @@ Because judging can be asynchronous, the video plus README or hosted link is eff
 - Record the backup video when the demo first works; check audio and screen on export; keep it open in a tab.
 - Rehearse screen sharing on the actual platform, use wired or hotspot internet, and test 10 minutes before presenting.
 
+**Optional rehearsal aid (our suggestion):** Ask someone to join as a remote viewer and name the detail you point to after a slide or share-source change. Use the [Hybrid Pointing Rehearsal Record](https://light-tracer.com/wp-content/uploads/2026/10/hybrid-pointing-rehearsal-record-open-v1.pdf) (PDF, CC BY 4.0) to record what the viewer saw and any fix to recheck.
+
 ---
 
 ## 5. Hardware judging, solo entry and university rules: a working physical loop wins, and so do solo hackers who cut scope
